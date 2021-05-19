@@ -3,68 +3,84 @@ body {
     background-position: center;
     background-color:#fff;
     color: #000;
-  }
+}
 
-  .navbar-laravel {
+.navbar-laravel {
     background-color: #252A35;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
-  }
+}
 
-  .navbar-brand {
+.navbar-brand {
     color: #fff !important;
-  }
+}
 
-  .nav-link {
+.nav-link {
     color: #fff !important;
-  }
+}
 
-  .table-dark {
+.table-dark {
     color: #fff;
-  }
+}
 
-  .list-group-item {
+.list-group-item {
     border-color: #fff;
     background-color: #000;
-  }
+}
 
-  .login-box {
+.login-box {
     background-color: rgba(0, 0, 0, 0);
-  }
+}
 
-  login-header {
+login-header {
     background-color: rgba(0, 0, 0, 0.25);
-  }
+}
 
-  login-body {
+login-body {
     background-color: rgba(0, 0, 0, 0.25);
-  }
+}
 
-  input[type="file"] {
-      display: none;
-  }
+input[type="file"] {
+    display: none;
+}
 
-  .col-md-4 {
-      padding: 0;
-  }
+.col-md-4 {
+    padding: 0;
+}
 
-  .image-box {
-      background-color: rgb(189, 183, 183);
-      height: 200px;
-      width: 80%;
-      cursor: pointer;
+.image-box {
+    background-color: rgb(189, 183, 183);
+    height: 200px;
+    width: 80%;
+    cursor: pointer;
 
-  }
+}
 
-  form {
-      margin-top: 10px;
-      padding: 10px;
-      background-color: aquamarine;
-  }
+form {
+    margin-top: 10px;
+    padding: 10px;;
+}
 
-  .col-md-3 {
-      font-weight: bold;
-  }
+.col-md-3 {
+    font-weight: bold;
+}
 
-  .col-md-2 {
-      font-weight: bold;
-  }
+.col-md-2 {
+    font-weight: bold;
+}
+
+h2 {
+    margin: 10px 0;
+}
+
+.btn-1 {
+    width: 200px;
+    height: 200px;
+    background-color: #fff;
+    color: blue;
+    border: 3px solid;
+
+}
+
+.search-box {
+    width: 350px;
+}

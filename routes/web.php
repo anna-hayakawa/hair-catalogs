@@ -18,7 +18,7 @@ Route::get('/', function () {
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::get('catalog/create', 'Admin\CatalogController@add');
     Route::post('catalog/create', 'Admin\CatalogController@create');
-    Route::get('index', 'Admin\CatalogController@index');
+    Route::get('catalog', 'Admin\CatalogController@index');
 });
 
 

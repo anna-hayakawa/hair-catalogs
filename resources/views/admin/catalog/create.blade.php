@@ -109,7 +109,9 @@
                         </div>
                     </div>
                     {{ csrf_field() }}
-                    <input type="submit" class="btn btn-primary" value="投稿">
+                    <div class="col-md-6 offset-md-6">
+                        <input type="submit" class="btn btn-primary" value="投稿">
+                    </div>
                 </form>
             </div>
         </div>

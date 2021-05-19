@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\HairStyle;
+use App\HairTagMatch;
+use App\Tag;
 
 class CatalogController extends Controller
 {
@@ -21,12 +24,11 @@ class CatalogController extends Controller
     {
         $cond_title = $request->cond_title;
         if ($cond_title != '') {
-            $posts = News::where('title', 'LIKE', '%' . $cond_title . '%')
-            ->orWhere('body', 'LIKE', '%' . $cond_title . '%')->get();
+            $posts = HairStyle::where('title', 'LIKE', '%' . $cond_title . '%')
+            ->orWhere('description', 'LIKE', '%' . $cond_title . '%')->get();
         } else {
-            $posts = News::all();
+            $posts = HairStyle::all();
         }
-        return view('admin.news.index', ['posts' => $posts, 'cond_title' => $cond_title]);
-        return view('admin.catalog.index');
+        return view('admin.catalog.index', ['posts' => $posts, 'cond_title' => $cond_title]);
     }
 }
