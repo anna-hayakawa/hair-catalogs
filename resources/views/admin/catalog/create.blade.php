@@ -18,17 +18,17 @@
                     <div class="form-group row">
                         <div class="col-md-4">
                             <label class="image-box">
-                                <input type="file" class="form-control-file" name="image">画像1
+                                <input type="file" class="form-control-file" name="image">画像1を選択
                             </label>
                         </div>
                         <div class="col-md-4">
                             <label class="image-box">
-                                <input type="file" class="form-control-file" name="image">画像2
+                                <input type="file" class="form-control-file" name="image">画像2を選択
                             </label>
                         </div>
                         <div class="col-md-4">
                             <label class="image-box">
-                                <input type="file" class="form-control-file" name="image">画像3
+                                <input type="file" class="form-control-file" name="image">画像3を選択
                             </label>
                         </div>
                     </div>

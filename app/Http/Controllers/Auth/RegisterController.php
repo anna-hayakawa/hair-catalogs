@@ -72,4 +72,9 @@ class RegisterController extends Controller
             'introduction' => $data['introduction']
         ]);
     }
+
+    public function redirectPath()
+    {
+        return 'admin/catalog';
+    }
 }
