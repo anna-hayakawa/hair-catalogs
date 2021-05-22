@@ -11,6 +11,8 @@
 |
 */
 
+use App\Http\Controllers\TagController;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -21,9 +23,12 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::get('catalog', 'Admin\CatalogController@index');
     Route::get('profile/edit', 'Admin\ProfileController@edit');
     Route::post('profile/edit', 'Admin\ProfileController@update');
+    // Route::resource('catalog', CatalogController::class);
 });
 
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::resource('tag', TagController::class);

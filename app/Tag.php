@@ -11,4 +11,9 @@ class Tag extends Model
     public static $rules = [
         'tag_name' => 'required'
     ];
+
+    public function styles()
+    {
+        return $this->belongsToMany('App\HairStyle')->withTimestamps();
+    }
 }

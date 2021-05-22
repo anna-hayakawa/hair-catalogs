@@ -23,7 +23,8 @@
                 </div>
                 <form action="{{ action('Admin\CatalogController@index') }}" method="get">
                     <div class="form-group row float-md-right">
-                        <div class="col-md-9 search-box">
+                        <label class="col-md-3 text-right">タイトル検索</label>
+                        <div class="col-md-7 search-box">
                             <input type="text" class="form-control" name="cond_title" value="{{ $cond_title }}">
                         </div>
                         <div class="col-md-2">
@@ -40,29 +41,34 @@
                     <table class="table table-dark">
                         <thead>
                             <tr>
-                                <th width="10%">ID</th>
-                                <th width="20%">タイトル</th>
-                                <th width="20%">サブタイトル</th>
-                                <th width="50%">説明</th>
+                                <th width="7%">ID</th>
+                                <th width="15%">タイトル</th>
+                                <th width="15%">サブタイトル</th>
+                                <th width="40%">説明</th>
+                                <th width="23%">画像</th>
                             </tr>
                         </thead>
-                        {{-- <tbody>
-                            @foreach($posts as $news)
-                                <tr>
-                                    <th>{{ $news->id }}</th>
-                                    <td>{{ str_limit($news->title, 100) }}</td>
-                                    <td>{{ str_limit($news->body, 250) }}</td>
-                                    <td>
-                                        <div>
-                                            <a href="{{ action('Admin\NewsController@edit', ['id' => $news->id]) }}">編集</a>
-                                        </div>
-                                        <div>
-                                            <a href="{{ action('Admin\NewsController@delete', ['id' => $news->id]) }}">削除</a>
-                                        </div>
-                                    </td>
-                                </tr>
+                        <tbody>
+                            @foreach($posts as $style)
+                                @if ($style->user_id == Auth::user()->id)
+                                    <tr>
+                                        <th>{{ $style->id }}</th>
+                                        <td>{{ str_limit($style->title, 100) }}</td>
+                                        <td>{{ str_limit($style->caption, 100) }}</td>
+                                        <td>{{ str_limit($style->description, 250) }}</td>
+                                        <td><img src="{{ asset('storage/image/' . $style->image_path1) }}" width="150" height="100"></td>
+                                        {{--  <td>
+                                            <div>
+                                                <a href="{{ action('Admin\NewsController@edit', ['id' => $news->id]) }}">編集</a>
+                                            </div>
+                                            <div>
+                                                <a href="{{ action('Admin\NewsController@delete', ['id' => $news->id]) }}">削除</a>
+                                            </div>
+                                        </td>  --}}
+                                    </tr>
+                                @endif
                             @endforeach
-                        </tbody> --}}
+                        </tbody>
                     </table>
                 </div>
             </div>

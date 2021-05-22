@@ -18,21 +18,28 @@
                     <div class="form-group row">
                         <div class="col-md-4">
                             <label class="image-box">
-                                <input type="file" class="form-control-file" name="image">画像1を選択
+                                <input type="file" class="form-control-file" name="image1">画像1を選択
                             </label>
                         </div>
                         <div class="col-md-4">
                             <label class="image-box">
-                                <input type="file" class="form-control-file" name="image">画像2を選択
+                                <input type="file" class="form-control-file" name="image2">画像2を選択
                             </label>
                         </div>
                         <div class="col-md-4">
                             <label class="image-box">
-                                <input type="file" class="form-control-file" name="image">画像3を選択
+                                <input type="file" class="form-control-file" name="image3">画像3を選択
                             </label>
                         </div>
                     </div>
-                    <div class="form-group row">
+                    {{--  {{--  <p>
+                        @foreach($tag as $tags)
+                        <label>
+                            <input type="checkbox" name="tags[]" value="{{ $tags->id }}">{{ $tags->name }}
+                        </label>
+                        @endforeach
+                    </p>  --}}
+                    {{--  <div class="form-group row">
                         <label class="col-md-3" for="tpo">シュチュエーション</label>
                         <div class="form-check1">
                             <label class="form-check-label">
@@ -89,7 +96,7 @@
                                 <input type="checkbox" name="arrange[]" value="updo">まとめ髪
                             </label>
                         </div>
-                    </div>
+                    </div>  --}}
                     <div class="form-group row">
                         <label class="col-md-2" for="title">タイトル</label>
                         <div class="col-md-10">
@@ -97,20 +104,23 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-md-2" for="subtitle">サブタイトル</label>
+                        <label class="col-md-2" for="caption">サブタイトル</label>
                         <div class="col-md-10">
-                            <input type="text" class="form-control" name="subtitle" value="{{ old('subtitle') }}">
+                            <input type="text" class="form-control" name="caption" value="{{ old('caption') }}">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-md-2" for="body">説明</label>
                         <div class="col-md-10">
-                            <textarea class="form-control" name="body" rows="20">{{ old('body') }}</textarea>
+                            <textarea class="form-control" name="description" rows="15">{{ old('description') }}</textarea>
                         </div>
                     </div>
-                    {{ csrf_field() }}
-                    <div class="col-md-6 offset-md-6">
-                        <input type="submit" class="btn btn-primary" value="投稿">
+                    <div class="form-group row">
+                        <div class="col-md-6 offset-md-6">
+                            <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
+                            {{ csrf_field() }}
+                            <input type="submit" class="btn btn-primary" value="投稿">
+                        </div>
                     </div>
                 </form>
             </div>
