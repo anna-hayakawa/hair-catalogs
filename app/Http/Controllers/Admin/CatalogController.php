@@ -36,12 +36,16 @@ class CatalogController extends Controller
         } else {
             $style->image_path3 = null;
         }
+
         unset($form['_token']);
         unset($form['image1']);
         unset($form['image2']);
         unset($form['image3']);
 
         $style->fill($form)->save();
+
+
+        $tags = Tag::all();;
 
         return redirect('admin/catalog');
     }

@@ -32,43 +32,17 @@
                             </label>
                         </div>
                     </div>
-                    {{--  {{--  <p>
-                        @foreach($tag as $tags)
-                        <label>
-                            <input type="checkbox" name="tags[]" value="{{ $tags->id }}">{{ $tags->name }}
-                        </label>
-                        @endforeach
-                    </p>  --}}
-                    {{--  <div class="form-group row">
-                        <label class="col-md-3" for="tpo">シュチュエーション</label>
-                        <div class="form-check1">
-                            <label class="form-check-label">
-                                <input type="checkbox" name="tpo[]" value="wedding">結婚式
-                            </label>
-                            <label class="form-check-label">
-                                <input type="checkbox" name="tpo[]" value="event">イベント
-                            </label>
-                            <label class="form-check-label">
-                                <input type="checkbox" name="tpo[]" value="live">ライヴ
-                            </label>
-                            <label class="form-check-label">
-                                <input type="checkbox" name="tpo[]" value="concert">コンサート
-                            </label>
-                            <label class="form-check-label">
-                                <input type="checkbox" name="tpo[]" value="goout">お出かけ
-                            </label>
-                            <label class="form-check-label">
-                                <input type="checkbox" name="tpo[]" value="ceremony">卒業式
-                            </label>
-                            <label class="form-check-label">
-                                <input type="checkbox" name="tpo[]" value="party">パーティー／お食事会
-                            </label>
-                            <label class="form-check-label">
-                                <input type="checkbox" name="tpo[]" value="other">その他
-                            </label>
-                        </div>
-                    </div>
                     <div class="form-group row">
+                        <label class="col-md-3" for="tpo">シュチュエーション</label>
+                        <p>
+                            @foreach($tags as $tag)
+                            <label>
+                                <input type="checkbox" name="tags[]" value="{{ $tag->id }}">{{ $tag->tag_name }}
+                            </label>
+                            @endforeach
+                        </p>
+                    </div>
+                    {{-- <div class="form-group row">
                         <label class="col-md-3" for="arrange">アレンジ</label>
                         <div class="form-check2">
                             <label class="form-check-label">
@@ -96,7 +70,7 @@
                                 <input type="checkbox" name="arrange[]" value="updo">まとめ髪
                             </label>
                         </div>
-                    </div>  --}}
+                    </div> --}}
                     <div class="form-group row">
                         <label class="col-md-2" for="title">タイトル</label>
                         <div class="col-md-10">

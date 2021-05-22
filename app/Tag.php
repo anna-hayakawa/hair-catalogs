@@ -14,6 +14,6 @@ class Tag extends Model
 
     public function styles()
     {
-        return $this->belongsToMany('App\HairStyle')->withTimestamps();
+        return $this->belongsToMany('App\HairStyle', 'hair_tag');
     }
 }
