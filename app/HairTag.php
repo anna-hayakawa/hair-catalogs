@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class HairTagMatch extends Model
+class HairTag extends Model
 {
     protected $guarded = ['id'];
 
@@ -12,4 +12,6 @@ class HairTagMatch extends Model
         'style_id' => 'required',
         'tag_id' => 'required',
     ];
+
+    protected $fillable = ['post_id', 'tag_id'];
 }
