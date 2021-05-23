@@ -11,6 +11,6 @@ class CatalogsController extends Controller
 {
     public function index()
     {
-    return view('catalogs.index', [ 'tags' => Tag::all()]);
+    return view('catalogs.index', ['tags' => Tag::all()]);
     }
 }

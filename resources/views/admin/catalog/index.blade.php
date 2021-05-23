@@ -8,10 +8,10 @@
             <div class="col-md-12 mx-auto">
                 <h2>マイページ</h2>
             </div>
-            <div class="col-md-4 text-right">
+            <div class="col-md-5 text-right">
                 <a href="{{ action('Admin\CatalogController@add') }}" role="button" class="btn btn-primary btn-1">新規投稿</a>
             </div>
-            <div class="col-md-4 offset-md-3 text-left">
+            <div class="col-md-5 offset-md-2 text-left">
                 <a href="{{ action('Admin\ProfileController@edit') }}" role="button" class="btn btn-primary btn-1">プロフィール編集</a>
             </div>
         </div>
@@ -23,8 +23,8 @@
                 </div>
                 <form action="{{ action('Admin\CatalogController@index') }}" method="get">
                     <div class="form-group row float-md-right">
-                        <label class="col-md-3 text-right">タイトル検索</label>
-                        <div class="col-md-7 search-box">
+                        <label class="col-md-3 text-right title-label">タイトル検索</label>
+                        <div class="col-md-7 search-box1">
                             <input type="text" class="form-control" name="cond_title" value="{{ $cond_title }}">
                         </div>
                         <div class="col-md-2">

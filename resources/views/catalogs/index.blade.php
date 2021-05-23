@@ -1,5 +1,7 @@
 @extends('layouts.front')
 
+@section('title', 'HairCatalogs')
+
 @section('content')
     <div class="container">
         <div class="row">
