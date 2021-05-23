@@ -6,12 +6,13 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\HairStyle;
 use App\Tag;
+use App\HairTag;
 
 class CatalogController extends Controller
 {
     public function add()
     {
-        return view('admin.catalog.create');
+        return view('admin.catalog.create', ['tags' => Tag::all()]);
     }
 
     public function create(Request $request)
@@ -44,8 +45,16 @@ class CatalogController extends Controller
 
         $style->fill($form)->save();
 
+        $style = HairStyle::create($request->all());
+        $style->tags()->attach(request()->tag_id);
 
-        $tags = Tag::all();;
+        // //中間テーブルへの保存
+        // $tagId = HairStyle::all()->last();
+
+        // $hair_tag = new HairTag();
+        // $hair_tag->style_id = $tagId->id;
+        // $hair_tag->tag_id = $tagId->tag_id;
+        // $hair_tag->save();
 
         return redirect('admin/catalog');
     }

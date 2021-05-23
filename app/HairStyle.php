@@ -12,11 +12,14 @@ class HairStyle extends Model
         'user_id' => 'required',
         'title' => 'required',
         'description' => 'required',
-        'image1' => 'required'
+        'image1' => 'required',
+        'tag_id' => 'required'
     ];
 
     public function tags()
     {
-        return $this->belongsToMany('App\Tag', 'hair_tag');
+        return $this->belongsToMany('App\Tag', 'App\HairTag');
     }
+
+
 }

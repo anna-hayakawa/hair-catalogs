@@ -33,44 +33,15 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-md-3" for="tpo">シュチュエーション</label>
+                        <label class="col-md-3" for="tpo">シチュエーション</label>
                         <p>
                             @foreach($tags as $tag)
                             <label>
-                                <input type="checkbox" name="tags[]" value="{{ $tag->id }}">{{ $tag->tag_name }}
+                                <input type="checkbox" name="tag_id" value="{{ $tag->id }}">{{ $tag->tag_name }}
                             </label>
                             @endforeach
                         </p>
                     </div>
-                    {{-- <div class="form-group row">
-                        <label class="col-md-3" for="arrange">アレンジ</label>
-                        <div class="form-check2">
-                            <label class="form-check-label">
-                                <input type="checkbox" name="arrange[]" value="upstyle">アップスタイル
-                            </label>
-                            <label class="form-check-label">
-                                <input type="checkbox" name="arrange[]" value="downstyle">ダウンスタイル
-                            </label>
-                            <label class="form-check-label">
-                                <input type="checkbox" name="arrange[]" value="halfup">ハーフアップ
-                            </label>
-                            <label class="form-check-label">
-                                <input type="checkbox" name="arrange[]" value="ponytail">ポニーテール
-                            </label>
-                            <label class="form-check-label">
-                                <input type="checkbox" name="arrange[]" value="bun">お団子
-                            </label>
-                            <label class="form-check-label">
-                                <input type="checkbox" name="arrange[]" value="buncheshair">ツインテール
-                            </label>
-                            <label class="form-check-label">
-                                <input type="checkbox" name="arrange[]" value="shinyon">夜会巻き
-                            </label>
-                            <label class="form-check-label">
-                                <input type="checkbox" name="arrange[]" value="updo">まとめ髪
-                            </label>
-                        </div>
-                    </div> --}}
                     <div class="form-group row">
                         <label class="col-md-2" for="title">タイトル</label>
                         <div class="col-md-10">
