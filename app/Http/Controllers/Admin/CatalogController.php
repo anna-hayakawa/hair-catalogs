@@ -37,17 +37,27 @@ class CatalogController extends Controller
         } else {
             $style->image_path3 = null;
         }
+        $form_tags = $form['tag_id'];
 
         unset($form['_token']);
         unset($form['image1']);
         unset($form['image2']);
         unset($form['image3']);
+        unset($form['tag_id']);
 
         $style->fill($form)->save();
-
-        $style = HairStyle::create($request->all());
-        $style->tags()->attach(request()->tag_id);
-
+        $style_id = $style->id;
+        // dd($style->id);
+        if (is_array($form_tags)) {
+            foreach ($form_tags as $form_tag) {
+                $insert = [
+                    'style_id' => $style_id,
+                    'tag_id' => (int)$form_tag
+                ];
+                // dd($insert);
+                HairTag::insert($insert);
+            }
+        }
         // //中間テーブルへの保存
         // $tagId = HairStyle::all()->last();
 

@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class HairTag extends Model
 {
     protected $guarded = ['id'];
+    protected $table = 'hair_tag';
 
     public static $rules = [
         'style_id' => 'required',
