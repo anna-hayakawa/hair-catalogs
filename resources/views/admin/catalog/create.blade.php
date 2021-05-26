@@ -3,6 +3,7 @@
 @section('title', '新規投稿の作成')
 
 @section('content')
+<script src="{{ mix('js/hoge.js') }}"></script>
     <div class="container">
         <div class="row">
             <div class="col-md-12 mx-auto">
@@ -18,17 +19,20 @@
                     <div class="form-group row">
                         <div class="col-md-4">
                             <label class="image-box">
-                                <input type="file" class="form-control-file" name="image1">画像1を選択
+                                <input type="file" class="form-control-file" name="image1" id="image1" accept="image/*" />
+                            </label>
+                            <p class="btn_upload">
+                                画像1を選択
+                            </p>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="image-box">
+                                <input type="file" class="form-control-file" name="image2" accept="image/*">画像2を選択
                             </label>
                         </div>
                         <div class="col-md-4">
                             <label class="image-box">
-                                <input type="file" class="form-control-file" name="image2">画像2を選択
-                            </label>
-                        </div>
-                        <div class="col-md-4">
-                            <label class="image-box">
-                                <input type="file" class="form-control-file" name="image3">画像3を選択
+                                <input type="file" class="form-control-file" name="image3" accept="image/*">画像3を選択
                             </label>
                         </div>
                     </div>

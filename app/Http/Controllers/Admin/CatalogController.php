@@ -46,6 +46,7 @@ class CatalogController extends Controller
         unset($form['tag_id']);
 
         $style->fill($form)->save();
+
         $style_id = $style->id;
         // dd($style->id);
         if (is_array($form_tags)) {
@@ -58,14 +59,6 @@ class CatalogController extends Controller
                 HairTag::insert($insert);
             }
         }
-        // //中間テーブルへの保存
-        // $tagId = HairStyle::all()->last();
-
-        // $hair_tag = new HairTag();
-        // $hair_tag->style_id = $tagId->id;
-        // $hair_tag->tag_id = $tagId->tag_id;
-        // $hair_tag->save();
-
         return redirect('admin/catalog');
     }
 
