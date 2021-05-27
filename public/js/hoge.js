@@ -11046,52 +11046,7 @@ $(document).ready(function () {
     fr.readAsDataURL(file);
     $(".image-box3 img").css('opacity', 0);
   });
-}); // $('#image1').change(
-//     function () {
-//         if (!this.files.length) {
-//             return;
-//         }
-//         console.log('image1')
-//         var file = $(this).prop('files')[0];
-//         var fr = new FileReader();
-//         $('.image-box').css('background-image', 'none');
-//         fr.onload = function() {
-//             $('.image-box').css('background-image', 'url(' + fr.result + ')');
-//         }
-//         fr.readAsDataURL(file);
-//         $(".image-box img").css('opacity', 0);
-//     }
-// );
-// $('#image2').change(
-//     function () {
-//         if (!this.files.length) {
-//             return;
-//         }
-//         var file = $(this).prop('files')[0];
-//         var fr = new FileReader();
-//         $('.image-box').css('background-image', 'none');
-//         fr.onload = function() {
-//             $('.image-box').css('background-image', 'url(' + fr.result + ')');
-//         }
-//         fr.readAsDataURL(file);
-//         $(".image-box img").css('opacity', 0);
-//     }
-// );
-// $('#image3').change(
-//     function () {
-//         if (!this.files.length) {
-//             return;
-//         }
-//         var file = $(this).prop('files')[0];
-//         var fr = new FileReader();
-//         $('.image-box').css('background-image', 'none');
-//         fr.onload = function() {
-//             $('.image-box').css('background-image', 'url(' + fr.result + ')');
-//         }
-//         fr.readAsDataURL(file);
-//         $(".image-box img").css('opacity', 0);
-//     }
-// );
+});
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 
 /***/ }),

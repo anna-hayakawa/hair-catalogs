@@ -17,55 +17,55 @@
                         </ul>
                     @endif
                     <div class="form-group row">
-                        <div class="col-md-4">
+                        <div class="col-md-4 text-center">
                             <label class="image-box1">
                                 <input type="file" class="form-control-file" name="image1" id="image1" accept="image/*" />
                             </label>
-                            <p class="btn_upload">
+                            <p class="labels">
                                 画像1
                             </p>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-4 text-center">
                             <label class="image-box2">
                                 <input type="file" class="form-control-file" name="image2" id="image2" accept="image/*" />
                             </label>
-                            <p class="btn_upload">
+                            <p class="labels">
                                 画像2
                             </p>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-4 text-center">
                             <label class="image-box3">
                                 <input type="file" class="form-control-file" name="image3" id="image3" accept="image/*" />
                             </label>
-                            <p class="btn_upload">
+                            <p class="labels">
                                 画像3
                             </p>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-md-3" for="tpo">シチュエーション</label>
+                        <label class="col-md-2 labels" for="tpo">シチュエーション</label>
                         <p>
                             @foreach($tags as $tag)
-                            <label>
-                                <input type="checkbox" name="tag_id[]" value="{{ $tag->id }}">{{ $tag->tag_name }}
+                            <label class="checkbox">
+                                <input type="checkbox" class="check_box" name="tag_id[]" value="{{ $tag->id }}">{{ $tag->tag_name }}
                             </label>
                             @endforeach
                         </p>
                     </div>
                     <div class="form-group row">
-                        <label class="col-md-2" for="title">タイトル</label>
+                        <label class="col-md-2 labels" for="title">タイトル</label>
                         <div class="col-md-10">
                             <input type="text" class="form-control" name="title" value="{{ old('title') }}">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-md-2" for="caption">サブタイトル</label>
+                        <label class="col-md-2 labels" for="caption">サブタイトル</label>
                         <div class="col-md-10">
                             <input type="text" class="form-control" name="caption" value="{{ old('caption') }}">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-md-2" for="body">説明</label>
+                        <label class="col-md-2 labels" for="body">説明</label>
                         <div class="col-md-10">
                             <textarea class="form-control" name="description" rows="15">{{ old('description') }}</textarea>
                         </div>
