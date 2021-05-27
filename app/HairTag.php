@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class HairTag extends Model
 {
     protected $guarded = ['id'];
+
+    //Modelにテーブルを認識させる
     protected $table = 'hair_tag';
 
     public static $rules = [

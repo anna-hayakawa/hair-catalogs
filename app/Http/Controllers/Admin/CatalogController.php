@@ -15,6 +15,7 @@ class CatalogController extends Controller
         return view('admin.catalog.create', ['tags' => Tag::all()]);
     }
 
+
     public function create(Request $request)
     {
         $this->validate($request, HairStyle::$rules);
@@ -47,8 +48,9 @@ class CatalogController extends Controller
 
         $style->fill($form)->save();
 
+        //中間テーブルへの保存
         $style_id = $style->id;
-        // dd($style->id);
+
         if (is_array($form_tags)) {
             foreach ($form_tags as $form_tag) {
                 $insert = [
@@ -62,6 +64,7 @@ class CatalogController extends Controller
         return redirect('admin/catalog');
     }
 
+
     public function index(Request $request)
     {
         $cond_title = $request->cond_title;
@@ -73,4 +76,6 @@ class CatalogController extends Controller
         }
         return view('admin.catalog.index', ['posts' => $posts, 'cond_title' => $cond_title]);
     }
+
+
 }

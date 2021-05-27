@@ -74,14 +74,14 @@ h4 {
     font-weight: bold;
 }
 
-.image-box {
-  background-image: url(/images/lady_icon.png?2e0dc4e2d2be745f45a3a5310b00a9bf);
-  background-color: rgba(153, 153, 153, 0.801);
-  width: 255px;
-  height: 255px;
-  margin-bottom: 0;
+.image-box1, .image-box2, .image-box3 {
+    background-image: url(/images/lady_icon.png?2e0dc4e2d2be745f45a3a5310b00a9bf);
+    background-color: rgba(153, 153, 153, 0.801);
+    width: 255px;
+    height: 255px;
+    margin-bottom: 0;
 }
 
-.image-box input[type=file] {
-  opacity: 0;
+.image-box1 input[type=file], .image-box2 input[type=file], .image-box3 input[type=file] {
+    opacity: 0;
 }

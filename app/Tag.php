@@ -12,8 +12,9 @@ class Tag extends Model
         'tag_name' => 'required'
     ];
 
+    //HairStyle ModelとHairTag Modelへの関連付け
     public function styles()
     {
-        return $this->belongsToMany('App\HairStyle', 'hair_tag');
+        return $this->belongsToMany('App\HairStyle', 'App/HairTag');
     }
 }

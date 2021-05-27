@@ -18,22 +18,28 @@
                     @endif
                     <div class="form-group row">
                         <div class="col-md-4">
-                            <label class="image-box">
+                            <label class="image-box1">
                                 <input type="file" class="form-control-file" name="image1" id="image1" accept="image/*" />
                             </label>
                             <p class="btn_upload">
-                                画像1を選択
+                                画像1
                             </p>
                         </div>
                         <div class="col-md-4">
-                            <label class="image-box">
-                                <input type="file" class="form-control-file" name="image2" accept="image/*">画像2を選択
+                            <label class="image-box2">
+                                <input type="file" class="form-control-file" name="image2" id="image2" accept="image/*" />
                             </label>
+                            <p class="btn_upload">
+                                画像2
+                            </p>
                         </div>
                         <div class="col-md-4">
-                            <label class="image-box">
-                                <input type="file" class="form-control-file" name="image3" accept="image/*">画像3を選択
+                            <label class="image-box3">
+                                <input type="file" class="form-control-file" name="image3" id="image3" accept="image/*" />
                             </label>
+                            <p class="btn_upload">
+                                画像3
+                            </p>
                         </div>
                     </div>
                     <div class="form-group row">

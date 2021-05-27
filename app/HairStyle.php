@@ -16,10 +16,9 @@ class HairStyle extends Model
         'tag_id' => 'required'
     ];
 
+    //Tag ModelとHairTag Modelへの関連付け
     public function tags()
     {
         return $this->belongsToMany('App\Tag', 'App\HairTag');
     }
-
-
 }
