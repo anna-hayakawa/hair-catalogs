@@ -11006,7 +11006,7 @@ $(function () {
     $('.image-box1').css('background-image', 'none');
 
     fr.onload = function () {
-      $('.image-box1').css('background-image', 'url(' / storage / image / +$image_path1 + ')');
+      $('.image-box1').css('background-image', 'url(' + fr.result + ')');
     };
 
     fr.readAsDataURL(file);

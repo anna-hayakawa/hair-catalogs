@@ -16,7 +16,7 @@
                             @endforeach
                         </ul>
                     @endif
-                    <div class="form-group row">
+                    <div class="form-group row image-boxes">
                         <div class="col-md-4 text-center">
                             <label class="image-box1">
                                 <input type="file" class="form-control-file" name="image1" id="image1" accept="image/*" />

@@ -10,11 +10,11 @@ class HairStyle extends Model
 
     public static $rules = [
         'user_id' => 'required',
+        'image1' => 'required',
+        'tag_id' => 'required',
         'title' => 'required',
         'description' => 'required',
-        'image1' => 'required',
-        'tag_id' => 'required'
-    ];
+        ];
 
     //Tag ModelとHairTag Modelへの関連付け
     public function tags()

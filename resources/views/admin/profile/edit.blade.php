@@ -18,7 +18,7 @@
                     <div class="form-group row">
                         <div class="col-md-3">
                             <label class="profile-image-box">
-                                <input type="file" class="form-control-file" name="image" value="{{ $profile_form->image_path }}">プロフィール画像を選択
+                                <input type="file" class="form-control-file" name="profile_image" value="{{ $profile_form->image_path }}">プロフィール画像を選択
                             </label>
                         </div>
                     </div>
