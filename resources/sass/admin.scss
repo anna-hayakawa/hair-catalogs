@@ -104,3 +104,53 @@ h4 {
 .check_box {
     margin-right: 5px;
 }
+
+.form-group-profile {
+    margin-top: 60px;
+    margin-bottom: 40px;
+}
+
+.name-box {
+    padding-top: 90px;
+}
+
+.image-box {
+    padding-left: 50px;
+}
+
+.name-label {
+    padding-left: 15px;
+    font-weight: bold;
+}
+
+.intro-label {
+    padding-left: 50px;
+    font-weight: bold;
+}
+
+.btn-pri {
+    margin-left: 55px;
+}
+
+.image-btn {
+    margin-top: 10px;
+    margin-left: 23px;
+    padding: 10px;
+    border-radius: 4px;
+    width: 200px;
+    text-align: center;
+    display: block;
+    background-color: rgb(247, 179, 190);
+    color: #fff;
+    box-shadow:  0 2px 6px rgba(146, 146, 146, 0.8);
+    cursor: pointer;
+    float: left;
+}
+
+.img1 {
+    background-image: url('../../public/images/default_profile_icon.png');
+    background-size: 280px 255px;
+    width: 280px;
+    height: 255px;
+}
+
