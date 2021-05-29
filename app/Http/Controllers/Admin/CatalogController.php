@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\HairStyle;
 use App\Tag;
 use App\HairTag;
+use InterventionImage;
 
 class CatalogController extends Controller
 {
@@ -23,18 +24,24 @@ class CatalogController extends Controller
         $form = $request->all();
 
         if (isset($form['image1'])) {
-            $path = $request->file('image1')->store('public/image');
-            $style->image_path1 = basename($path);
+            $file1 = $request->file('image1');
+            $filename1 = $file1->getClientOriginalName();
+            InterventionImage::make($file1)->resize(255, null, function ($constraint) {$constraint->aspectRatio();})->save(storage_path('app/public/image/' . $filename1 ));
+            $style->image_path1 = $filename1;
         }
         if (isset($form['image2'])) {
-            $path = $request->file('image2')->store('public/image');
-            $style->image_path2 = basename($path);
+            $file2 = $request->file('image2');
+            $filename2 = $file2->getClientOriginalName();
+            InterventionImage::make($file2)->resize(255, null, function ($constraint) {$constraint->aspectRatio();})->save(storage_path('app/public/image/' . $filename2 ));
+            $style->image_path2 = $filename2;
         } else {
             $style->image_path2 = null;
         }
         if (isset($form['image3'])) {
-            $path = $request->file('image3')->store('public/image');
-            $style->image_path3 = basename($path);
+            $file3 = $request->file('image3');
+            $filename3 = $file3->getClientOriginalName();
+            InterventionImage::make($file3)->resize(255, null, function ($constraint) {$constraint->aspectRatio();})->save(storage_path('app/public/image/' . $filename3 ));
+            $style->image_path3 = $filename3;
         } else {
             $style->image_path3 = null;
         }

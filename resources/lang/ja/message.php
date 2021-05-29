@@ -13,5 +13,6 @@
         'Forgot Your Password?' => 'パスワードをお忘れですか？',
         'Login/Sign up' => 'ログイン／新規登録',
         'Logout' => 'ログアウト',
+        'MyPage' => 'マイページ',
     ];
 

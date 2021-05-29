@@ -16,7 +16,7 @@
         <link rel="stylesheet" href="{{ asset('css/admin.css') }}" />
     </head>
     <body>
-        <div id="app">
+        <div id="app_1">
             <nav class="navbar navbar-expand-md navbar-dark navbar-laravel">
                 <div class="container">
                     <a class="navbar-brand" href="{{ url('/') }}">
@@ -39,6 +39,9 @@
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ action('Admin\CatalogController@index') }}" onclick="submit()">
+                                        {{ __('message.MyPage') }}
+                                    </a>
                                     <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                         {{ __('message.Logout') }}
                                     </a>

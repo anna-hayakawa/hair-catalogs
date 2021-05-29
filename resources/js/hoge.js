@@ -8,8 +8,8 @@
 
 
 //input type="file"で、選択した画像をプレビュー表示する
-$(document).ready(function(){
-    $('#image1').change(
+$(function(){
+    $('#image1').on('change',
         function () {
             if (!this.files.length) {
                 return;
@@ -19,13 +19,13 @@ $(document).ready(function(){
             var fr = new FileReader();
             $('.image-box1').css('background-image', 'none');
             fr.onload = function() {
-                $('.image-box1').css('background-image', 'url(' + fr.result + ')');
+                $('.image-box1').css('background-image', 'url('/storage/image/ + $image_path1 + ')');
             }
             fr.readAsDataURL(file);
             $(".image-box1 img").css('opacity', 0);
         }
     );
-    $('#image2').change(
+    $('#image2').on('change',
         function () {
             if (!this.files.length) {
                 return;
@@ -41,7 +41,7 @@ $(document).ready(function(){
             $(".image-box2 img").css('opacity', 0);
         }
     );
-    $('#image3').change(
+    $('#image3').on('change',
         function () {
             if (!this.files.length) {
                 return;

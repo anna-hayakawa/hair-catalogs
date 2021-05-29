@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            //ログイン画面
+            {{--  ログイン画面  --}}
             <div class="card">
                 <div class="card-header">{{ __('message.Login') }}</div>
                 <div class="card-body">
@@ -57,7 +57,7 @@
                     </form>
                 </div>
             </div>
-            //新規登録画面
+            {{--  新規登録画面  --}}
             <div class="card">
                 <div class="card-header">{{ __('message.Sign Up') }}</div>
                 <div class="card-body">
