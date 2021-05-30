@@ -7,7 +7,6 @@ use App\Http\Controllers\Controller;
 use App\HairStyle;
 use App\Tag;
 use App\HairTag;
-use InterventionImage;
 
 class CatalogController extends Controller
 {
@@ -78,14 +77,26 @@ class CatalogController extends Controller
         return view('admin.catalog.index', ['posts' => $posts, 'cond_title' => $cond_title]);
     }
 
+
     public function edit(Request $request)
     {
         $style = HairStyle::find($request->id);
         if(empty($style)) {
             abort(404);
         }
-        return view('admin.catalog.edit', ['style_form' => $style, 'tags' => Tag::all()]);
+        $hair_tags = HairTag::where('style_id', $style->id)->get()->toArray();
+        $tags = Tag::all();
+        foreach ($tags as &$tag) {
+            if (in_array($tag->id, $hair_tags, true)) {
+                $tag->checked = true;
+            } else {
+                $tag->checked = false;
+            }
+        }
+
+        return view('admin.catalog.edit', ['style_form' => $style, 'tags' => $tags, 'hair_tags' => $hair_tags]);
     }
+
 
     public function update(Request $request)
     {
@@ -122,6 +133,7 @@ class CatalogController extends Controller
 
         return redirect('admin/catalog');
     }
+
 
     public function delete(Request $request)
     {

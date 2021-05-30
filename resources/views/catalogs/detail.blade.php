@@ -11,10 +11,10 @@
                         <table class="table table-striped">
                             <tr>
                                 <th>id</th>
-                                <td>{{ $id }}</td>
+                                <td>{{ $style->id }}</td>
                                 </tr>
                                 <tr>
-                                <th>タスク</th>
+                                <th>タイトル</th>
                                 <td>{{ $style->title }}</td>
                             </tr>
                             </table>

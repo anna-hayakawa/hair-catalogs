@@ -45,10 +45,12 @@
                 <div class="form-group row">
                     <label class="col-md-2 labels" for="tpo">シチュエーション</label>
                     <p>
-                        @foreach($tags as $tag)
+                        @foreach($tags as $key => $tag)
                         <label class="checkbox">
-                            <input type="checkbox" class="check_box" name="tag_id[]" value="{{ $tag->id }}" {{ $tag->id === (int)old("tag") ? "checked" : '' }}>{{ $tag->tag_name }}
+                            <input type="checkbox" class="check_box" name="tag_id[]" value="{{ $tag->id }}" {{ $tag->checked === true ? 'checked': '' }}>{{ $tag->tag_name }}
+                        {{ print_r(old("tag_id"), true) }}
                         </label>
+
                         @endforeach
                     </p>
                 </div>
