@@ -149,8 +149,29 @@ h4 {
 
 .img1 {
     background-image: url('../../public/images/default_profile_icon.png');
-    background-size: 280px 255px;
+    background-size: 270px 255px;
     width: 280px;
     height: 255px;
+}
+
+.btns-1 {
+    display: inline-block;
+    padding: 8px 20px;
+    text-decoration: none;
+    background: rgb(81, 104, 230);
+    margin-bottom: 10px;
+    margin-top: 2px;
+}
+
+.btns-2 {
+    display: inline-block;
+    padding: 8px 20px;
+    text-decoration: none;
+    background: rgb(81, 104, 230);
+    margin-top: 8px;
+}
+
+a {
+    color: #fff;
 }
 

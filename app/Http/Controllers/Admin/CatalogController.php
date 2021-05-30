@@ -78,5 +78,58 @@ class CatalogController extends Controller
         return view('admin.catalog.index', ['posts' => $posts, 'cond_title' => $cond_title]);
     }
 
+    public function edit(Request $request)
+    {
+        $style = HairStyle::find($request->id);
+        if(empty($style)) {
+            abort(404);
+        }
+        return view('admin.catalog.edit', ['style_form' => $style, 'tags' => Tag::all()]);
+    }
 
+    public function update(Request $request)
+    {
+        $this->validate($request, HairStyle::$rules);
+
+        $style = HairStyle::find($request->id);
+        $style_form = $request->all();
+
+        if ($request->file('image1')) {
+            $path = $request->file('image1')->store('public/image');
+            $style_form['image_path1'] = basename($path);
+        } else {
+            $style_form['image_path1'] = $style->image_path1;
+        }
+        if ($request->file('image2')) {
+            $path = $request->file('image2')->store('public/image');
+            $style_form['image_path2'] = basename($path);
+        } else {
+            $style_form['image_path2'] = $style->image_path2;
+        }
+        if ($request->file('image3')) {
+            $path = $request->file('image3')->store('public/image');
+            $style_form['image_path3'] = basename($path);
+        } else {
+            $style_form['image_path3'] = $style->image_path1;
+        }
+
+        unset($news_form['image1']);
+        unset($news_form['image2']);
+        unset($news_form['image3']);
+        unset($news_form['_token']);
+
+        $style->fill($style_form)->save();
+
+        return redirect('admin/catalog');
+    }
+
+    public function delete(Request $request)
+    {
+        $style = HairStyle::find($request->id);
+
+
+        $style->delete();
+
+        return redirect('admin/catalog');
+    }
 }

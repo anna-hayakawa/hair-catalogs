@@ -41,4 +41,9 @@ class ProfileController extends Controller
 
         return redirect('admin/catalog');
     }
+
+    public function detail()
+    {
+        return view('admin.profile.detail');
+    }
 }

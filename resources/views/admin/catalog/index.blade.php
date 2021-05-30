@@ -44,7 +44,7 @@
                                 <th width="7%">ID</th>
                                 <th width="15%">タイトル</th>
                                 <th width="15%">サブタイトル</th>
-                                <th width="40%">説明</th>
+                                <th width="30%">説明</th>
                                 <th width="23%">画像</th>
                             </tr>
                         </thead>
@@ -57,14 +57,14 @@
                                         <td>{{ str_limit($style->caption, 100) }}</td>
                                         <td>{{ str_limit($style->description, 250) }}</td>
                                         <td><img src="{{ asset('storage/image/' . $style->image_path1) }}" width="150" height="100"></td>
-                                        {{--  <td>
-                                            <div>
-                                                <a href="{{ action('Admin\NewsController@edit', ['id' => $news->id]) }}">編集</a>
+                                        <td>
+                                            <div class="btns-1">
+                                                <a href="{{ action('Admin\CatalogController@edit', ['id' => $style->id]) }}">編集</a>
                                             </div>
-                                            <div>
-                                                <a href="{{ action('Admin\NewsController@delete', ['id' => $news->id]) }}">削除</a>
+                                            <div class="btns-2">
+                                                <a href="{{ action('Admin\CatalogController@delete', ['id' => $style->id]) }}">削除</a>
                                             </div>
-                                        </td>  --}}
+                                        </td>
                                     </tr>
                                 @endif
                             @endforeach

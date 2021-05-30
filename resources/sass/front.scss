@@ -78,3 +78,71 @@ body {
     }
 }
 
+.checkbox {
+    margin-left: 30px;
+    margin-top: 45px;
+}
+
+.check_box {
+    margin-right: 5px;
+}
+
+.tag-label {
+    background-color: rgb(235, 204, 204);
+    width: 200px;
+    height: 40px;
+    padding-top: 8px;
+    font-weight: bold;
+
+    border-bottom: transparent; /* 下辺を透明に */
+    border-top-left-radius: 8px; /* 左上を角丸に */
+    border-top-right-radius: 8px; /* 右上を角丸に */
+
+    /* メイン表示エリアの線の太さだけ下にずらす */
+    margin-bottom: -1px;
+
+    position: relative;
+    text-align: center;
+}
+
+.tag-group {
+    // border: thick double #32a1ce;
+    margin-top: 50px;
+}
+
+.tag-area {
+    background-color: #fff;
+    width: 1050px;
+    height: 150px;
+    border: 1px solid rgb(235, 204, 204);
+}
+
+.style-list {
+    margin-top: 80px;
+}
+
+.style {
+    border: 6px solid rgb(202, 198, 198);
+    margin: 20px;
+    padding: 0 5px 40px 5px;
+}
+
+.title-label {
+    width: 255px;
+    text-align: center;
+    padding-top: 10px;
+    font-size: 15px;
+}
+
+.tag-btn {
+    background-color: rgb(247, 171, 184);
+    color: #fff;
+    box-shadow:  0 2px 6px rgba(146, 146, 146, 0.8);
+    cursor: pointer;
+    border-radius: 4px;
+    border: none;
+}
+
+a {
+    color: #000;
+}
