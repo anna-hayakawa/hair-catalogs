@@ -17,26 +17,26 @@
     </head>
     <body>
         <div id="app">
-            <nav class="navbar navbar-expand-md navbar-dark navbar-laravel">
+            <nav class="navbar navbar-expand-md  navbar-laravel">
                 <div class="container">
+                    {{-- ロゴ --}}
                     <a class="navbar-brand" href="{{ url('/') }}">
+                        <img class="logo-icon" src={{ asset('images/salon_icon.png') }}>
                         {{ config('app.name', 'HairCatalogs') }}
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav mr-auto">
-                        </ul>
-
+                        {{-- <ul class="navbar-nav mr-auto"></ul> --}}
                         <ul class="navbar-nav ml-auto">
                         @guest
-                            <li><a class="nav-link" href="{{ route('login') }}">{{ __('message.Login/Sign up') }}</a></li>
+                            <li><a class="nav-link" href="{{ route('login') }}">{{ __('message.Login') }}</a></li>
+                            <li><a class="nav-link" href="{{ route('register') }}">{{ __('message.Register') }}</a></li>
                         @else
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                <a id="navbarDropdown" class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    <img class="logo-icon2" src="{{ asset('images/hamburger_menu.png') }}">
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ action('Admin\CatalogController@index') }}" onclick="submit()">
@@ -50,7 +50,10 @@
                                     </form>
                                 </div>
                             </li>
-                            @endguest
+                            <div class="user-name">
+                                <p class="user-name-p">{{ Auth::user()->name }}</p>
+                            </div>
+                        @endguest
                         </ul>
                     </div>
                 </div>

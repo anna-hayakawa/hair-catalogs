@@ -7,11 +7,10 @@
         'Confirm Password' => 'パスワード確認',
         'Profile Image' => 'プロフィール画像',
         'Introduction' => '自己紹介',
-        'Register' => '登録',
+        'Register' => '新規登録',
         'Login' => 'ログイン',
         'Remember Me' => 'ログイン情報を記憶する',
         'Forgot Your Password?' => 'パスワードをお忘れですか？',
-        'Login/Sign up' => 'ログイン／新規登録',
         'Logout' => 'ログアウト',
         'MyPage' => 'マイページ',
     ];

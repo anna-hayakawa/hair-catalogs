@@ -8,10 +8,115 @@
 @import '~bootstrap/scss/bootstrap';
 
 .navbar-laravel {
-    background-color: #000;
+    background-color: #5f4436;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+    height: 60px;
+}
+
+body {
+    color: #000;
+    background-color: #fdfaec;
+}
+
+.navbar-brand {
+    color: #fff !important;
+    letter-spacing: 1px;
+}
+
+.nav-link {
+    color: #fff !important;
+    margin-left: 4px;
+}
+
+.header {
+    .logo {
+        width: 120px;
+        height: 82px;
+    }
+}
+
+.headline {
+    .caption {
+        position: relative;
+        width: 350px;
+        .image {
+            img {
+                width: 100%;
+            }
+        }
+        .title {
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.6);
+            h1 {
+                color: #fff;
+                font-size: 1.2em;
+            }
+        }
+        .body {
+            font-size: 0.8em;
+        }
+    }
+}
+
+.posts {
+    .post {
+        .date {
+            font-size: 0.6em;
+            color: #999999;
+        }
+        .title {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        .body {
+            font-size: 0.8em;
+        }
+        .image {
+            img {
+                width: 250px;
+            }
+        }
+    }
+}
+
+.dropdown-menu {
+    background-color: #000;
+
+    .dropdown-item {
+        background-color: #000;
+        color: #fff;
+    }
+}
+
+.logo-icon {
+    width: 25px;
+    height: 25px;
+    margin-right: 2px;
+    margin-bottom: 4px;
+}
+
+.logo-icon2 {
+    width: 25px;
+    height: 25px;
+    margin-top: 9px;
 }
 
 .card {
     margin-bottom: 15px;
 }
+
+.user-name {
+    height: 60px;
+}
+
+.user-name-p {
+    line-height: 60px;
+    color:#fff;
+    font-weight: bold;
+    font-size: 15px;
+    width: 100px;
+}
+
