@@ -10942,20 +10942,27 @@ a.text-dark:focus {
   }
 }
 
+body {
+  color: #3d2b20;
+  background-color: #fdfaec;
+}
+
 .navbar-laravel {
   background-color: #5f4436;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
   height: 60px;
 }
 
-body {
-  color: #000;
-  background-color: #fdfaec;
-}
-
-.navbar-brand {
+.navbar-laravel .navbar-brand {
   color: #fff !important;
   letter-spacing: 1px;
+}
+
+.navbar-laravel .navbar-brand .logo-icon {
+  width: 25px;
+  height: 25px;
+  margin-right: 2px;
+  margin-bottom: 4px;
 }
 
 .nav-link {
@@ -10963,9 +10970,19 @@ body {
   margin-left: 4px;
 }
 
+.nav-link .logo-icon2 {
+  width: 25px;
+  height: 25px;
+  margin-top: 9px;
+}
+
 .nav-links {
   color: #fff !important;
   margin-right: 100px;
+}
+
+.nav-links:hover {
+  text-decoration: none;
 }
 
 .header .logo {
@@ -11018,42 +11035,50 @@ body {
 }
 
 .dropdown-menu {
-  background-color: #000;
+  background-color: #5f4436;
+  margin-top: -2px;
 }
 
 .dropdown-menu .dropdown-item {
-  background-color: #000;
+  background-color: #5f4436;
   color: #fff;
 }
 
-.logo-icon {
-  width: 25px;
-  height: 25px;
-  margin-right: 2px;
-  margin-bottom: 4px;
+.dropdown-menu .dropdown-item:hover {
+  opacity: 0.5;
 }
 
-.logo-icon2 {
-  width: 25px;
-  height: 25px;
-  margin-top: 9px;
-}
-
-.card {
+.card1 {
+  margin-top: 60px;
   margin-bottom: 15px;
-  height: 300px;
+  height: 315px;
+  background-color: #fff;
+  border: 1px solid #ebcccc;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.card2 {
+  margin-top: 60px;
+  margin-bottom: 15px;
+  height: 700px;
+  background-color: #fff;
+  border: 1px solid #ebcccc;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
 }
 
 .card-header {
   background-color: #ebcccc;
   font-weight: bold;
+  border-bottom: transparent;
 }
 
 .user-name {
   height: 60px;
 }
 
-.user-name-p {
+.user-name p {
   line-height: 60px;
   color: #fff;
   font-weight: bold;
@@ -11061,12 +11086,22 @@ body {
   width: 100px;
 }
 
-.cards {
-  margin-top: 60px;
-}
-
 .form-group1 {
   margin-top: 9px;
   margin-bottom: 20px;
+}
+
+.form-group1 .button {
+  background-color: #d6a6ae;
+  color: #fff;
+  box-shadow: 0 2px 6px rgba(146, 146, 146, 0.8);
+  cursor: pointer;
+  border-radius: 4px;
+  border: none;
+  width: 90px;
+}
+
+.form-group1 .button:hover {
+  background-color: #cf7584;
 }
 

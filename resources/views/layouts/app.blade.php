@@ -21,6 +21,7 @@
 </head>
 <body>
     <div id="app">
+        {{--  ナビゲーションバー  --}}
         <nav class="navbar navbar-expand-md navbar-laravel">
             <div class="container">
                 {{--  ロゴ  --}}
@@ -36,10 +37,10 @@
                     <ul class="navbar-nav ml-auto">
                     @guest
                         @yield('route')
-                    @else
+                    {{--  @else
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                <img class="logo-icon" src="{{ asset('images/hamburger_menu.png') }}"
+                                <img class="logo-icon2" src="{{ asset('images/hamburger_menu.png') }}"
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ action('Admin\CatalogController@index') }}" onclick="submit()">
@@ -55,7 +56,7 @@
                         </li>
                         <div class="user-name">
                             <p class="user-name-p">{{ Auth::user()->name }}</p>
-                        </div>
+                        </div>  --}}
                     @endguest
                     </ul>
                 </div>

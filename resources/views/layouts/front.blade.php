@@ -17,6 +17,7 @@
     </head>
     <body>
         <div id="app">
+            {{--  ナビゲーションバー  --}}
             <nav class="navbar navbar-expand-md  navbar-laravel">
                 <div class="container">
                     {{-- ロゴ --}}
@@ -51,7 +52,7 @@
                                 </div>
                             </li>
                             <div class="user-name">
-                                <p class="user-name-p">{{ Auth::user()->name }}</p>
+                                <p>{{ Auth::user()->name }}</p>
                             </div>
                         @endguest
                         </ul>

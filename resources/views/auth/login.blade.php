@@ -10,8 +10,8 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8 cards">
-            <div class="card">
+        <div class="col-md-8">
+            <div class="card1">
                 <div class="card-header">{{ __('message.Login') }}</div>
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
@@ -50,7 +50,7 @@
                         </div>
                         <div class="form-group1 row mb-0">
                             <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-primary button">
                                     {{ __('message.Login') }}
                                 </button>
                                 @if (Route::has('password.request'))

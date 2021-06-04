@@ -64,26 +64,12 @@ body {
   width: 250px;
 }
 
-.dropdown-menu {
-  background-color: #5f4436;
-  margin-top: -2px;
+.tag-group {
+  margin-top: 50px;
+  color: #3d2b20;
 }
 
-.dropdown-menu .dropdown-item {
-  background-color: #5f4436;
-  color: #fff;
-}
-
-.checkbox {
-  margin-left: 30px;
-  margin-top: 45px;
-}
-
-.check_box {
-  margin-right: 5px;
-}
-
-.tag-label {
+.tag-group .tag-label {
   background-color: #ebcccc;
   width: 200px;
   height: 40px;
@@ -95,42 +81,28 @@ body {
   /* 左上を角丸に */
   border-top-right-radius: 8px;
   /* 右上を角丸に */
-  /* メイン表示エリアの線の太さだけ下にずらす */
   margin-bottom: -1px;
   position: relative;
   text-align: center;
 }
 
-.tag-group {
-  margin-top: 50px;
-  color: #3d2b20;
-}
-
-.tag-area {
+.tag-group .tag-area {
   background-color: #fff;
   width: 1050px;
   height: 150px;
   border: 1px solid #ebcccc;
 }
 
-.style-list {
-  margin-top: 80px;
+.tag-group .tag-area .checkbox {
+  margin-left: 30px;
+  margin-top: 45px;
 }
 
-.style {
-  border: 6px solid #cac6c6;
-  margin: 20px;
-  padding: 0 5px 40px 5px;
+.tag-group .tag-area .checkbox .check_box {
+  margin-right: 5px;
 }
 
-.title-label {
-  width: 255px;
-  text-align: center;
-  padding-top: 10px;
-  font-size: 15px;
-}
-
-.tag-btn {
+.tag-group .tag-area .tag-btn {
   background-color: #d6a6ae;
   color: #fff;
   box-shadow: 0 2px 6px rgba(146, 146, 146, 0.8);
@@ -140,7 +112,25 @@ body {
   width: 70px;
 }
 
-a {
-  color: #000;
+.tag-group .tag-area .tag-btn:hover {
+  background-color: #cf7584;
+}
+
+.style-list {
+  margin-top: 80px;
+}
+
+.style-list .style {
+  border: 6px solid #cac6c6;
+  margin: 20px;
+  padding: 0 5px 40px 5px;
+}
+
+.style-list .style .title-label {
+  width: 255px;
+  text-align: center;
+  padding-top: 10px;
+  font-size: 15px;
+  color: #3d2b20;
 }
 

@@ -4,19 +4,19 @@
 
 {{--  navbar右側  --}}
 @section('route')
-<li><a class="nav-link" href="{{ route('login') }}">{{ __('message.Login') }}</a></li>
+<li><a class="nav-links" href="{{ route('login') }}">{{ __('message.Login') }}</a></li>
 @endsection
 
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8 cards">
-            <div class="card">
+        <div class="col-md-8 ">
+            <div class="card2">
                 <div class="card-header">{{ __('message.Sign Up') }}</div>
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
-                        <div class="form-group row">
+                        <div class="form-group1 row">
                             <label for="name" class="col-md-3 col-form-label text-md-right">{{ __('message.Name') }}</label>
                             <div class="col-md-7">
                                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
@@ -27,13 +27,13 @@
                                 @enderror
                             </div>
                         </div>
-                        <div class="form-group row">
-                            <label for="email1" class="col-md-3 col-form-label text-md-right">{{ __('message.E-Mail Address') }}</label>
+                        <div class="form-group1 row">
+                            <label for="email" class="col-md-3 col-form-label text-md-right">{{ __('message.E-Mail Address') }}</label>
                             <div class="col-md-7">
-                                <input id="email1" type="email" class="form-control" name="email" value="{{ old('email1') }}" required autocomplete="email">
+                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autocomplete="email">
                             </div>
                         </div>
-                        <div class="form-group row">
+                        <div class="form-group1 row">
                             <label for="password" class="col-md-3 col-form-label text-md-right">{{ __('message.Password') }}</label>
                             <div class="col-md-7">
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
@@ -44,27 +44,27 @@
                                 @enderror
                             </div>
                         </div>
-                        <div class="form-group row">
+                        <div class="form-group1 row">
                             <label for="password-confirm" class="col-md-3 col-form-label text-md-right">{{ __('message.Confirm Password') }}</label>
                             <div class="col-md-7">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
-                        <div class="form-group row">
+                        <div class="form-group1 row">
                             <label for="profile_image" class="col-md-3 col-form-label text-md-right">{{ __('message.Profile Image') }}</label>
                             <div class="col-md-7">
                                 <input id="profile_image" type="file" class="form-control-image" name="profile_image" value="{{ old('profile_image') }}" accept="image/*">
                             </div>
                         </div>
-                        <div class="form-group row">
+                        <div class="form-group1 row">
                             <label for="introduction" class="col-md-3 col-form-label text-md-right">{{ __('message.Introduction') }}</label>
                             <div class="col-md-7">
                                 <textarea id="introduction" class="form-control" name="introduction" rows="10">{{ old('introduction') }}</textarea>
                             </div>
                         </div>
-                        <div class="form-group row mb-0">
+                        <div class="form-group1 row mb-0">
                             <div class="col-md-7 offset-md-3">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-primary button">
                                     {{ __('message.Register') }}
                                 </button>
                             </div>
