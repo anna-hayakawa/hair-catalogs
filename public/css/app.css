@@ -10963,6 +10963,11 @@ body {
   margin-left: 4px;
 }
 
+.nav-links {
+  color: #fff !important;
+  margin-right: 100px;
+}
+
 .header .logo {
   width: 120px;
   height: 82px;
@@ -11036,6 +11041,12 @@ body {
 
 .card {
   margin-bottom: 15px;
+  height: 300px;
+}
+
+.card-header {
+  background-color: #ebcccc;
+  font-weight: bold;
 }
 
 .user-name {
@@ -11048,5 +11059,14 @@ body {
   font-weight: bold;
   font-size: 15px;
   width: 100px;
+}
+
+.cards {
+  margin-top: 60px;
+}
+
+.form-group1 {
+  margin-top: 9px;
+  margin-bottom: 20px;
 }
 

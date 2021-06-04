@@ -28,6 +28,11 @@ body {
     margin-left: 4px;
 }
 
+.nav-links {
+    color: #fff !important;
+    margin-right: 100px;
+}
+
 .header {
     .logo {
         width: 120px;
@@ -106,6 +111,12 @@ body {
 
 .card {
     margin-bottom: 15px;
+    height: 300px;
+}
+
+.card-header {
+    background-color: rgb(235, 204, 204);
+    font-weight: bold;
 }
 
 .user-name {
@@ -120,3 +131,11 @@ body {
     width: 100px;
 }
 
+.cards {
+    margin-top: 60px;
+}
+
+.form-group1 {
+    margin-top: 9px;
+    margin-bottom: 20px;
+}

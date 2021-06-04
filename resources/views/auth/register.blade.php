@@ -2,6 +2,7 @@
 
 @section('title', '新規登録')
 
+{{--  navbar右側  --}}
 @section('route')
 <li><a class="nav-link" href="{{ route('login') }}">{{ __('message.Login') }}</a></li>
 @endsection
@@ -9,7 +10,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-8 cards">
             <div class="card">
                 <div class="card-header">{{ __('message.Sign Up') }}</div>
                 <div class="card-body">

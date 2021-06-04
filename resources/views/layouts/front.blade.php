@@ -28,7 +28,7 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        {{-- <ul class="navbar-nav mr-auto"></ul> --}}
+                        {{--  navbar右側  --}}
                         <ul class="navbar-nav ml-auto">
                         @guest
                             <li><a class="nav-link" href="{{ route('login') }}">{{ __('message.Login') }}</a></li>

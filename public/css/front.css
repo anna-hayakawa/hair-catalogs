@@ -66,7 +66,7 @@ body {
 
 .dropdown-menu {
   background-color: #5f4436;
-  margin-top: 0;
+  margin-top: -2px;
 }
 
 .dropdown-menu .dropdown-item {
@@ -103,6 +103,7 @@ body {
 
 .tag-group {
   margin-top: 50px;
+  color: #3d2b20;
 }
 
 .tag-area {
@@ -130,12 +131,13 @@ body {
 }
 
 .tag-btn {
-  background-color: #f7abb8;
+  background-color: #d6a6ae;
   color: #fff;
   box-shadow: 0 2px 6px rgba(146, 146, 146, 0.8);
   cursor: pointer;
   border-radius: 4px;
   border: none;
+  width: 70px;
 }
 
 a {

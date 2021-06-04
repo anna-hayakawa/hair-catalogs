@@ -4,6 +4,7 @@
 
 @section('content')
     <div class="container">
+        {{--  タグ検索  --}}
         <div class="row">
             <form action="{{ action('CatalogsController@index') }}" method="get">
                 <div class="tag-group">
@@ -26,6 +27,7 @@
                 </div>
             </form>
         </div>
+        {{--  カタログ一覧  --}}
         <div class="row">
             <div class="style-list col-md-12 mx-auto row">
                 @foreach ($posts as $style)

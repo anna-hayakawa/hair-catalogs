@@ -23,6 +23,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-laravel">
             <div class="container">
+                {{--  ロゴ  --}}
                 <a class="navbar-brand" href="{{ url('/') }}">
                     <img class="logo-icon" src={{ asset('images/salon_icon.png') }}>
                     {{ config('app.name', 'HairCatalogs') }}
@@ -31,8 +32,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    {{-- <ul class="navbar-nav mr-auto">
-                    </ul> --}}
+                    {{-- navbar右側 --}}
                     <ul class="navbar-nav ml-auto">
                     @guest
                         @yield('route')
