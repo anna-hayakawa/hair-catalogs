@@ -1,71 +1,32 @@
 body {
   background-repeat: no-repeat;
   background-position: center;
-  background-color: #fff;
-  color: #000;
-}
-
-.navbar-laravel {
-  background-color: #000;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
-}
-
-.navbar-brand {
-  color: #fff !important;
-}
-
-.nav-link {
-  color: #fff !important;
-}
-
-.table-dark {
-  color: #fff;
-}
-
-.list-group-item {
-  border-color: #fff;
-  background-color: #000;
-}
-
-.login-box {
-  background-color: rgba(0, 0, 0, 0);
-}
-
-login-header {
-  background-color: rgba(0, 0, 0, 0.25);
-}
-
-login-body {
-  background-color: rgba(0, 0, 0, 0.25);
-}
-
-.dropdown-menu {
-  background-color: #000;
-}
-
-.dropdown-menu .dropdown-item {
-  background-color: #000;
-  color: #fff;
-}
-
-.btn-1 {
-  width: 250px;
-  height: 170px;
-  padding: 73px 0;
-  font-size: 16px;
-  margin-bottom: 15px;
 }
 
 h2 {
-  margin: 10px 0 30px 0;
+  margin: 10px 0 40px 0;
+}
+
+.btn-1 {
+  width: 150px;
+  height: 45px;
+  font-size: 15px;
+  padding: 11px 0;
+  margin: 30px 0 15px 0;
+  background-color: #d6a6ae;
+  color: #fff;
+  box-shadow: 0 2px 6px rgba(146, 146, 146, 0.8);
+  cursor: pointer;
+  border-radius: 4px;
+  border: none;
+}
+
+.btn-1:hover {
+  background-color: #cf7584;
 }
 
 h4 {
-  margin: 20px 0 10px 0;
-}
-
-.search-box1 {
-  padding-right: 0;
+  margin: 40px 0 20px 0;
 }
 
 .title-label {
@@ -74,28 +35,77 @@ h4 {
   font-weight: bold;
 }
 
+.search-box1 {
+  padding-right: 0;
+}
+
+.search-btn {
+  background-color: #d6a6ae;
+  color: #fff;
+  box-shadow: 0 2px 6px rgba(146, 146, 146, 0.8);
+  cursor: pointer;
+  border-radius: 4px;
+  border: none;
+  width: 60px;
+}
+
+.search-btn:hover {
+  background-color: #cf7584;
+}
+
+.table-catalog {
+  background-color: #fff;
+  color: #3d2b20;
+  border: 1px solid #d6c6be;
+}
+
+.table-catalog thead {
+  background-color: #5f4436;
+  color: #fff;
+}
+
+.table-catalog tbody tr {
+  border: 1px solid #d6c6be;
+}
+
+.table-catalog .btn {
+  padding: 8px 20px;
+  text-decoration: none;
+  background-color: #d6c6be;
+  color: #573e2e;
+  font-weight: bold;
+  margin: 6px 0;
+  padding: 7px 20px;
+}
+
+.table-catalog .btn:hover {
+  background-color: #be9f91;
+}
+
 .image-boxes {
   margin-bottom: 30px;
 }
 
-.image-box1,
-.image-box2,
-.image-box3 {
+.image-boxes .image-box1,
+.image-boxes .image-box2,
+.image-boxes .image-box3 {
   background-image: url(/images/lady_icon.png?2e0dc4e2d2be745f45a3a5310b00a9bf);
   background-size: 255px 255px;
   background-color: rgba(153, 153, 153, 0.801);
   width: 255px;
   height: 255px;
   margin-bottom: 0;
+  cursor: pointer;
 }
 
-.image-box1 input[type=file],
-.image-box2 input[type=file],
-.image-box3 input[type=file] {
+.image-boxes .image-box1 input[type=file],
+.image-boxes .image-box2 input[type=file],
+.image-boxes .image-box3 input[type=file] {
   opacity: 0;
 }
 
 .labels {
+  color: #3d2b20;
   font-weight: bold;
   padding: 5px 0;
 }
@@ -105,8 +115,22 @@ h4 {
   margin-left: 17px;
 }
 
-.check_box {
+.checkbox .check_box {
   margin-right: 5px;
+}
+
+.button {
+  background-color: #d6a6ae;
+  color: #fff;
+  box-shadow: 0 2px 6px rgba(146, 146, 146, 0.8);
+  cursor: pointer;
+  border-radius: 4px;
+  border: none;
+  width: 80px;
+}
+
+.button:hover {
+  background-color: #cf7584;
 }
 
 .form-group-profile {
@@ -156,23 +180,6 @@ h4 {
   background-size: 270px 255px;
   width: 280px;
   height: 255px;
-}
-
-.btns-1 {
-  display: inline-block;
-  padding: 8px 20px;
-  text-decoration: none;
-  background: #5168e6;
-  margin-bottom: 10px;
-  margin-top: 2px;
-}
-
-.btns-2 {
-  display: inline-block;
-  padding: 8px 20px;
-  text-decoration: none;
-  background: #5168e6;
-  margin-top: 8px;
 }
 
 a {

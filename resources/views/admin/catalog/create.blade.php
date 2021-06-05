@@ -74,7 +74,7 @@
                         <div class="col-md-6 offset-md-6">
                             <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
                             {{ csrf_field() }}
-                            <input type="submit" class="btn btn-primary" value="投稿">
+                            <input type="submit" class="btn btn-primary button" value="投稿">
                         </div>
                     </div>
                 </form>

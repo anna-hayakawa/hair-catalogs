@@ -18,7 +18,7 @@
     <body>
         <div id="app">
             {{--  ナビゲーションバー  --}}
-            <nav class="navbar navbar-expand-md  navbar-laravel">
+            <nav class="navbar navbar-expand-md navbar-laravel">
                 <div class="container">
                     {{-- ロゴ --}}
                     <a class="navbar-brand" href="{{ url('/') }}">

@@ -1,10 +1,5 @@
 @charset "UTF-8";
 
-body {
-  color: #000;
-  background-color: #fdfaec;
-}
-
 .navbar-brand {
   color: #fff !important;
   letter-spacing: 1px;
