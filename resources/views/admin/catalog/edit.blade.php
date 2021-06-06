@@ -46,9 +46,9 @@
                     <label class="col-md-2 labels" for="tpo">シチュエーション</label>
                     <p>
                         @foreach($tags as $key => $tag)
-                        <label class="checkbox">
-                            <input type="checkbox" class="check_box" name="tag_id[]" value="{{ $tag->id }}" {{ $tag->checked === true ? 'checked': '' }}>{{ $tag->tag_name }}
-                        {{ print_r(old("tag_id"), true) }}
+                        <label class="checkbox" for="hair_tags-{{ $key }}">
+                            {{ Form::checkbox('tag_id[]', $tag->id, in_array($tag->id, $hair_tags, true), ['id' => 'hair_tags-' . $tag->id]) }}
+                            {{ $tag->tag_name }}
                         </label>
 
                         @endforeach

@@ -84,17 +84,31 @@ class CatalogController extends Controller
         if(empty($style)) {
             abort(404);
         }
-        $hair_tags = HairTag::where('style_id', $style->id)->get()->toArray();
-        $tags = Tag::all();
-        foreach ($tags as &$tag) {
-            if (in_array($tag->id, $hair_tags, true)) {
-                $tag->checked = true;
-            } else {
-                $tag->checked = false;
-            }
+
+        // 検索タグを取得
+        $hair_tags = HairTag::where('style_id', $style->id)->get();
+
+        // 配列に変換する変数の初期化
+        $hair_tags_arr = [];
+
+        // 検索タグを配列に変換
+        foreach ($hair_tags as $hair_tag) {
+            $hair_tags_arr[] = $hair_tag->tag_id;
         }
 
-        return view('admin.catalog.edit', ['style_form' => $style, 'tags' => $tags, 'hair_tags' => $hair_tags]);
+        $tags = Tag::all();
+//        foreach ($tags as &$tag) {
+//            if (in_array($tag->id, $hair_tags, true)) {
+//                $tag->checked = true;
+//            } else {
+//                $tag->checked = false;
+//            }
+//        }
+//        \Log::debug(__LINE__ . ' ' . print_r($hair_tags, true));
+//        \Log::debug(__LINE__ . ' ' . print_r($hair_tags_arr, true));
+//        \Log::debug(__LINE__ . ' ' . print_r($tags, true));
+
+        return view('admin.catalog.edit', ['style_form' => $style, 'tags' => $tags, 'hair_tags' => $hair_tags_arr]);
     }
 
 
