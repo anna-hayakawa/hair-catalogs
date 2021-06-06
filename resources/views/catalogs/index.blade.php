@@ -5,7 +5,7 @@
 @section('content')
     <div class="container">
         {{--  タグ検索  --}}
-        <div class="row">
+        <div class="row tag-groups">
             <form action="{{ action('CatalogsController@index') }}" method="get">
                 <div class="tag-group">
                     <div class="col-md-2 tag-label">
@@ -33,10 +33,10 @@
                 @foreach ($posts as $style)
                     <a href="{{ action('CatalogsController@detail') }}">
                         <div class="style">
-                            <div class="image col-md-6 text-right mt-4">
+                            <div class="image col-md-12">
                                 <img src="{{ asset('storage/image/' . $style->image_path1) }}"  width="255" height="300">
                             </div>
-                            <div class="text col-md-6">
+                            <div class="text col-md-12">
                                 <div class="title-label">
                                     {{ str_limit($style->title, 150) }}
                                 </div>
