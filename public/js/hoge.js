@@ -10995,6 +10995,12 @@ return jQuery;
 // console.log('hello')
 //input type="file"で、選択した画像をプレビュー表示する
 $(function () {
+  console.log($('#image1').attr('value'));
+
+  if ($('#image1').attr('data-def') != '') {
+    $('#image1').css('background-image', $('#image1').attr('data-def'));
+  }
+
   $('#image1').on('change', function () {
     if (!this.files.length) {
       return;

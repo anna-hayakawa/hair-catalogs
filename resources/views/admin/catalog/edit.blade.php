@@ -18,24 +18,24 @@
                 @endif
                 <div class="form-group row image-boxes">
                     <div class="col-md-4 text-center">
-                        <label class="image-box1">
-                            <input type="file" class="form-control-file" name="image1" id="image1" accept="image/*" value="{{ asset('storage/image/' . $style_form->image_path1) }}"/>
+                        <label class="image-box1" style="background-img: url('{{ asset('storage/image/' . $style_form->image_path1) }}')">
+                            <input type="file" class="form-control-file" name="image1" id="image1" accept="image/*" data-def="{{ asset('storage/image/' . $style_form->image_path1) }}"/>
                         </label>
                         <p class="labels">
                             画像1
                         </p>
                     </div>
                     <div class="col-md-4 text-center">
-                        <label class="image-box2">
-                            <input type="file" class="form-control-file" name="image2" id="image2" accept="image/*" value="{{ asset('storage/image/' . $style_form->image_path2) }}"/>
+                        <label class="image-box2" style="background-img: url('{{ asset('storage/image/' . $style_form->image_path2) }}')">
+                            <input type="file" class="form-control-file" name="image2" id="image2" accept="image/*" data-def="{{ asset('storage/image/' . $style_form->image_path2) }}"/>
                         </label>
                         <p class="labels">
                             画像2
                         </p>
                     </div>
                     <div class="col-md-4 text-center">
-                        <label class="image-box3">
-                            <input type="file" class="form-control-file" name="image3" id="image3" accept="image/*" value="{{ asset('storage/image/' . $style_form->image_path3) }}"/>
+                        <label class="image-box3" style="background-img: url('{{ asset('storage/image/' . $style_form->image_path3) }}')">
+                            <input type="file" class="form-control-file" name="image3" id="image3" accept="image/*" data-def="{{ asset('storage/image/' . $style_form->image_path3) }}"/>
                         </label>
                         <p class="labels">
                             画像3
@@ -46,7 +46,7 @@
                     <label class="col-md-2 labels" for="tpo">シチュエーション</label>
                     <p>
                         @foreach($tags as $key => $tag)
-                        <label class="checkbox" for="hair_tags-{{ $key }}">
+                        <label class="checkbox" for="hair_tags-{{ $tag->id }}">
                             {{ Form::checkbox('tag_id[]', $tag->id, in_array($tag->id, $hair_tags, true), ['id' => 'hair_tags-' . $tag->id]) }}
                             {{ $tag->tag_name }}
                         </label>
