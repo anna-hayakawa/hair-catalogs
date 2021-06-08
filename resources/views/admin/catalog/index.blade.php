@@ -18,7 +18,7 @@
         </div>
         <div class="row">
             <div class="list col-md-12 mx-auto">
-            <hr color="#c0c0c0">
+            <hr color="#d6c6be">
                 <div class="col-md-12 mx-auto">
                     <h4>投稿一覧</h4>
                 </div>

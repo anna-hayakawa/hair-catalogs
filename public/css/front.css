@@ -138,3 +138,17 @@
   color: #3d2b20;
 }
 
+.style-list .more-btn {
+  background-color: #d6a6ae;
+  color: #fff;
+  box-shadow: 0 2px 6px rgba(146, 146, 146, 0.8);
+  cursor: pointer;
+  border-radius: 4px;
+  border: none;
+  width: 70px;
+}
+
+.style-list .more-btn:hover {
+  background-color: #cf7584;
+}
+

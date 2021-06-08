@@ -12,8 +12,13 @@ class CatalogsController extends Controller
 {
     public function index(Request $request)
     {
-        // $value = $_REQUEST['val'];
-        $posts = HairStyle::all()->sortByDesc('update_at');
+        $tag_id = optional($request->tag)->id;
+        if (isset($tag_id)) {
+            $tag_num = HairTag::where('tag_id', $tag_id)->get();
+            $posts = HairStyle::where('id', $tag_num->style_id).orderBy('updated_at', 'desc')->get();
+        } else {
+            $posts = HairStyle::all()->sortByDesc('updated_at');
+        }
 
         return view('catalogs.index', ['tags' => Tag::all(), 'posts' => $posts]);
     }

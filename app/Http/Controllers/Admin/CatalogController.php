@@ -57,7 +57,6 @@ class CatalogController extends Controller
                     'style_id' => $style_id,
                     'tag_id' => (int)$form_tag
                 ];
-                // dd($insert);
                 HairTag::insert($insert);
             }
         }

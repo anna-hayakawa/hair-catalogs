@@ -3,6 +3,7 @@
 @section('title', 'HairCatalogs')
 
 @section('content')
+<script src="{{ mix('js/index.js') }}"></script>
     <div class="container">
         {{--  タグ検索  --}}
         <div class="row tag-groups">
@@ -44,6 +45,9 @@
                         </div>
                     </a>
                 @endforeach
+                <div class="col-md-12">
+                    <button class="more-btn">もっと見る</button>
+                </div>
             </div>
         </div>
     </div>
