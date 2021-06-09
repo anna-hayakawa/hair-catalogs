@@ -10995,10 +10995,16 @@ return jQuery;
 // console.log('hello')
 //input type="file"で、選択した画像をプレビュー表示する
 $(function () {
-  console.log($('#image1').attr('value'));
+  if ($('#image1').data('image') != '') {
+    $('.image-box1').css('background-image', 'url(' + $('#image1').data('image') + ')');
+  }
 
-  if ($('#image1').attr('data-def') != '') {
-    $('#image1').css('background-image', $('#image1').attr('data-def'));
+  if ($('#image2').data('image') != '') {
+    $('.image-box2').css('background-image', 'url(' + $('#image2').data('image') + ')');
+  }
+
+  if ($('#image3').data('image') != '') {
+    $('.image-box3').css('background-image', 'url(' + $('#image3').data('image') + ')');
   }
 
   $('#image1').on('change', function () {

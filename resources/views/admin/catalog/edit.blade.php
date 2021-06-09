@@ -19,24 +19,42 @@
                 <div class="form-group row image-boxes">
                     <div class="col-md-4 text-center">
                         <label class="image-box1" style="background-img: url('{{ asset('storage/image/' . $style_form->image_path1) }}')">
-                            <input type="file" class="form-control-file" name="image1" id="image1" accept="image/*" data-def="{{ asset('storage/image/' . $style_form->image_path1) }}"/>
-                        </label>
+                            {{--  <input type="file" class="form-control-file" name="image1" id="image1" accept="image/*" data-def="{{ asset('storage/image/' . $style_form->image_path1) }}"/>  --}}
+                            <input type="file" class="form-control-file" name="image1" id="image1" accept="image/*"
+                            @if ($style_form->image_path1 !='')
+                                data-image="{{ asset('storage/image/' . $style_form->image_path1) }}"
+                            @else
+                                data-def_image=""
+                            @endif
+                        /></label>
                         <p class="labels">
                             画像1
                         </p>
                     </div>
                     <div class="col-md-4 text-center">
                         <label class="image-box2" style="background-img: url('{{ asset('storage/image/' . $style_form->image_path2) }}')">
-                            <input type="file" class="form-control-file" name="image2" id="image2" accept="image/*" data-def="{{ asset('storage/image/' . $style_form->image_path2) }}"/>
-                        </label>
+                            {{--  <input type="file" class="form-control-file" name="image2" id="image2" accept="image/*" data-def="{{ asset('storage/image/' . $style_form->image_path2) }}"/>  --}}
+                            <input type="file" class="form-control-file" name="image2" id="image2" accept="image/*"
+                            @if ($style_form->image_path2 !='')
+                                data-image="{{ asset('storage/image/' . $style_form->image_path2) }}"
+                            @else
+                                data-def_image=""
+                            @endif
+                        /></label>
                         <p class="labels">
                             画像2
                         </p>
                     </div>
                     <div class="col-md-4 text-center">
                         <label class="image-box3" style="background-img: url('{{ asset('storage/image/' . $style_form->image_path3) }}')">
-                            <input type="file" class="form-control-file" name="image3" id="image3" accept="image/*" data-def="{{ asset('storage/image/' . $style_form->image_path3) }}"/>
-                        </label>
+                            {{--  <input type="file" class="form-control-file" name="image3" id="image3" accept="image/*" data-def="{{ asset('storage/image/' . $style_form->image_path3) }}"/>  --}}
+                            <input type="file" class="form-control-file" name="image3" id="image3" accept="image/*"
+                            @if ($style_form->image_path3 !='')
+                                data-image="{{ asset('storage/image/' . $style_form->image_path3) }}"
+                            @else
+                                data-def_image=""
+                            @endif
+                        /></label>
                         <p class="labels">
                             画像3
                         </p>
@@ -74,9 +92,9 @@
                 </div>
                 <div class="form-group row">
                     <div class="col-md-6 offset-md-6">
-                        <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
+                        <input type="hidden" name="style_id" value="{{ $style_form->id }}">
                         {{ csrf_field() }}
-                        <input type="submit" class="btn btn-primary" value="更新">
+                        <input type="submit" class="btn btn-primary button" value="更新">
                     </div>
                 </div>
             </form>

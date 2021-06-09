@@ -114,35 +114,59 @@ class CatalogController extends Controller
     public function update(Request $request)
     {
         $this->validate($request, HairStyle::$rules);
-
-        $style = HairStyle::find($request->id);
+        $style = HairStyle::find($request->style_id);
         $style_form = $request->all();
 
         if ($request->file('image1')) {
             $path = $request->file('image1')->store('public/image');
             $style_form['image_path1'] = basename($path);
+            // $style->image_path1 = basename($path);
         } else {
             $style_form['image_path1'] = $style->image_path1;
+            // $style->image_path1 = $style->image_path1;
         }
         if ($request->file('image2')) {
             $path = $request->file('image2')->store('public/image');
             $style_form['image_path2'] = basename($path);
+            // $style->image_path2 = basename($path);
         } else {
             $style_form['image_path2'] = $style->image_path2;
+            // $style->image_path2 = $style->image_path2;
         }
         if ($request->file('image3')) {
             $path = $request->file('image3')->store('public/image');
             $style_form['image_path3'] = basename($path);
+            // $style->image_path3 = basename($path);
         } else {
-            $style_form['image_path3'] = $style->image_path1;
+            $style_form['image_path3'] = $style->image_path3;
+            // $style->image_path3 = $style->image_path3;
         }
 
-        unset($news_form['image1']);
-        unset($news_form['image2']);
-        unset($news_form['image3']);
-        unset($news_form['_token']);
+        $form_tags = $style_form['tag_id'];
+
+        unset($style_form['image1']);
+        unset($style_form['image2']);
+        unset($style_form['image3']);
+        unset($style_form['_token']);
+        unset($style_form['tag_id']);
+        unset($style_form['style_id']);
+        // dd($style_form);
 
         $style->fill($style_form)->save();
+
+        //中間テーブルへの保存
+        $style_id = $style->id;
+        HairTag::where('style_id', $style_id)->delete();
+
+        if (is_array($form_tags)) {
+            foreach ($form_tags as $form_tag) {
+                $insert = [
+                    'style_id' => $style_id,
+                    'tag_id' => (int)$form_tag
+                ];
+                HairTag::insert($insert);
+            }
+        }
 
         return redirect('admin/catalog');
     }
@@ -152,7 +176,9 @@ class CatalogController extends Controller
     {
         $style = HairStyle::find($request->id);
 
-
+        if (HairTag::where('style_id', $style->id)) {
+            HairTag::where('style_id', $style->id)->delete();
+        }
         $style->delete();
 
         return redirect('admin/catalog');
