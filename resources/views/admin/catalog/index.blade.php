@@ -22,11 +22,11 @@
                 <div class="col-md-12 mx-auto">
                     <h4>投稿一覧</h4>
                 </div>
-                {{--  タイトル検索  --}}
+                {{--  タイトル／説明の検索  --}}
                 <form action="{{ action('Admin\CatalogController@index') }}" method="get">
                     <div class="form-group row float-md-right">
-                        <label class="col-md-3 text-right title-label">タイトル検索</label>
-                        <div class="col-md-7 search-box1">
+                        <label class="col-md-4 text-right title-label">タイトル／説明で検索</label>
+                        <div class="col-md-6 search-box1">
                             <input type="text" class="form-control" name="cond_title" value="{{ $cond_title }}">
                         </div>
                         <div class="col-md-2">

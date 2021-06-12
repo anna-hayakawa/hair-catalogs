@@ -68,7 +68,6 @@
                             {{ Form::checkbox('tag_id[]', $tag->id, in_array($tag->id, $hair_tags, true), ['id' => 'hair_tags-' . $tag->id]) }}
                             {{ $tag->tag_name }}
                         </label>
-
                         @endforeach
                     </p>
                 </div>

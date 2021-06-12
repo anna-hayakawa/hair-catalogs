@@ -6,6 +6,8 @@
 // });
 // console.log('hello')
 
+const { css } = require("jquery");
+
 
 //input type="file"で、選択した画像をプレビュー表示する
 $(function(){

@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\HairStyle;
 use App\Tag;
 use App\HairTag;
+use Carbon\Carbon;
 
 class CatalogController extends Controller
 {
@@ -66,12 +67,13 @@ class CatalogController extends Controller
 
     public function index(Request $request)
     {
+        //投稿一覧での検索機能
         $cond_title = $request->cond_title;
         if ($cond_title != '') {
             $posts = HairStyle::where('title', 'LIKE', '%' . $cond_title . '%')
-            ->orWhere('description', 'LIKE', '%' . $cond_title . '%')->get();
+            ->orWhere('description', 'LIKE', '%' . $cond_title . '%')->orderBy('updated_at', 'desc')->get();
         } else {
-            $posts = HairStyle::all();
+            $posts = HairStyle::all()->sortByDesc('updated_at');
         }
         return view('admin.catalog.index', ['posts' => $posts, 'cond_title' => $cond_title]);
     }
@@ -162,7 +164,9 @@ class CatalogController extends Controller
             foreach ($form_tags as $form_tag) {
                 $insert = [
                     'style_id' => $style_id,
-                    'tag_id' => (int)$form_tag
+                    'tag_id' => (int)$form_tag,
+                    'created_at' => Carbon::now(),
+                    'update_at' => Carbon::now(),
                 ];
                 HairTag::insert($insert);
             }

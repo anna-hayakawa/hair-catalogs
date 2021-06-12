@@ -148,7 +148,7 @@ return [
     'attributes' => [
         'title' => '「タイトル」を入力',
         'description' => '「説明」を入力',
-        'image1' => '「画像1」を選択',
+        'image_path1' => '「画像1」を選択',
         'tag_id' => '「シチュエーション」を1つ以上選択',
         'name' => '名前を入力',
     ],

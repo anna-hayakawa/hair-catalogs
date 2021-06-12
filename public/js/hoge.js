@@ -10993,7 +10993,10 @@ return jQuery;
 //     });
 // });
 // console.log('hello')
-//input type="file"で、選択した画像をプレビュー表示する
+var _require = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js"),
+    css = _require.css; //input type="file"で、選択した画像をプレビュー表示する
+
+
 $(function () {
   if ($('#image1').data('image') != '') {
     $('.image-box1').css('background-image', 'url(' + $('#image1').data('image') + ')');
