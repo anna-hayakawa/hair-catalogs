@@ -129,9 +129,8 @@ class CatalogController extends Controller
         \Log::debug(__LINE__ . ' ' . __METHOD__ . ' ' . print_r($style_form, true));
 
         //リクエストの保存
-        if (isset($style_form['image_path1'])) {
-            $path = $request->file('image_path1')->store('public/image');
-            \Log::debug(__LINE__ . ' ' . __METHOD__ . ' ' . $path);
+        if (isset($style_form['image1'])) {
+            $path = $request->file('image1')->store('public/image');
             $style_form['image_path1'] = basename($path);
         } else {
             $style_form['image_path1'] = $style->image_path1;
@@ -151,7 +150,7 @@ class CatalogController extends Controller
 
         $form_tags = $style_form['tag_id'];
 
-        unset($style_form['image_path1']);
+        unset($style_form['image1']);
         unset($style_form['image2']);
         unset($style_form['image3']);
         unset($style_form['_token']);
