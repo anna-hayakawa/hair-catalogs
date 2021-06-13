@@ -20,7 +20,7 @@
                     <div class="col-md-4 text-center">
                         <label class="image-box1" style="background-img: url('{{ asset('storage/image/' . $style_form->image_path1) }}')">
                             {{--  <input type="file" class="form-control-file" name="image1" id="image1" accept="image/*" data-def="{{ asset('storage/image/' . $style_form->image_path1) }}"/>  --}}
-                            <input type="file" class="form-control-file" name="image1" id="image1" accept="image/*"
+                            <input type="file" class="form-control-file" name="image_path1" id="image1" accept="image/*"
                             @if ($style_form->image_path1 !='')
                                 data-image="{{ asset('storage/image/' . $style_form->image_path1) }}"
                             @else

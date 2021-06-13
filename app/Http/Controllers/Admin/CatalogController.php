@@ -23,8 +23,8 @@ class CatalogController extends Controller
         $style = new HairStyle();
         $form = $request->all();
 
-        if (isset($form['image1'])) {
-            $path = $request->file('image1')->store('public/image');
+        if (isset($form['image_path1'])) {
+            $path = $request->file('image_path1')->store('public/image');
             $style->image_path1 = basename($path);
         }
         if (isset($form['image2'])) {
@@ -42,7 +42,7 @@ class CatalogController extends Controller
         $form_tags = $form['tag_id'];
 
         unset($form['_token']);
-        unset($form['image1']);
+        unset($form['image_path1']);
         unset($form['image2']);
         unset($form['image3']);
         unset($form['tag_id']);
@@ -115,12 +115,22 @@ class CatalogController extends Controller
 
     public function update(Request $request)
     {
-        $this->validate($request, HairStyle::$rules);
+        //バリデーション image_path1の必須を解除
+        $rules = HairStyle::$rules;
+
         $style = HairStyle::find($request->style_id);
         $style_form = $request->all();
 
-        if ($request->file('image1')) {
-            $path = $request->file('image1')->store('public/image');
+        if ($style->image_path1 !== '') {
+            unset($rules['image_path1']);
+        }
+        $this->validate($request, $rules);
+        // dd($request);
+        \Log::debug(__LINE__ . ' ' . __METHOD__ . ' ' . print_r($style_form, true));
+        if (isset($style_form['image_path1'])) {
+
+            $path = $request->file('image_path1')->store('public/image');
+            \Log::debug(__LINE__ . ' ' . __METHOD__ . ' ' . $path);
             $style_form['image_path1'] = basename($path);
             // $style->image_path1 = basename($path);
         } else {
@@ -146,7 +156,7 @@ class CatalogController extends Controller
 
         $form_tags = $style_form['tag_id'];
 
-        unset($style_form['image1']);
+        unset($style_form['image_path1']);
         unset($style_form['image2']);
         unset($style_form['image3']);
         unset($style_form['_token']);
@@ -165,8 +175,8 @@ class CatalogController extends Controller
                 $insert = [
                     'style_id' => $style_id,
                     'tag_id' => (int)$form_tag,
-                    'created_at' => Carbon::now(),
-                    'update_at' => Carbon::now(),
+                    // 'created_at' => Carbon::now(),
+                    // 'update_at' => Carbon::now(),
                 ];
                 HairTag::insert($insert);
             }

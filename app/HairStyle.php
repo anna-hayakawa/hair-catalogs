@@ -10,7 +10,7 @@ class HairStyle extends Model
 
     public static $rules = [
         // 'user_id' => 'required',
-        // 'image_path1' => 'required',
+        'image_path1' => 'required',
         // 'image_path2' => 'required',
         // 'image_path3' => 'required',
         'tag_id' => 'required',

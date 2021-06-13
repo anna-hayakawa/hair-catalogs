@@ -19,11 +19,11 @@
                     <div class="form-group row image-boxes">
                         <div class="col-md-4 text-center">
                             <label class="image-box1">
-                                <input type="file" class="form-control-file" name="image1" id="image1" accept="image/*" />
+                                <input type="file" class="form-control-file" name="image_path1" id="image1" accept="image/*" />
                             </label>
-                            <p class="labels">
-                                画像1
-                            </p>
+                            <div class="remove-box">
+                                <input type="button" class="remove-btn" name="remove1" id="remove1" value="画像1をクリア">
+                            </div>
                         </div>
                         <div class="col-md-4 text-center">
                             <label class="image-box2">
