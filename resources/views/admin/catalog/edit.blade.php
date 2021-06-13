@@ -18,8 +18,7 @@
                 @endif
                 <div class="form-group row image-boxes">
                     <div class="col-md-4 text-center">
-                        <label class="image-box1" style="background-img: url('{{ asset('storage/image/' . $style_form->image_path1) }}')">
-                            {{--  <input type="file" class="form-control-file" name="image1" id="image1" accept="image/*" data-def="{{ asset('storage/image/' . $style_form->image_path1) }}"/>  --}}
+                        <label class="image-box1">
                             <input type="file" class="form-control-file" name="image_path1" id="image1" accept="image/*"
                             @if ($style_form->image_path1 !='')
                                 data-image="{{ asset('storage/image/' . $style_form->image_path1) }}"
@@ -32,9 +31,8 @@
                         </p>
                     </div>
                     <div class="col-md-4 text-center">
-                        <label class="image-box2" style="background-img: url('{{ asset('storage/image/' . $style_form->image_path2) }}')">
-                            {{--  <input type="file" class="form-control-file" name="image2" id="image2" accept="image/*" data-def="{{ asset('storage/image/' . $style_form->image_path2) }}"/>  --}}
-                            <input type="file" class="form-control-file" name="image2" id="image2" accept="image/*"
+                        <label class="image-box2">
+                            <input type="file" class="form-control-file" name="image_path2" id="image2" accept="image/*"
                             @if ($style_form->image_path2 !='')
                                 data-image="{{ asset('storage/image/' . $style_form->image_path2) }}"
                             @else
@@ -46,9 +44,8 @@
                         </p>
                     </div>
                     <div class="col-md-4 text-center">
-                        <label class="image-box3" style="background-img: url('{{ asset('storage/image/' . $style_form->image_path3) }}')">
-                            {{--  <input type="file" class="form-control-file" name="image3" id="image3" accept="image/*" data-def="{{ asset('storage/image/' . $style_form->image_path3) }}"/>  --}}
-                            <input type="file" class="form-control-file" name="image3" id="image3" accept="image/*"
+                        <label class="image-box3">
+                            <input type="file" class="form-control-file" name="image_path3" id="image3" accept="image/*"
                             @if ($style_form->image_path3 !='')
                                 data-image="{{ asset('storage/image/' . $style_form->image_path3) }}"
                             @else

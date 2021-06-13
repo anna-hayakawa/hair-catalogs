@@ -10994,21 +10994,22 @@ return jQuery;
 // });
 // console.log('hello')
 var _require = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js"),
-    css = _require.css; //input type="file"で、選択した画像をプレビュー表示する
+    css = _require.css; //保存済みの画像を、編集画面で表示する
 
 
 $(function () {
-  if ($('#image1').data('image') != '') {
+  if ($('#image1').data('image') != null) {
     $('.image-box1').css('background-image', 'url(' + $('#image1').data('image') + ')');
   }
 
-  if ($('#image2').data('image') != '') {
+  if ($('#image2').data('image') != null) {
     $('.image-box2').css('background-image', 'url(' + $('#image2').data('image') + ')');
   }
 
-  if ($('#image3').data('image') != '') {
+  if ($('#image3').data('image') != null) {
     $('.image-box3').css('background-image', 'url(' + $('#image3').data('image') + ')');
-  }
+  } //input type="file"で、選択した画像をプレビュー表示する
+
 
   $('#image1').on('change', function () {
     if (!this.files.length) {

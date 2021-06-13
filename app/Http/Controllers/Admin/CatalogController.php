@@ -27,14 +27,14 @@ class CatalogController extends Controller
             $path = $request->file('image_path1')->store('public/image');
             $style->image_path1 = basename($path);
         }
-        if (isset($form['image2'])) {
-            $path = $request->file('image2')->store('public/image');
+        if (isset($form['image_path2'])) {
+            $path = $request->file('image_path2')->store('public/image');
             $style->image_path2 = basename($path);
         } else {
             $style->image_path2 = null;
         }
-        if (isset($form['image3'])) {
-            $path = $request->file('image3')->store('public/image');
+        if (isset($form['image_path3'])) {
+            $path = $request->file('image_path3')->store('public/image');
             $style->image_path3 = basename($path);
         } else {
             $style->image_path3 = null;
@@ -43,8 +43,8 @@ class CatalogController extends Controller
 
         unset($form['_token']);
         unset($form['image_path1']);
-        unset($form['image2']);
-        unset($form['image3']);
+        unset($form['image_path2']);
+        unset($form['image_path3']);
         unset($form['tag_id']);
 
         $style->fill($form)->save();
@@ -125,33 +125,27 @@ class CatalogController extends Controller
             unset($rules['image_path1']);
         }
         $this->validate($request, $rules);
-        // dd($request);
-        \Log::debug(__LINE__ . ' ' . __METHOD__ . ' ' . print_r($style_form, true));
-        if (isset($style_form['image_path1'])) {
 
+        \Log::debug(__LINE__ . ' ' . __METHOD__ . ' ' . print_r($style_form, true));
+
+        if (isset($style_form['image_path1'])) {
             $path = $request->file('image_path1')->store('public/image');
             \Log::debug(__LINE__ . ' ' . __METHOD__ . ' ' . $path);
             $style_form['image_path1'] = basename($path);
-            // $style->image_path1 = basename($path);
         } else {
             $style_form['image_path1'] = $style->image_path1;
-            // $style->image_path1 = $style->image_path1;
         }
         if ($request->file('image2')) {
             $path = $request->file('image2')->store('public/image');
             $style_form['image_path2'] = basename($path);
-            // $style->image_path2 = basename($path);
         } else {
             $style_form['image_path2'] = $style->image_path2;
-            // $style->image_path2 = $style->image_path2;
         }
         if ($request->file('image3')) {
             $path = $request->file('image3')->store('public/image');
             $style_form['image_path3'] = basename($path);
-            // $style->image_path3 = basename($path);
         } else {
             $style_form['image_path3'] = $style->image_path3;
-            // $style->image_path3 = $style->image_path3;
         }
 
         $form_tags = $style_form['tag_id'];

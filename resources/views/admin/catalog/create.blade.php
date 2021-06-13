@@ -27,7 +27,7 @@
                         </div>
                         <div class="col-md-4 text-center">
                             <label class="image-box2">
-                                <input type="file" class="form-control-file" name="image2" id="image2" accept="image/*" />
+                                <input type="file" class="form-control-file" name="image_path2" id="image2" accept="image/*" />
                             </label>
                             <p class="labels">
                                 画像2
@@ -35,7 +35,7 @@
                         </div>
                         <div class="col-md-4 text-center">
                             <label class="image-box3">
-                                <input type="file" class="form-control-file" name="image3" id="image3" accept="image/*" />
+                                <input type="file" class="form-control-file" name="image_path3" id="image3" accept="image/*" />
                             </label>
                             <p class="labels">
                                 画像3
