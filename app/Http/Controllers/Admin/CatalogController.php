@@ -128,6 +128,7 @@ class CatalogController extends Controller
 
         \Log::debug(__LINE__ . ' ' . __METHOD__ . ' ' . print_r($style_form, true));
 
+        //リクエストの保存
         if (isset($style_form['image_path1'])) {
             $path = $request->file('image_path1')->store('public/image');
             \Log::debug(__LINE__ . ' ' . __METHOD__ . ' ' . $path);
@@ -184,9 +185,12 @@ class CatalogController extends Controller
     {
         $style = HairStyle::find($request->id);
 
+        //中間テーブルの削除
         if (HairTag::where('style_id', $style->id)) {
             HairTag::where('style_id', $style->id)->delete();
         }
+
+        //スタイルの削除
         $style->delete();
 
         return redirect('admin/catalog');

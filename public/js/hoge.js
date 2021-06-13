@@ -11062,6 +11062,26 @@ $(function () {
     fr.readAsDataURL(file);
     $(".image-box3 img").css('opacity', 0);
   });
+}); //remove-btnによる、プレビュー画像のクリア
+
+$(function () {
+  $('#remove1').on('click', function () {
+    var obj = document.getElementById("image1"); // console.log(obj.value);
+
+    obj.value = ""; // console.log(obj.value);
+
+    $('.image-box1').css('background-image', 'url(/images/lady_icon.png?2e0dc4e2d2be745f45a3a5310b00a9bf)');
+  });
+  $('#remove2').on('click', function () {
+    var obj = document.getElementById("image2");
+    obj.value = "";
+    $('.image-box2').css('background-image', 'url(/images/lady_icon.png?2e0dc4e2d2be745f45a3a5310b00a9bf)');
+  });
+  $('#remove3').on('click', function () {
+    var obj = document.getElementById("image3");
+    obj.value = "";
+    $('.image-box3').css('background-image', 'url(/images/lady_icon.png?2e0dc4e2d2be745f45a3a5310b00a9bf)');
+  });
 });
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 

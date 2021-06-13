@@ -29,17 +29,17 @@
                             <label class="image-box2">
                                 <input type="file" class="form-control-file" name="image_path2" id="image2" accept="image/*" />
                             </label>
-                            <p class="labels">
-                                画像2
-                            </p>
+                            <div class="remove-box">
+                                <input type="button" class="remove-btn" name="remove2" id="remove2" value="画像2をクリア">
+                            </div>
                         </div>
                         <div class="col-md-4 text-center">
                             <label class="image-box3">
                                 <input type="file" class="form-control-file" name="image_path3" id="image3" accept="image/*" />
                             </label>
-                            <p class="labels">
-                                画像3
-                            </p>
+                            <div class="remove-box">
+                                <input type="button" class="remove-btn" name="remove3" id="remove3" value="画像3をクリア">
+                            </div>
                         </div>
                     </div>
                     <div class="form-group row">

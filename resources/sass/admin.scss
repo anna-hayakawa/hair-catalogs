@@ -3,6 +3,7 @@ body {
     background-position: center;
 }
 
+
 // マイページ
 h2 {
     margin: 10px 0 40px 0;
@@ -86,6 +87,7 @@ h4 {
     }
 }
 
+
 // 投稿ページ
 .image-boxes {
     margin-bottom: 30px;
@@ -105,26 +107,36 @@ h4 {
     }
 }
 
+.remove-box {
+    width: 255px;
+    margin: auto;
+    margin-bottom: 20px;
+
+    .remove-btn {
+        background-color: #ccbab0;
+        color: rgb(87, 62, 46);
+        box-shadow:  0 2px 6px rgba(146, 146, 146, 0.8);
+        font-size: 14px;
+        font-weight: bold;
+        border-radius: 4px;
+        border: none;
+        cursor: pointer;
+        width: 115px;
+        height: 33px;
+        margin-left: 70px;
+        margin: 7px 0;
+        padding: 6px 11px;
+    }
+
+    .remove-btn:hover {
+        background-color: #be9f91;
+    }
+}
+
 .labels {
     color: rgb(61, 43, 32);
     font-weight: bold;
     padding: 5px 0;
-}
-
-.remove-box {
-    width: 255px;
-}
-.remove-btn {
-    background-color: rgb(214, 166, 174);
-    color: #fff;
-    box-shadow:  0 2px 6px rgba(146, 146, 146, 0.8);
-    cursor: pointer;
-    border-radius: 4px;
-    border: none;
-    width: 110px;
-    height: 35px;
-    margin-left: 70px;
-    font-size: 13px;
 }
 
 .checkbox {
