@@ -14,12 +14,12 @@
                 </div>
                 <div class="col-md-8">
                     <div class="col-md-4 name-box">
-                        <div class="name-label">
+                        <div class="name-text">
                             {{ $profile_form->name }}
                         </div>
                     </div>
                     <div class="col-md-8 intro-box">
-                        <div class="intro-label">
+                        <div class="intro-text">
                             {{ $profile_form->introduction }}
                         </div>
                     </div>

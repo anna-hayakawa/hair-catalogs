@@ -46,7 +46,7 @@
                     </a>
                 @endforeach
                 <div class="col-md-12">
-                    <button class="more-btn">もっと見る</button>
+                    <button class="more-btn" id="more-btn">もっと見る</button>
                 </div>
             </div>
         </div>
