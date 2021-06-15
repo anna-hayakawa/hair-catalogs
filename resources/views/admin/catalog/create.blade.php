@@ -77,6 +77,9 @@
                             <input type="submit" class="btn btn-primary button" value="投稿">
                         </div>
                     </div>
+                    <input type="hidden" name="remove1" id="remove1flag" value="0">
+                    <input type="hidden" name="remove2" id="remove2flag" value="0">
+                    <input type="hidden" name="remove3" id="remove3flag" value="0">
                 </form>
             </div>
         </div>

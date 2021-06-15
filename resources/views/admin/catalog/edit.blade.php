@@ -25,10 +25,11 @@
                             @else
                                 data-def_image=""
                             @endif
-                        /></label>
-                        <p class="labels">
-                            画像1
-                        </p>
+                            />
+                        </label>
+                        <div class="remove-box">
+                            <input type="button" class="remove-btn" name="remove1" id="remove1" value="画像1をクリア">
+                        </div>
                     </div>
                     <div class="col-md-4 text-center">
                         <label class="image-box2">
@@ -38,23 +39,25 @@
                             @else
                                 data-def_image=""
                             @endif
-                        /></label>
-                        <p class="labels">
-                            画像2
-                        </p>
+                            />
+                        </label>
+                        <div class="remove-box">
+                            <input type="button" class="remove-btn" name="remove2" id="remove2" value="画像2をクリア">
+                        </div>
                     </div>
                     <div class="col-md-4 text-center">
                         <label class="image-box3">
-                            <input type="file" class="form-control-file" name="image_path3" id="image3" accept="image/*"
+                            <input type="file" class="form-control-file" name="image3" id="image3" accept="image/*"
                             @if ($style_form->image_path3 !='')
                                 data-image="{{ asset('storage/image/' . $style_form->image_path3) }}"
                             @else
                                 data-def_image=""
                             @endif
-                        /></label>
-                        <p class="labels">
-                            画像3
-                        </p>
+                            />
+                        </label>
+                        <div class="remove-box">
+                            <input type="button" class="remove-btn" name="remove3" id="remove3" value="画像3をクリア">
+                        </div>
                     </div>
                 </div>
                 <div class="form-group row">
@@ -93,6 +96,9 @@
                         <input type="submit" class="btn btn-primary button" value="更新">
                     </div>
                 </div>
+                <input type="hidden" name="remove1" id="remove1flag" value="0">
+                <input type="hidden" name="remove2" id="remove2flag" value="0">
+                <input type="hidden" name="remove3" id="remove3flag" value="0">
             </form>
         </div>
     </div>

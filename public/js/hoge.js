@@ -11066,20 +11066,25 @@ $(function () {
 
 $(function () {
   $('#remove1').on('click', function () {
-    var obj = document.getElementById("image1"); // console.log(obj.value);
-
+    var obj = document.getElementById("image1");
     obj.value = ""; // console.log(obj.value);
 
+    var flag = document.getElementById("remove1flag");
+    flag.value = "1";
     $('.image-box1').css('background-image', 'url(/images/lady_icon.png?2e0dc4e2d2be745f45a3a5310b00a9bf)');
   });
   $('#remove2').on('click', function () {
     var obj = document.getElementById("image2");
     obj.value = "";
+    var flag = document.getElementById("remove2flag");
+    flag.value = "1";
     $('.image-box2').css('background-image', 'url(/images/lady_icon.png?2e0dc4e2d2be745f45a3a5310b00a9bf)');
   });
   $('#remove3').on('click', function () {
     var obj = document.getElementById("image3");
     obj.value = "";
+    var flag = document.getElementById("remove3flag");
+    flag.value = "1";
     $('.image-box3').css('background-image', 'url(/images/lady_icon.png?2e0dc4e2d2be745f45a3a5310b00a9bf)');
   });
 });

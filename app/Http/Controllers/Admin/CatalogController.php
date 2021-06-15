@@ -45,6 +45,9 @@ class CatalogController extends Controller
         unset($form['image_path1']);
         unset($form['image_path2']);
         unset($form['image_path3']);
+        unset($form['remove1']);
+        unset($form['remove2']);
+        unset($form['remove3']);
         unset($form['tag_id']);
 
         $style->fill($form)->save();
@@ -115,6 +118,7 @@ class CatalogController extends Controller
 
     public function update(Request $request)
     {
+        // dd($request);
         //バリデーション image_path1の必須を解除
         $rules = HairStyle::$rules;
 
@@ -124,6 +128,10 @@ class CatalogController extends Controller
         if ($style->image_path1 !== '') {
             unset($rules['image_path1']);
         }
+        if ($request->image1 == '' && $request->remove1 == "1") {
+            $rules['image_path1'] = 'required';
+        }
+
         $this->validate($request, $rules);
 
         \Log::debug(__LINE__ . ' ' . __METHOD__ . ' ' . print_r($style_form, true));
@@ -135,13 +143,22 @@ class CatalogController extends Controller
         } else {
             $style_form['image_path1'] = $style->image_path1;
         }
-        if ($request->file('image2')) {
+
+        if ($request->remove2 == "1") {
+            $style_form['image2'] = null;
+            $style_form['image_path2'] = null;
+        } elseif (isset($style_form['image2'])) {
             $path = $request->file('image2')->store('public/image');
             $style_form['image_path2'] = basename($path);
         } else {
             $style_form['image_path2'] = $style->image_path2;
         }
-        if ($request->file('image3')) {
+
+        // if (!isset($style_form['image3']) || $request->remove3 == "1") {
+        if ($request->remove3 == "1") {
+            $style_form['image3'] = null;
+            $style_form['image_path3'] = null;
+        } elseif (isset($style_form['image3'])) {
             $path = $request->file('image3')->store('public/image');
             $style_form['image_path3'] = basename($path);
         } else {
@@ -153,6 +170,9 @@ class CatalogController extends Controller
         unset($style_form['image1']);
         unset($style_form['image2']);
         unset($style_form['image3']);
+        unset($style_form['remove1']);
+        unset($style_form['remove2']);
+        unset($style_form['remove3']);
         unset($style_form['_token']);
         unset($style_form['tag_id']);
         unset($style_form['style_id']);
