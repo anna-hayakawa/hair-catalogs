@@ -11105,3 +11105,18 @@ body {
   background-color: #cf7584;
 }
 
+.form-group1 .button1 {
+  background-color: #d6a6ae;
+  color: #fff;
+  box-shadow: 0 2px 6px rgba(146, 146, 146, 0.8);
+  cursor: pointer;
+  border-radius: 4px;
+  border: none;
+  width: 90px;
+  margin-left: 120px;
+}
+
+.form-group1 .button1:hover {
+  background-color: #cf7584;
+}
+

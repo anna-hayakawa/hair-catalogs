@@ -8,6 +8,7 @@
             <div class="col-md-12 mx-auto">
                 <h2>プロフィール</h2>
             </div>
+            {{-- プロフィール詳細 --}}
             <div class="col-md-12 profile-box row ">
                 <div class="col-md-4 image-box">
                     <img id="img1" src="{{ asset('storage/image/' . $profile_form->image_path) }}">
@@ -32,6 +33,7 @@
             </div>
         </div>
         <hr color="#d6c6be">
+        {{-- 投稿一覧 --}}
         <div class="col-md-12 mx-auto">
             <h4 class="h4-label">投稿一覧</h4>
         </div>

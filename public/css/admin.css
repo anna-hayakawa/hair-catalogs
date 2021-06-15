@@ -153,6 +153,7 @@ h4 {
   border-radius: 4px;
   border: none;
   width: 80px;
+  margin-left: 40px;
 }
 
 .button:hover {
@@ -162,6 +163,7 @@ h4 {
 .profile-box {
   margin-top: 15px;
   margin-bottom: 40px;
+  margin-left: 40px;
 }
 
 .profile-box .image-box {
@@ -176,7 +178,8 @@ h4 {
 }
 
 .profile-box .name-box {
-  padding-top: 40px;
+  padding-top: 50px;
+  padding-left: 30px;
 }
 
 .profile-box .name-box .name-text {
@@ -191,10 +194,11 @@ h4 {
 
 .profile-box .intro-box {
   padding-top: 60px;
+  padding-left: 30px;
 }
 
 .profile-box .intro-box .intro-text {
-  font-size: 17px;
+  font-size: 16px;
   width: 800px;
 }
 
@@ -203,7 +207,7 @@ h4 {
 }
 
 .profile-box .edit-btn-box {
-  margin: 13px 0 0 38px;
+  margin: 13px 0 0 36px;
 }
 
 .profile-box .edit-btn-box .edit-btn {
@@ -263,22 +267,78 @@ h4 {
 }
 
 .profile-box1 {
-  margin-top: 70px;
-  margin-bottom: 15px;
+  margin-top: 15px;
+  margin-bottom: 40px;
+  margin-left: 40px;
 }
 
-.profile-box1 .intro-label {
+.profile-box1 .image-box {
+  background-image: url(/images/lady_icon.png?2e0dc4e2d2be745f45a3a5310b00a9bf);
+  background-size: 280px 280px;
+  background-color: rgba(153, 153, 153, 0.801);
+  width: 280px;
+  height: 280px;
+  margin-bottom: 0;
+  cursor: pointer;
+  border-radius: 20px;
+  border: 6px solid #d8c0b4;
+}
+
+.profile-box1 .image-box input[type=file] {
+  opacity: 0;
+}
+
+.profile-box1 .remove-box {
+  width: 280px;
+  margin: 0;
+}
+
+.profile-box1 .remove-box .remove-btn {
+  background-color: #ccbab0;
+  color: #573e2e;
+  box-shadow: 0 2px 6px rgba(146, 146, 146, 0.8);
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  width: 130px;
+  height: 33px;
+  margin: 7px 0 7px 75px;
+  padding: 6px 11px;
+}
+
+.profile-box1 .remove-box .remove-btn:hover {
+  background-color: #be9f91;
+}
+
+.profile-box1 .name-box {
+  padding-top: 45px;
+}
+
+.profile-box1 .name-box .name-label {
+  font-weight: bold;
+  margin-top: 40px;
+}
+
+.profile-box2 {
+  margin-top: 40px;
+  margin-bottom: 15px;
+  margin-left: 40px;
+}
+
+.profile-box2 .intro-label {
   font-weight: bold;
   margin-top: 2px;
   margin-left: 10px;
 }
 
-.profile-box1 .form-control {
+.profile-box2 .form-control {
   padding-right: 20px;
 }
 
 .update-btn {
-  margin-left: 55px;
+  margin-left: 140px;
   background-color: #d6a6ae;
   color: #fff;
   box-shadow: 0 2px 6px rgba(146, 146, 146, 0.8);
@@ -290,24 +350,5 @@ h4 {
 
 .update-btn:hover {
   background-color: #cf7584;
-}
-
-.image-btn {
-  margin-top: 10px;
-  margin-left: 23px;
-  padding: 10px;
-  border-radius: 4px;
-  width: 200px;
-  text-align: center;
-  display: block;
-  background-color: #f7b3be;
-  color: #fff;
-  box-shadow: 0 2px 6px rgba(146, 146, 146, 0.8);
-  cursor: pointer;
-  float: left;
-}
-
-a {
-  color: #fff;
 }
 

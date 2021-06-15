@@ -64,7 +64,7 @@
                         </div>
                         <div class="form-group1 row mb-0">
                             <div class="col-md-7 offset-md-3">
-                                <button type="submit" class="btn btn-primary button">
+                                <button type="submit" class="btn btn-primary button1">
                                     {{ __('message.Register') }}
                                 </button>
                             </div>

@@ -173,4 +173,19 @@ body {
     .button:hover {
         background-color: rgb(207, 117, 132);
     }
+
+    .button1 {
+        background-color: rgb(214, 166, 174);
+        color: #fff;
+        box-shadow:  0 2px 6px rgba(146, 146, 146, 0.8);
+        cursor: pointer;
+        border-radius: 4px;
+        border: none;
+        width: 90px;
+        margin-left: 120px;
+    }
+
+    .button1:hover {
+        background-color: rgb(207, 117, 132);
+    }
 }

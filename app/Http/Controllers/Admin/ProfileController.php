@@ -37,7 +37,10 @@ class ProfileController extends Controller
         $profile = User::find($request->id);
         $profile_form = $request->all();
 
-        if ($request->file('image')) {
+        if ($request->remove == "1") {
+            $profile_form['image'] = null;
+            $profile_form['image_path'] = null;
+        } elseif ($request->file('image')) {
             $path = $request->file('image')->store('public/image');
             $profile_form['image_path'] = basename($path);
         } else {
@@ -45,10 +48,11 @@ class ProfileController extends Controller
         }
 
         unset($profile_form['image']);
+        unset($profile_form['remove']);
         unset($profile_form['_token']);
 
         $profile->fill($profile_form)->save();
 
-        return redirect('admin/catalog');
+        return redirect('admin/profile');
     }
 }

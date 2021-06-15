@@ -90,12 +90,13 @@
                     </div>
                 </div>
                 <div class="form-group row">
-                    <div class="col-md-6 offset-md-6">
+                    <div class="col-md-7 offset-md-5">
                         <input type="hidden" name="style_id" value="{{ $style_form->id }}">
                         {{ csrf_field() }}
                         <input type="submit" class="btn btn-primary button" value="更新">
                     </div>
                 </div>
+                {{-- 画像クリアボタンのフラグ --}}
                 <input type="hidden" name="remove1" id="remove1flag" value="0">
                 <input type="hidden" name="remove2" id="remove2flag" value="0">
                 <input type="hidden" name="remove3" id="remove3flag" value="0">
