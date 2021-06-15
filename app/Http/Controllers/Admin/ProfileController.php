@@ -6,9 +6,19 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use App\User;
+use App\HairStyle;
 
 class ProfileController extends Controller
 {
+    public function index()
+    {
+        $profile = Auth::user();
+        $posts = HairStyle::all()->sortByDesc('updated_at');
+
+        return view('admin.profile.index', ['profile_form' => $profile, 'posts' => $posts]);
+    }
+
+
     public function edit()
     {
         $profile = Auth::user();
@@ -40,13 +50,5 @@ class ProfileController extends Controller
         $profile->fill($profile_form)->save();
 
         return redirect('admin/catalog');
-    }
-
-
-    public function detail()
-    {
-        $profile = Auth::user();
-
-        return view('admin.profile.detail', ['profile_form' => $profile]);
     }
 }

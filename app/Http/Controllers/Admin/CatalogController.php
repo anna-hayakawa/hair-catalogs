@@ -118,16 +118,16 @@ class CatalogController extends Controller
 
     public function update(Request $request)
     {
-        // dd($request);
-        //バリデーション image_path1の必須を解除
         $rules = HairStyle::$rules;
 
         $style = HairStyle::find($request->style_id);
         $style_form = $request->all();
 
+        //バリデーション image_path1の必須を解除
         if ($style->image_path1 !== '') {
             unset($rules['image_path1']);
         }
+        //バリデーション 編集時、image1の画像をクリアして保存できないように
         if ($request->image1 == '' && $request->remove1 == "1") {
             $rules['image_path1'] = 'required';
         }

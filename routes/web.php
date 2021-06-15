@@ -24,9 +24,10 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::get('catalog/edit', 'Admin\CatalogController@edit');
     Route::post('catalog/edit', 'Admin\CatalogController@update');
     Route::get('catalog/delete', 'Admin\CatalogController@delete');
+    Route::get('profile', 'Admin\ProfileController@index');
     Route::get('profile/edit', 'Admin\ProfileController@edit');
     Route::post('profile/edit', 'Admin\ProfileController@update');
-    Route::get('profile', 'Admin\ProfileController@detail');
+
 });
 
 

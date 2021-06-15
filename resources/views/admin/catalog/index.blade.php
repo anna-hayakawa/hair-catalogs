@@ -13,7 +13,7 @@
                 <a href="{{ action('Admin\CatalogController@add') }}" role="button" class="btn btn-primary btn-1">新規投稿の作成へ</a>
             </div>
             <div class="col-md-5 offset-md-2 text-left">
-                <a href="{{ action('Admin\ProfileController@detail') }}" role="button" class="btn btn-primary btn-1">プロフィール画面へ</a>
+                <a href="{{ action('Admin\ProfileController@index') }}" role="button" class="btn btn-primary btn-1">プロフィール画面へ</a>
             </div>
         </div>
         <div class="row">
