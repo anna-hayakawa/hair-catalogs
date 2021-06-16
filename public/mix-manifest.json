@@ -1,9 +1,9 @@
 {
+    "/js/admin.js": "/js/admin.js",
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
     "/css/admin.css": "/css/admin.css",
     "/css/front.css": "/css/front.css",
-    "/js/hoge.js": "/js/hoge.js",
-    "/js/index.js": "/js/index.js",
+    "/js/front.js": "/js/front.js",
     "/js/profile.js": "/js/profile.js"
 }

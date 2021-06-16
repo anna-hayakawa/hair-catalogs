@@ -37,7 +37,7 @@ class ProfileController extends Controller
         $profile = User::find($request->id);
         $profile_form = $request->all();
 
-        if ($request->remove == "1") {
+        if ($request->image == '' &&$request->remove == "1") {
             $profile_form['image'] = null;
             $profile_form['image_path'] = null;
         } elseif ($request->file('image')) {

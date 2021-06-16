@@ -11016,7 +11016,7 @@ $(function () {
     obj.value = "";
     var flag = document.getElementById("remove-flag");
     flag.value = "1";
-    $('.image-box').css('background-image', 'url(/images/lady_icon.png?2e0dc4e2d2be745f45a3a5310b00a9bf)');
+    $('.image-box').css('background-image', 'url(/images/default_profile_icon.png)');
   });
 });
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))

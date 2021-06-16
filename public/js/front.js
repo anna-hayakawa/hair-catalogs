@@ -10979,9 +10979,9 @@ return jQuery;
 
 /***/ }),
 
-/***/ "./resources/js/index.js":
+/***/ "./resources/js/front.js":
 /*!*******************************!*\
-  !*** ./resources/js/index.js ***!
+  !*** ./resources/js/front.js ***!
   \*******************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -11004,12 +11004,12 @@ return jQuery;
 
 /***/ 3:
 /*!*************************************!*\
-  !*** multi ./resources/js/index.js ***!
+  !*** multi ./resources/js/front.js ***!
   \*************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/anir/task/task_04/hair_catalogs/resources/js/index.js */"./resources/js/index.js");
+module.exports = __webpack_require__(/*! /Users/anir/task/task_04/hair_catalogs/resources/js/front.js */"./resources/js/front.js");
 
 
 /***/ })

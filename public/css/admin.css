@@ -168,13 +168,23 @@ h4 {
 
 .profile-box .image-box {
   padding: 0 35px;
+  width: 280px;
+  height: 280px;
+  border: none;
 }
 
 .profile-box .image-box img {
-  border-radius: 20px;
-  border: 10px double #d8c0b4;
+  background-image: url(/images/default_profile_icon.png);
+  background-size: 283px 280px;
+  background-position: center;
+  background-size: contain;
+  background-color: rgba(153, 153, 153, 0.801);
   width: 280px;
-  height: 280px;
+  height: 283px;
+  margin-bottom: 0;
+  cursor: pointer;
+  border-radius: 20px;
+  border: 6px solid #d8c0b4;
 }
 
 .profile-box .name-box {
@@ -273,11 +283,12 @@ h4 {
 }
 
 .profile-box1 .image-box {
-  background-image: url(/images/lady_icon.png?2e0dc4e2d2be745f45a3a5310b00a9bf);
-  background-size: 280px 280px;
+  background-image: url(/images/default_profile_icon.png);
+  background-size: 285px 280px;
+  background-position: 50% 5%;
   background-color: rgba(153, 153, 153, 0.801);
   width: 280px;
-  height: 280px;
+  height: 285px;
   margin-bottom: 0;
   cursor: pointer;
   border-radius: 20px;

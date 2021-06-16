@@ -3,7 +3,7 @@
 @section('title', '投稿の編集')
 
 @section('content')
-<script src="{{ mix('js/hoge.js') }}"></script>
+<script src="{{ mix('js/admin.js') }}"></script>
 <div class="container">
     <div class="row">
         <div class="col-md-12 mx-auto">

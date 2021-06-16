@@ -10979,10 +10979,10 @@ return jQuery;
 
 /***/ }),
 
-/***/ "./resources/js/hoge.js":
-/*!******************************!*\
-  !*** ./resources/js/hoge.js ***!
-  \******************************/
+/***/ "./resources/js/admin.js":
+/*!*******************************!*\
+  !*** ./resources/js/admin.js ***!
+  \*******************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -11093,13 +11093,13 @@ $(function () {
 /***/ }),
 
 /***/ 1:
-/*!************************************!*\
-  !*** multi ./resources/js/hoge.js ***!
-  \************************************/
+/*!*************************************!*\
+  !*** multi ./resources/js/admin.js ***!
+  \*************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/anir/task/task_04/hair_catalogs/resources/js/hoge.js */"./resources/js/hoge.js");
+module.exports = __webpack_require__(/*! /Users/anir/task/task_04/hair_catalogs/resources/js/admin.js */"./resources/js/admin.js");
 
 
 /***/ })

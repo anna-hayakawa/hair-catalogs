@@ -11,7 +11,11 @@
             {{-- プロフィール詳細 --}}
             <div class="col-md-12 profile-box row ">
                 <div class="col-md-4 image-box">
-                    <img id="img1" src="{{ asset('storage/image/' . $profile_form->image_path) }}">
+                    @if ($profile_form->image_path != null)
+                        <img src="{{ asset('storage/image/' . $profile_form->image_path) }}" alt="" onerror="this.src='/images/default_profile_icon.png'" />
+                    @else
+                        <img alt="">
+                    @endif
                 </div>
                 <div class="col-md-8">
                     <div class="col-md-4 name-box">

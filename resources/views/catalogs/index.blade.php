@@ -3,7 +3,7 @@
 @section('title', 'HairCatalogs')
 
 @section('content')
-<script src="{{ mix('js/index.js') }}"></script>
+<script src="{{ mix('js/front.js') }}"></script>
     <div class="container">
         {{--  タグ検索  --}}
         <div class="row tag-groups">
