@@ -18,17 +18,19 @@ Route::get('/', function () {
 });
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
+    Route::get('catalog', 'Admin\CatalogController@index');
     Route::get('catalog/create', 'Admin\CatalogController@add');
     Route::post('catalog/create', 'Admin\CatalogController@create');
-    Route::get('catalog', 'Admin\CatalogController@index');
+    Route::get('catalog/delete', 'Admin\CatalogController@delete');
     Route::get('catalog/edit', 'Admin\CatalogController@edit');
     Route::post('catalog/edit', 'Admin\CatalogController@update');
-    Route::get('catalog/delete', 'Admin\CatalogController@delete');
     Route::get('profile', 'Admin\ProfileController@index');
     Route::get('profile/edit', 'Admin\ProfileController@edit');
     Route::post('profile/edit', 'Admin\ProfileController@update');
-
 });
+
+Route::get('catalog/detail/{catalog_id}', 'CatalogsController@detail')->name('catalog.detail');
+Route::get('catalog/search', 'CatalogsController@search')->name('catalog.search');
 
 
 Auth::routes();
@@ -36,6 +38,6 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/', 'CatalogsController@index');
-Route::get('catalog/detail', 'CatalogsController@detail');
+
 
 

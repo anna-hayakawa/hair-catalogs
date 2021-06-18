@@ -44,7 +44,7 @@
         <div class="style-list col-md-12 mx-auto row">
             @foreach ($posts as $style)
                 @if ($style->user_id == Auth::user()->id)
-                    <a href="{{ action('CatalogsController@detail') }}">
+                    <a href="{{ route('catalog.detail', ['catalog_id' => $style->id]) }}">
                         <div class="style">
                             <div class="image col-md-12">
                                 <img src="{{ asset('storage/image/' . $style->image_path1) }}"  width="245" height="270">

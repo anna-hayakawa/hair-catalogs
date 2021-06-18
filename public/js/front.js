@@ -10987,17 +10987,72 @@ return jQuery;
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function($) {$(function () {
-  var show = 12;
-  var num = 9; // var contents =
-
   $('#more-btn').on('click', function () {
-    // $(contents + '.is-hidden').slice(0, num).removeClass('is-hidden');
-    // if ($(contents + '.is-hidden').length == 0) {
-    //     $('#more-btn').fadeOut();
-    // }
-    console.log("morebtn");
+    $.ajax({
+      url: '/api/catalog',
+      type: 'GET',
+      data: {
+        id: 'id'
+      }
+    }).done(function (response) {
+      console.log(response);
+      var row;
+
+      for (var i = 0; i < Object.keys(response).length; i++) {
+        row = row + "<td>" + response[i].title + "</td>";
+      }
+
+      $('.test').append(row);
+    }).fail(function () {
+      alert('エラー');
+    });
   });
-});
+}); // $(function() {
+//     const defaultStyleCnt = 12; // 初期表示件数
+//     const addStyleCnt = 12;     // 追加表示件数
+//     $(function () {
+//         let maxStyleCnt = 0;     // 最大表示件数
+//         let currentStyleCnt = 0; // 現在の表示件数
+//         let styleList = $('.test'); // 一覧を取得
+//         // 一覧の初期表示
+//         $(styleList).each(function (i, elem) {
+//           // 初期表示件数のみ表示
+//             if (i < defaultStyleCnt) {
+//                 $(this).show();
+//                 currentStyleCnt++;
+//             }
+//             maxStyleCnt++;
+//           // もっと見るボタンを表示
+//             let displayed = 0;
+//             if (maxStyleCnt > currentStyleCnt && !displayed) {
+//                 $('#more-btn').show();
+//                 displayed = 1;
+//             }
+//         });
+//     });
+//     $('#more-btn').on('click', function () {
+//         $.ajax({
+//             url: '/api/catalog',
+//             type: 'GET',
+//             data: {}
+//         })
+//         .done(function() {
+//             let newCount = currentStyleCnt + addStyleCnt; // 新しく表示する件数
+//              // 新しく表示する件数のみ表示
+//             $(styleList).each(function (i, elem) {
+//                 if (currentStyleCnt <= i && i < newCount) {
+//                     $(this).show();
+//                     currentStyleCnt++;
+//                 }
+//             });
+//               // もっと見るボタンを非表示
+//             if (maxDispCnt <= newCount) {
+//                 $(this).hide();
+//             }
+//             return false;
+//         });
+//     });
+// });
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 
 /***/ }),

@@ -102,4 +102,3 @@ $(function() {
         $('.image-box3').css('background-image', 'url(/images/lady_icon.png?2e0dc4e2d2be745f45a3a5310b00a9bf)');
     });
 });
-

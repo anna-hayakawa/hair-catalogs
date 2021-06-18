@@ -59,7 +59,9 @@ class CatalogController extends Controller
             foreach ($form_tags as $form_tag) {
                 $insert = [
                     'style_id' => $style_id,
-                    'tag_id' => (int)$form_tag
+                    'tag_id' => (int)$form_tag,
+                    'created_at' => Carbon::now(),
+                    'updated_at' => Carbon::now(),
                 ];
                 HairTag::insert($insert);
             }
@@ -166,6 +168,7 @@ class CatalogController extends Controller
         }
 
         $form_tags = $style_form['tag_id'];
+        $style_form['updated_at'] = Carbon::now();
 
         unset($style_form['image1']);
         unset($style_form['image2']);
@@ -189,8 +192,8 @@ class CatalogController extends Controller
                 $insert = [
                     'style_id' => $style_id,
                     'tag_id' => (int)$form_tag,
-                    // 'created_at' => Carbon::now(),
-                    // 'update_at' => Carbon::now(),
+                    'created_at' => Carbon::now(),
+                    'updated_at' => Carbon::now(),
                 ];
                 HairTag::insert($insert);
             }

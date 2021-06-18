@@ -152,3 +152,29 @@
   background-color: #cf7584;
 }
 
+.detail-box {
+  margin-top: 80px;
+}
+
+.detail-box .image-box {
+  background-color: #fff;
+  border: 4px solid #d6c3ba;
+  margin: 20px auto;
+  padding: 0 5px 40px 5px;
+  height: 900px;
+}
+
+.detail-box .image-box img {
+  width: 510px;
+  height: 543px;
+  margin: 40px 0 0 50px;
+}
+
+.detail-box .title-box .title-text {
+  width: 255px;
+  text-align: center;
+  padding-top: 10px;
+  font-size: 15px;
+  color: #3d2b20;
+}
+

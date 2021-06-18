@@ -167,7 +167,7 @@ h4 {
 //プロフィールページ
 .profile-box {
     margin-top: 15px;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
     margin-left: 40px;
 
     .image-box {
@@ -185,7 +185,6 @@ h4 {
             width: 280px;
             height: 283px;
             margin-bottom: 0;
-            cursor: pointer;
             border-radius: 20px;
             border: 6px solid #d8c0b4;
         }
@@ -297,6 +296,7 @@ h4 {
         width: 280px;
         height: 285px;
         margin-bottom: 0;
+        margin-top: 10px;
         cursor: pointer;
         border-radius: 20px;
         border: 6px solid #d8c0b4;
@@ -331,7 +331,7 @@ h4 {
     }
 
     .name-box {
-        padding-top: 45px;
+        padding-top: 50px;
 
         .name-label {
             font-weight: bold;
@@ -342,7 +342,7 @@ h4 {
 }
 
 .profile-box2 {
-    margin-top: 40px;
+    margin-top: 30px;
     margin-bottom: 15px;
     margin-left: 40px;
 
