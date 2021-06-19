@@ -8,6 +8,7 @@ use App\HairStyle;
 use App\Tag;
 use App\HairTag;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 
 class CatalogController extends Controller
 {
@@ -75,19 +76,21 @@ class CatalogController extends Controller
         //投稿一覧での検索機能
         $cond_title = $request->cond_title;
         if ($cond_title != '') {
-            $posts = HairStyle::where('title', 'LIKE', '%' . $cond_title . '%')
-            ->orWhere('description', 'LIKE', '%' . $cond_title . '%')->orderBy('updated_at', 'desc')->get();
+            $posts = HairStyle::where('user_id', Auth::id())->where('title', 'LIKE', '%' . $cond_title . '%')
+            ->orWhere('description', 'LIKE', '%' . $cond_title . '%')->orderBy('updated_at', 'desc')->paginate(10);
         } else {
-            $posts = HairStyle::all()->sortByDesc('updated_at');
+            $posts = HairStyle::where('user_id', Auth::id())->orderByDesc('updated_at', 'desc')->paginate(10);
         }
+        $data['params'] = ['cond_title' => $cond_title];
 
+        //No.
         $styles = HairStyle::all()->sortBy('created_at');
         foreach ($styles as $style) {
             $n = 0;
             $style->number = $n++;
         }
         // dd($style->number);
-        return view('admin.catalog.index', ['posts' => $posts, 'cond_title' => $cond_title, 'number' => $style->number]);
+        return view('admin.catalog.index', ['posts' => $posts, 'cond_title' => $cond_title, 'number' => $style->number, 'params' => $data['params']]);
     }
 
 

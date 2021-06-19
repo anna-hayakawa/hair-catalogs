@@ -25,7 +25,7 @@
                 {{--  タイトル／説明の検索  --}}
                 <form action="{{ action('Admin\CatalogController@index') }}" method="get">
                     <div class="form-group row float-md-right">
-                        <label class="col-md-4 text-right title-label">タイトル／説明で検索</label>
+                        <label class="col-md-4 text-right title-desc-label">タイトル／説明で検索</label>
                         <div class="col-md-6 search-box1">
                             <input type="text" class="form-control" name="cond_title" value="{{ $cond_title }}">
                         </div>
@@ -54,7 +54,7 @@
                         </thead>
                         <tbody>
                             @foreach($posts as $style)
-                                @if ($style->user_id == Auth::user()->id)
+                                {{-- @if ($style->user_id == Auth::user()->id) --}}
                                     <tr>
                                         <th>{{ $number }}</th>
                                         <td>{{ str_limit($style->title, 100) }}</td>
@@ -70,10 +70,11 @@
                                             </div>
                                         </td>
                                     </tr>
-                                @endif
+                                {{-- @endif --}}
                             @endforeach
                         </tbody>
                     </table>
+                    {{ $posts->appends($params)->links() }}
                 </div>
             </div>
         </div>

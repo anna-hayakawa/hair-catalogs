@@ -29,8 +29,21 @@ class CatalogsController extends Controller
     public function detail($catalog_id)
     {
         $style = HairStyle::find($catalog_id);
-        // dd($style);
-        return view('catalogs.detail', ['style' => $style]);
+
+        if (HairTag::where('style_id', $style->id)) {
+            $hair_tags = HairTag::where('style_id', $style->id)->get();
+        }
+        $tags = [];
+        // $tags = [];
+        foreach ($hair_tags as $hair_tag) {
+                $tags[] = Tag::find($hair_tag->tag_id);
+                // $tags[] = Tag::where('id', $hair_tag->tag_id)->get();
+                // $tags[] = $tag->tag_name;
+        }
+        // dd($tags);
+
+
+        return view('catalogs.detail', ['style' => $style, 'tags' => $tags]);
     }
 
 
