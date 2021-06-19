@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -10979,26 +10979,21 @@ return jQuery;
 
 /***/ }),
 
-/***/ "./resources/js/profile.js":
-/*!*********************************!*\
-  !*** ./resources/js/profile.js ***!
-  \*********************************/
+/***/ "./resources/js/register.js":
+/*!**********************************!*\
+  !*** ./resources/js/register.js ***!
+  \**********************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function($) {//保存済みの画像を、編集画面で表示する
-$(function () {
-  if ($('#image').data('image') != null) {
-    $('.image-box').css('background-image', 'url(' + $('#image').data('image') + ')');
-  } //input type="file"で、選択した画像をプレビュー表示する
-
-
-  $('#image').on('change', function () {
+/* WEBPACK VAR INJECTION */(function($) {$(function () {
+  //input type="file"で、選択した画像をプレビュー表示する
+  $('#profile_image').on('change', function () {
     if (!this.files.length) {
       return;
     }
 
-    console.log('image');
+    console.log('profile_image');
     var file = $(this).prop('files')[0];
     var fr = new FileReader();
     $('.image-box').css('background-image', 'none');
@@ -11012,7 +11007,7 @@ $(function () {
   }); //remove-btnによる、プレビュー画像のクリア
 
   $('#remove').on('click', function () {
-    var obj = document.getElementById("image");
+    var obj = document.getElementById("profile_image");
     obj.value = "";
     var flag = document.getElementById("remove-flag");
     flag.value = "1";
@@ -11023,14 +11018,14 @@ $(function () {
 
 /***/ }),
 
-/***/ 3:
-/*!***************************************!*\
-  !*** multi ./resources/js/profile.js ***!
-  \***************************************/
+/***/ 4:
+/*!****************************************!*\
+  !*** multi ./resources/js/register.js ***!
+  \****************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/anir/task/task_04/hair_catalogs/resources/js/profile.js */"./resources/js/profile.js");
+module.exports = __webpack_require__(/*! /Users/anir/task/task_04/hair_catalogs/resources/js/register.js */"./resources/js/register.js");
 
 
 /***/ })

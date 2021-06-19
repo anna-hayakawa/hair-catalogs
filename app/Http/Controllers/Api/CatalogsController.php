@@ -12,6 +12,6 @@ class CatalogsController extends Controller
 {
     public function index(Request $request)
     {
-        return HairStyle::orderByDesc('updated_at')->take(12)->get();
+        return HairStyle::all()->sortByDesc('updated_at');
     }
 }

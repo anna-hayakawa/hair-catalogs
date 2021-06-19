@@ -20,10 +20,11 @@ class CatalogsController extends Controller
         //     $posts = HairStyle::all()->sortByDesc('updated_at');
         // }
 
-        $posts = HairStyle::orderByDesc('updated_at')->take(12)->get();
+        $posts = HairStyle::all()->sortByDesc('updated_at');
 
         return view('catalogs.index', ['tags' => Tag::all(), 'posts' => $posts]);
     }
+
 
     public function detail($catalog_id)
     {

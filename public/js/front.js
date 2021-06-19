@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 2);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -10991,15 +10991,13 @@ return jQuery;
     $.ajax({
       url: '/api/catalog',
       type: 'GET',
-      data: {
-        id: 'id'
-      }
+      data: {}
     }).done(function (response) {
       console.log(response);
       var row;
 
       for (var i = 0; i < Object.keys(response).length; i++) {
-        row = row + "<td>" + response[i].title + "</td>";
+        row = response[i].title;
       }
 
       $('.test').append(row);
@@ -11046,7 +11044,7 @@ return jQuery;
 //                 }
 //             });
 //               // もっと見るボタンを非表示
-//             if (maxDispCnt <= newCount) {
+//             if (maxStyleCnt <= newCount) {
 //                 $(this).hide();
 //             }
 //             return false;
@@ -11057,7 +11055,7 @@ return jQuery;
 
 /***/ }),
 
-/***/ 3:
+/***/ 2:
 /*!*************************************!*\
   !*** multi ./resources/js/front.js ***!
   \*************************************/

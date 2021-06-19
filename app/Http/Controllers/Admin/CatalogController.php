@@ -80,7 +80,14 @@ class CatalogController extends Controller
         } else {
             $posts = HairStyle::all()->sortByDesc('updated_at');
         }
-        return view('admin.catalog.index', ['posts' => $posts, 'cond_title' => $cond_title]);
+
+        $styles = HairStyle::all()->sortBy('created_at');
+        foreach ($styles as $style) {
+            $n = 0;
+            $style->number = $n++;
+        }
+        // dd($style->number);
+        return view('admin.catalog.index', ['posts' => $posts, 'cond_title' => $cond_title, 'number' => $style->number]);
     }
 
 

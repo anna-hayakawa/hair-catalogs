@@ -131,11 +131,17 @@ body {
 .card2 {
     margin-top: 60px;
     margin-bottom: 15px;
-    height: 700px;
+    height: 980px;
     background-color: #fff;
     border: 1px solid rgb(235, 204, 204);
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
+
+    hr {
+        width: 600px;
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
 }
 
 .card-header {
@@ -182,10 +188,53 @@ body {
         border-radius: 4px;
         border: none;
         width: 90px;
-        margin-left: 120px;
+        margin-left: 140px;
     }
 
     .button1:hover {
         background-color: rgb(207, 117, 132);
+    }
+
+    .image-box {
+        background-image: url(/images/default_profile_icon.png);
+        background-size:255px 255px;
+        background-color: rgba(153, 153, 153, 0.801);
+        width: 255px;
+        height: 255px;
+        border-radius: 20px;
+        margin-bottom: 0;
+        margin-left: 65px;
+        cursor: pointer;
+    }
+
+    .image-box input[type=file] {
+        opacity: 0;
+    }
+
+    .remove-box {
+        width: 255px;
+        margin: auto;
+        margin-bottom: 0px;
+        margin-left: 135px;
+
+        .remove-btn {
+            background-color: #ccbab0;
+            color: rgb(87, 62, 46);
+            box-shadow:  0 2px 6px rgba(146, 146, 146, 0.8);
+            font-size: 14px;
+            font-weight: bold;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+            width: 115px;
+            height: 33px;
+            margin-left: 70px;
+            margin: 7px 0;
+            padding: 6px 11px;
+        }
+
+        .remove-btn:hover {
+            background-color: #be9f91;
+        }
     }
 }

@@ -8,6 +8,7 @@
 @endsection
 
 @section('content')
+<script src="{{ mix('js/register.js') }}"></script>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8 ">
@@ -50,16 +51,22 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
+                        <hr color="#d6c6be">
                         <div class="form-group1 row">
                             <label for="profile_image" class="col-md-3 col-form-label text-md-right">{{ __('message.Profile Image') }}</label>
                             <div class="col-md-7">
-                                <input id="profile_image" type="file" class="form-control-image" name="profile_image" value="{{ old('profile_image') }}" accept="image/*">
+                                <label class="image-box">
+                                    <input type="file" class="form-control-image" name="profile_image" id="profile_image" accept="image/*" />
+                                </label>
+                                <div class="remove-box">
+                                    <input type="button" class="remove-btn" name="remove" id="remove" value="画像をクリア">
+                                </div>
                             </div>
                         </div>
                         <div class="form-group1 row">
                             <label for="introduction" class="col-md-3 col-form-label text-md-right">{{ __('message.Introduction') }}</label>
                             <div class="col-md-7">
-                                <textarea id="introduction" class="form-control" name="introduction" rows="10">{{ old('introduction') }}</textarea>
+                                <textarea id="introduction" class="form-control" name="introduction" rows="8">{{ old('introduction') }}</textarea>
                             </div>
                         </div>
                         <div class="form-group1 row mb-0">
@@ -69,6 +76,8 @@
                                 </button>
                             </div>
                         </div>
+                        {{-- 画像クリアボタンのフラグ --}}
+                        <input type="hidden" name="remove" id="remove-flag" value="0">
                     </form>
                 </div>
             </div>

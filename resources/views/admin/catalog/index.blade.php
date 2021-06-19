@@ -41,10 +41,10 @@
             {{--  投稿一覧  --}}
             <div class="list-catalog col-md-12 mx-auto">
                 <div class="row">
-                    <table class="table table-borderless table-catalog ">
+                    <table class="table table-borderless table-catalog">
                         <thead>
                             <tr>
-                                <th width="7%">ID</th>
+                                <th width="7%">No.</th>
                                 <th width="18%">タイトル</th>
                                 <th width="17%">サブタイトル</th>
                                 <th width="30%">説明</th>
@@ -56,7 +56,7 @@
                             @foreach($posts as $style)
                                 @if ($style->user_id == Auth::user()->id)
                                     <tr>
-                                        <th>{{ $style->id }}</th>
+                                        <th>{{ $number }}</th>
                                         <td>{{ str_limit($style->title, 100) }}</td>
                                         <td>{{ str_limit($style->caption, 100) }}</td>
                                         <td>{{ str_limit($style->description, 250) }}</td>

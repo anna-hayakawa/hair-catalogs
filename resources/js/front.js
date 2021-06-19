@@ -3,14 +3,14 @@ $(function() {
         $.ajax({
             url: '/api/catalog',
             type: 'GET',
-            data: {id: 'id'}
+            data: {}
         })
 
         .done(function(response) {
             console.log(response);
             var row;
             for(var i=0; i<Object.keys(response).length; i++){
-                row = row + "<td>"+ response[i].title +"</td>";
+                row = response[i].title;
             }
             $('.test').append(row);
         })
@@ -20,10 +20,6 @@ $(function() {
         });
     });
 });
-
-
-
-
 
 // $(function() {
 //     const defaultStyleCnt = 12; // 初期表示件数
@@ -71,7 +67,7 @@ $(function() {
 //             });
 
 //               // もっと見るボタンを非表示
-//             if (maxDispCnt <= newCount) {
+//             if (maxStyleCnt <= newCount) {
 //                 $(this).hide();
 //             }
 
