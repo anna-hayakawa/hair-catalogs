@@ -31,8 +31,9 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
 
 
 Auth::routes();
-Route::get('catalog/detail/{id}', 'CatalogsController@detail')->name('catalog.detail');
-Route::get('catalog/detail/{id}', 'CatalogsController@search')->name('catalog.search');
+
+Route::get('catalog/detail/{catalog_id}', 'CatalogsController@detail')->name('catalog.detail');
+Route::get('catalog/search', 'CatalogsController@search')->name('catalog.search');
 
 Route::get('/home', 'HomeController@index')->name('home');
 

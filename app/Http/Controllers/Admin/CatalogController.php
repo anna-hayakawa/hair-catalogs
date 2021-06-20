@@ -233,8 +233,8 @@ class CatalogController extends Controller
                     $insert = [
                         'style_id' => $style_id,
                         'tag_id' => $tag->id,
-//                        'created_at' => Carbon::now(),
-//                        'updated_at' => Carbon::now(),
+                        'created_at' => Carbon::now(),
+                        'updated_at' => Carbon::now(),
                     ];
 
                     // 登録実行

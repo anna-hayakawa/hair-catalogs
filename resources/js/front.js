@@ -1,25 +1,33 @@
 $(function() {
-    $('#more-btn').on('click', function() {
-        $.ajax({
-            url: '/api/catalog',
-            type: 'GET',
-            data: {}
-        })
-
-        .done(function(response) {
-            console.log(response);
-            var row;
-            for(var i=0; i<Object.keys(response).length; i++){
-                row = response[i].title;
-            }
-            $('.test').append(row);
-        })
-
-        .fail(function() {
-            alert('エラー');
-        });
+    $('.more-btn').on('click', function() {
+        var page = $(this).data('page');
+        console.log(page);
+        displayCatalog();
     });
 });
+function displayCatalog(page) {
+    var url = '/api/catalog?'
+    + 'page=' + page;
+    $.ajax({
+        url: url,
+        type: 'GET',
+    })
+
+    .done(function(response) {
+        console.log(response);
+        var now = $('.now');
+
+        for(var i=0; i<response.length; i++){
+            // row = response[i].title;
+            console.log(response[i].title);
+        }
+        $('.test').append(now);
+    })
+
+    .fail(function() {
+        alert('エラー');
+    });
+};
 
 // $(function() {
 //     const defaultStyleCnt = 12; // 初期表示件数

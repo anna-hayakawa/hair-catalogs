@@ -48,7 +48,8 @@
                     </div>
                 @endforeach
                 <div class="col-md-12" id="more-box">
-                    <button class="more-btn" id="more-btn">もっと見る</button>
+                    <button class="more-btn" data-page="0">もっと見る</button>
+                    <button class="more-btn" data-page="1">もっと見る2</button>
                 </div>
             </div>
         </div>
