@@ -87,6 +87,19 @@ h4 {
     }
 }
 
+.pagination {
+    justify-content: center;
+
+    .page-item.active  .page-link {
+        background-color: #5f4436 !important; /* 背景色を変える */
+        border: 1px solid #5f4436; /* ボーダーの色を変える */
+    }
+
+    li a {
+        background-color: #fff; /* 背景色を変える */
+        color: rgb(61, 43, 32) !important; /* 数字の色を変える */
+    }
+}
 
 // 投稿ページ
 .image-boxes {

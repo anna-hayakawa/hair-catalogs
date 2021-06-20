@@ -53,10 +53,14 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($posts as $style)
+                            @foreach($posts as $index=>$style)
                                 {{-- @if ($style->user_id == Auth::user()->id) --}}
                                     <tr>
-                                        <th>{{ $number }}</th>
+                                            {{--  ユーザーの全投稿数がわかるように、created_atの降順とし、カウントダウンでNo.を取得する  --}}
+                                        <th>{{ $posts->total() - $index - (($posts-> currentPage()-1) * $posts->perPage()) }}</th>
+                                                                                                                                    {{--  $indexは、foreachの周期  --}}
+                                                                                                                                    {{--  $currentPageは、現在のページ
+                                                                                                                                    {{--  $perPageは、ページ毎に何件データを表示するか  --}}
                                         <td>{{ str_limit($style->title, 100) }}</td>
                                         <td>{{ str_limit($style->caption, 100) }}</td>
                                         <td>{{ str_limit($style->description, 250) }}</td>
@@ -74,6 +78,8 @@
                             @endforeach
                         </tbody>
                     </table>
+                </div>
+                <div class="pagination">
                     {{ $posts->appends($params)->links() }}
                 </div>
             </div>

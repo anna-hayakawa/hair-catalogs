@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 body {
   background-repeat: no-repeat;
   background-position: center;
@@ -80,6 +82,24 @@ h4 {
 
 .table-catalog .btn:hover {
   background-color: #be9f91;
+}
+
+.pagination {
+  justify-content: center;
+}
+
+.pagination .page-item.active .page-link {
+  background-color: #5f4436 !important;
+  /* 背景色を変える */
+  border: 1px solid #5f4436;
+  /* ボーダーの色を変える */
+}
+
+.pagination li a {
+  background-color: #fff;
+  /* 背景色を変える */
+  color: #3d2b20 !important;
+  /* 数字の色を変える */
 }
 
 .image-boxes {

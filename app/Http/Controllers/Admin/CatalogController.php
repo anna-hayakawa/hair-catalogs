@@ -76,21 +76,17 @@ class CatalogController extends Controller
         //投稿一覧での検索機能
         $cond_title = $request->cond_title;
         if ($cond_title != '') {
-            $posts = HairStyle::where('user_id', Auth::id())->where('title', 'LIKE', '%' . $cond_title . '%')
-            ->orWhere('description', 'LIKE', '%' . $cond_title . '%')->orderBy('updated_at', 'desc')->paginate(10);
+            $posts = Auth::user()->hairStyles()
+            ->where(function($query) use ($cond_title) {
+                $query->where('title', 'LIKE', '%' . $cond_title . '%')
+                ->orWhere('description', 'LIKE', '%' . $cond_title . '%');
+            })->orderBy('created_at', 'desc')->paginate(10);
         } else {
-            $posts = HairStyle::where('user_id', Auth::id())->orderByDesc('updated_at', 'desc')->paginate(10);
+            $posts = HairStyle::where('user_id', Auth::id())->orderByDesc('created_at', 'desc')->paginate(10);
         }
         $data['params'] = ['cond_title' => $cond_title];
 
-        //No.
-        $styles = HairStyle::all()->sortBy('created_at');
-        foreach ($styles as $style) {
-            $n = 0;
-            $style->number = $n++;
-        }
-        // dd($style->number);
-        return view('admin.catalog.index', ['posts' => $posts, 'cond_title' => $cond_title, 'number' => $style->number, 'params' => $data['params']]);
+    return view('admin.catalog.index', ['posts' => $posts, 'cond_title' => $cond_title, 'params' => $data['params']]);
     }
 
 
@@ -166,7 +162,6 @@ class CatalogController extends Controller
             $style_form['image_path2'] = $style->image_path2;
         }
 
-        // if (!isset($style_form['image3']) || $request->remove3 == "1") {
         if ($request->remove3 == "1") {
             $style_form['image3'] = null;
             $style_form['image_path3'] = null;
@@ -209,7 +204,6 @@ class CatalogController extends Controller
 //            }
 //        }
 
-
         // 検索タグをすべて取得する
         $tags = Tag::all();
 
@@ -240,7 +234,7 @@ class CatalogController extends Controller
                     // 登録実行
                     HairTag::insert($insert);
                 } else if (in_array($tag->id, $hair_tags, true) && !in_array((string)$tag->id, $form_tags, true)) {
-                    // ループのスタイルIDが登録済みに、リクエストにない場合は削除
+                    // ループのスタイルIDが登録済みにあって、リクエストにない場合は削除
 
                     // 削除実行
                     HairTag::where('style_id', $style_id)->where('tag_id', $tag->id)->delete();

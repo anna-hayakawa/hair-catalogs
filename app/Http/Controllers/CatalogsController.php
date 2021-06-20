@@ -31,18 +31,16 @@ class CatalogsController extends Controller
     {
         $style = HairStyle::find($catalog_id);
 
+        //投稿時、選択したタグの名前を取得
         if (HairTag::where('style_id', $style->id)) {
             $hair_tags = HairTag::where('style_id', $style->id)->get();
         }
         $tags = [];
-        // $tags = [];
         foreach ($hair_tags as $hair_tag) {
                 $tags[] = Tag::find($hair_tag->tag_id);
-                // $tags[] = Tag::where('id', $hair_tag->tag_id)->get();
-                // $tags[] = $tag->tag_name;
         }
-        // dd($tags);
 
+        //投稿者の情報を取得
         $profile = User::find($style->user_id);
         // dd($profile);
 
