@@ -29,11 +29,10 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::post('profile/edit', 'Admin\ProfileController@update');
 });
 
-Route::get('catalog/detail/{catalog_id}', 'CatalogsController@detail')->name('catalog.detail');
-Route::get('catalog/search', 'CatalogsController@search')->name('catalog.search');
-
 
 Auth::routes();
+Route::get('catalog/detail/{id}', 'CatalogsController@detail')->name('catalog.detail');
+Route::get('catalog/detail/{id}', 'CatalogsController@search')->name('catalog.search');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
