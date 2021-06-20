@@ -146,7 +146,7 @@ class CatalogController extends Controller
 
         $this->validate($request, $rules);
 
-        \Log::debug(__LINE__ . ' ' . __METHOD__ . ' ' . print_r($style_form, true));
+//        \Log::debug(__LINE__ . ' ' . __METHOD__ . ' ' . print_r($style_form, true));
 
         //リクエストの保存
         if (isset($style_form['image1'])) {
@@ -195,17 +195,56 @@ class CatalogController extends Controller
 
         //中間テーブルへの保存
         $style_id = $style->id;
-        HairTag::where('style_id', $style_id)->delete();
+//        HairTag::where('style_id', $style_id)->delete();
+//
+//        if (is_array($form_tags)) {
+//            foreach ($form_tags as $form_tag) {
+//                $insert = [
+//                    'style_id' => $style_id,
+//                    'tag_id' => (int)$form_tag,
+//                    // 'created_at' => Carbon::now(),
+//                    // 'update_at' => Carbon::now(),
+//                ];
+//                HairTag::insert($insert);
+//            }
+//        }
 
-        if (is_array($form_tags)) {
-            foreach ($form_tags as $form_tag) {
-                $insert = [
-                    'style_id' => $style_id,
-                    'tag_id' => (int)$form_tag,
-                    'created_at' => Carbon::now(),
-                    'updated_at' => Carbon::now(),
-                ];
-                HairTag::insert($insert);
+
+        // 検索タグをすべて取得する
+        $tags = Tag::all();
+
+        // 登録済みを取得
+        $hair_tags = [];
+        foreach (HairTag::where('style_id', $style_id)->get() as $hair_tag) {
+            $hair_tags[] = $hair_tag->tag_id;
+        }
+
+        // 検索タグに一つもチェックが入っていなかったら、検索タグをすべて削除
+        if (!is_array($form_tags)) {
+            HairTag::where('style_id', $style_id)->delete();
+        } else {
+
+            // 検索タグ一覧でループする
+            foreach ($tags as $tag) {
+                if (!in_array($tag->id, $hair_tags, true) && in_array((string)$tag->id, $form_tags, true))  {
+                    // ループのスタイルIDが登録済みにない、リクエストにある場合は登録
+
+                    // 登録パラメーター
+                    $insert = [
+                        'style_id' => $style_id,
+                        'tag_id' => $tag->id,
+//                        'created_at' => Carbon::now(),
+//                        'updated_at' => Carbon::now(),
+                    ];
+
+                    // 登録実行
+                    HairTag::insert($insert);
+                } else if (in_array($tag->id, $hair_tags, true) && !in_array((string)$tag->id, $form_tags, true)) {
+                    // ループのスタイルIDが登録済みに、リクエストにない場合は削除
+
+                    // 削除実行
+                    HairTag::where('style_id', $style_id)->where('tag_id', $tag->id)->delete();
+                }
             }
         }
 
