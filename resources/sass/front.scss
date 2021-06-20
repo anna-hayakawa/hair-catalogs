@@ -169,7 +169,7 @@
         border: 4px solid #d6c3ba;
         margin: 20px auto;
         padding: 0 5px 40px 5px;
-        height: 1000px;
+        height: 1100px;
 
         img {
             width: 510px;
@@ -194,8 +194,8 @@
         .caption-text {
             width: 520px;
             text-align: left;
-            margin: 0 0 13px 15px;
-            font-size: 17px;
+            margin: 0 0 15px 15px;
+            font-size: 18px;
             font-weight: bold;
         }
     }
@@ -205,18 +205,30 @@
         .desc-text {
             width: 520px;
             text-align: left;
-            margin: 0 0 20px 15px;
-            font-size: 14px;
+            margin: 0 0 60px 15px;
+            font-size: 15px;
+        }
+    }
+
+    .updated-box {
+        margin-left: 360px;
+        margin-bottom: -25px;
+
+        .updated-text {
+            width: 260px;
+            // text-align: right;
+            margin: 10px 0 0 18px;
+            font-size: 13px;
         }
     }
 
     .tpo-box {
-        margin-top: 40px;
+        // margin-top: 10px;
 
         .tpo-label {
             background-color: rgb(235, 204, 204);
             width: 140px;
-            padding-top: 8px;
+            padding-top: 7px;
             font-weight: bold;
             font-size: 13px;
             border-bottom: transparent; /* 下辺を透明に */
@@ -243,13 +255,42 @@
         }
     }
 
-    .updated-box {
+    .user-box {
+        margin-top: 20px;
 
-        .updated-text {
+        .user-label {
+            background-color: rgb(235, 204, 204);
+            width: 120px;
+            padding-top: 7px;
+            font-weight: bold;
+            font-size: 13px;
+            border-bottom: transparent; /* 下辺を透明に */
+            border-top-left-radius: 8px; /* 左上を角丸に */
+            border-top-right-radius: 8px; /* 右上を角丸に */
+            margin-bottom: -16px;
+            margin-left: 15px;
+            position: relative;
+            text-align: center;
+        }
+
+        .image-box {
+            border: 1px solid rgb(235, 204, 204);
             width: 520px;
+            height: 60px;
             text-align: left;
-            margin: 10px 0 20px 15px;
             font-size: 14px;
+            margin: 0 0 0 15px;
+
+
+            img {
+                width: 20px;
+                height: 20px;
+                margin: 40px 0 0 50px;
+            }
+
+            .name-text {
+
+            }
         }
     }
 }

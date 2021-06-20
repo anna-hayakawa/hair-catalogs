@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\HairStyle;
 use App\HairTag;
 use App\Tag;
+use App\User;
 
 
 class CatalogsController extends Controller
@@ -42,8 +43,10 @@ class CatalogsController extends Controller
         }
         // dd($tags);
 
+        $profile = User::find($style->user_id);
+        // dd($profile);
 
-        return view('catalogs.detail', ['style' => $style, 'tags' => $tags]);
+        return view('catalogs.detail', ['style' => $style, 'tags' => $tags, 'profile_form' => $profile]);
     }
 
 
