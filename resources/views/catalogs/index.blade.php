@@ -16,7 +16,8 @@
                         <p>
                             @foreach($tags as $tag)
                             <label class="checkbox">
-                                <input type="checkbox" class="check_box" name="tag_id[]" value="{{ $tag->id }}">{{ $tag->tag_name }}
+                                <input type="checkbox" class="check_box" name="tag_id[]" value="{{ $tag->id }}" />
+                                <span>{{ $tag->tag_name }}</span>
                             </label>
                             @endforeach
                         </p>

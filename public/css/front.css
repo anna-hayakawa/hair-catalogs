@@ -97,8 +97,52 @@
   margin-top: 45px;
 }
 
-.tag-groups .tag-group .tag-area .checkbox .check_box {
-  margin-right: 5px;
+.tag-groups .tag-group .tag-area .checkbox input[type=checkbox].check_box {
+  display: none;
+}
+
+.tag-groups .tag-group .tag-area .checkbox input[type=checkbox].check_box + span {
+  display: none;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  padding-left: 25px;
+}
+
+.tag-groups .tag-group .tag-area .checkbox input[type=checkbox].check_box + span::before {
+  content: "";
+  position: absolute;
+  display: block;
+  box-sizing: border-box;
+  width: 13px;
+  height: 13px;
+  margin-top: -10px;
+  left: 7px;
+  top: 60%;
+  border: 1px solid;
+  border-radius: 3px;
+  border-color: #5e4333;
+  background-color: #FFF;
+}
+
+.tag-groups .tag-group .tag-area .checkbox input[type=checkbox].check_box:checked + span::before {
+  background-color: #3d2b20;
+}
+
+.tag-groups .tag-group .tag-area .checkbox input[type=checkbox].check_box:checked + span::after {
+  content: "";
+  position: absolute;
+  display: block;
+  box-sizing: border-box;
+  width: 9px;
+  height: 5px;
+  margin-top: -5px;
+  top: 50%;
+  left: 9px;
+  transform: rotate(-45deg);
+  border-bottom: 2px solid;
+  border-left: 2px solid;
+  border-color: #fff;
 }
 
 .tag-groups .tag-group .tag-area .tag-btn {
