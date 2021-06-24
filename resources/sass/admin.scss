@@ -181,13 +181,69 @@ h4 {
     padding: 5px 0;
 }
 
-.checkbox {
-    margin-right: 7px;
-    margin-left: 17px;
-    color: rgb(61, 43, 32);
+.check-boxes {
+    margin-bottom: 14px;
 
-    .check_box {
-        margin-right: 5px;
+    .checkbox {
+        margin-right: 7px;
+        margin-left: 15px;
+        padding-top: 5px;
+        color: rgb(61, 43, 32);
+
+        //元々のチェックボックス(非表示)
+        input[type=checkbox].check_box {
+            // margin-right: 1px;
+            display: none;
+        }
+
+        //チェックボックスの代わりにもなるラベル(span)
+        input[type=checkbox].check_box + span{
+            display: none;
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            padding-left: 25px;
+            // padding-right: 10px;
+        }
+
+        //ラベルの左に表示させる正方形のボックス□
+        input[type=checkbox].check_box + span::before {
+            content: "";
+            position: absolute;
+            display: block;
+            box-sizing: border-box;
+            width: 13px;
+            height: 13px;
+            margin-top: -10px;
+            left: 7px;
+            top: 60%;
+            border: 1px solid;
+            border-radius: 3px;
+            border-color:  rgb(94, 67, 51);
+            background-color: #FFF;
+        }
+
+        //チェックしたときの□ボックスの背景色を変更する
+        input[type=checkbox].check_box:checked + span::before {
+            background-color: rgb(61, 43, 32);
+        }
+
+        //チェックが入った時のレ点
+        input[type=checkbox].check_box:checked +span::after {
+            content: "";
+            position: absolute;
+            display: block;
+            box-sizing: border-box;
+            width: 9px;
+            height: 5px;
+            margin-top: -5px;
+            top: 50%;
+            left: 9px;
+            transform: rotate(-45deg);
+            border-bottom: 2px solid;
+            border-left: 2px solid;
+            border-color: #fff;
+        }
     }
 }
 

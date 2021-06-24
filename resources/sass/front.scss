@@ -223,135 +223,139 @@
         padding: 0 5px 40px 5px;
         height: 1080px;
 
-        img {
-            width: 510px;
-            height: 543px;
-            margin: 40px 0 0 50px;
-        }
-    }
-
-    .title-box {
-
-        .title-text {
-            width: 520px;
-            text-align: left;
-            margin: 18px 0 7px 0;
-            font-size: 20px;
-            font-weight: bold;
-        }
-    }
-
-    .caption-box {
-
-        .caption-text {
-            width: 520px;
-            text-align: left;
-            margin: 0 0 15px 15px;
-            font-size: 18px;
-            font-weight: bold;
-        }
-    }
-
-    .desc-box {
-
-        .desc-text {
-            width: 520px;
-            text-align: left;
-            margin: 0 0 60px 15px;
-            font-size: 15px;
-        }
-    }
-
-    .tpo-box {
-        // margin-top: 10px;
-
-        .tpo-label {
-            background-color: rgb(235, 204, 204);
-            width: 140px;
-            padding-top: 7px;
-            font-weight: bold;
-            font-size: 13px;
-            border-bottom: transparent; /* 下辺を透明に */
-            border-top-left-radius: 8px; /* 左上を角丸に */
-            border-top-right-radius: 8px; /* 右上を角丸に */
-            margin-bottom: -16px;
-            margin-left: 15px;
-            position: relative;
-            text-align: center;
-        }
-
-        .tag-box {
-            border: 1px solid rgb(235, 204, 204);
-            width: 520px;
-            height: 60px;
-            text-align: left;
-            font-size: 14px;
-            margin: 0 0 0 15px;
-
-            .tag-name {
-                padding-right: 0;
-                margin: 7px 0 5px 17px;
-            }
-        }
-    }
-
-    .user-boxes {
-        margin-top: 23px;
-
-        .user-label {
-            background-color: rgb(235, 204, 204);
-            width: 100px;
-            padding-top: 5px;
-            font-weight: bold;
-            font-size: 12.5px;
-            border-bottom: transparent; /* 下辺を透明に */
-            border-top-left-radius: 8px; /* 左上を角丸に */
-            border-top-right-radius: 8px; /* 右上を角丸に */
-            margin-bottom: -16px;
-            margin-left: 15px;
-            position: relative;
-            text-align: center;
-        }
-
-        .user-box {
-            border: 1px solid rgb(235, 204, 204);
-            width: 520px;
-            height: 80px;
-            text-align: left;
-            font-size: 14px;
-            margin: 0 0 0 15px;
-
+        .slider {
 
             img {
-                background-image: url(/images/default_profile_icon.png);
-                background-size: 60px 60px;
-                background-color: rgba(153, 153, 153, 0.801);
-                background-position: center;
-                background-size: contain;
-                width: 60px;
-                height: 60px;
-                margin: 10px 15px 0 0;
-                border-radius: 15px;
-                border: 3px solid #d8c0b4;
-            }
-
-            .name-text {
-                margin-left: 5px;
-                margin-top: 30px;
-                font-size: 14px;
-
+                width: 510px;
+                height: 543px;
+                margin: 40px 0 0 50px;
             }
         }
-    }
 
-    .updated-box {
-        margin-left: 320px;
 
-        .updated-text {
-            width: 260px;
-            // text-align: right;
-            margin: 10px 0 0 18px;
-            font-size: 13px;
+        .title-box {
+
+            .title-text {
+                width: 520px;
+                text-align: left;
+                margin: 18px 0 7px 0;
+                font-size: 20px;
+                font-weight: bold;
+            }
+        }
+
+        .caption-box {
+
+            .caption-text {
+                width: 520px;
+                text-align: left;
+                margin: 0 0 15px 15px;
+                font-size: 18px;
+                font-weight: bold;
+            }
+        }
+
+        .desc-box {
+
+            .desc-text {
+                width: 520px;
+                text-align: left;
+                margin: 0 0 60px 15px;
+                font-size: 15px;
+            }
+        }
+
+        .tpo-box {
+            // margin-top: 10px;
+
+            .tpo-label {
+                background-color: rgb(235, 204, 204);
+                width: 140px;
+                padding-top: 7px;
+                font-weight: bold;
+                font-size: 13px;
+                border-bottom: transparent; /* 下辺を透明に */
+                border-top-left-radius: 8px; /* 左上を角丸に */
+                border-top-right-radius: 8px; /* 右上を角丸に */
+                margin-bottom: -16px;
+                margin-left: 15px;
+                position: relative;
+                text-align: center;
+            }
+
+            .tag-box {
+                border: 1px solid rgb(235, 204, 204);
+                width: 520px;
+                height: 60px;
+                text-align: left;
+                font-size: 14px;
+                margin: 0 0 0 15px;
+
+                .tag-name {
+                    padding-right: 0;
+                    margin: 7px 0 5px 17px;
+                }
+            }
+        }
+
+        .user-boxes {
+            margin-top: 23px;
+
+            .user-label {
+                background-color: rgb(235, 204, 204);
+                width: 100px;
+                padding-top: 5px;
+                font-weight: bold;
+                font-size: 12.5px;
+                border-bottom: transparent; /* 下辺を透明に */
+                border-top-left-radius: 8px; /* 左上を角丸に */
+                border-top-right-radius: 8px; /* 右上を角丸に */
+                margin-bottom: -16px;
+                margin-left: 15px;
+                position: relative;
+                text-align: center;
+            }
+
+            .user-box {
+                border: 1px solid rgb(235, 204, 204);
+                width: 520px;
+                height: 80px;
+                text-align: left;
+                font-size: 14px;
+                margin: 0 0 0 15px;
+
+
+                img {
+                    background-image: url(/images/default_profile_icon.png);
+                    background-size: 60px 60px;
+                    background-color: rgba(153, 153, 153, 0.801);
+                    background-position: center;
+                    background-size: contain;
+                    width: 60px;
+                    height: 60px;
+                    margin: 10px 15px 0 0;
+                    border-radius: 15px;
+                    border: 3px solid #d8c0b4;
+                }
+
+                .name-text {
+                    margin-left: 5px;
+                    margin-top: 30px;
+                    font-size: 14px;
+
+                }
+            }
+        }
+
+        .updated-box {
+            margin-left: 320px;
+
+            .updated-text {
+                width: 260px;
+                // text-align: right;
+                margin: 10px 0 0 18px;
+                font-size: 13px;
+            }
         }
     }
 }

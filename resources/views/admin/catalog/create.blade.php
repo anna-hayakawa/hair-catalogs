@@ -44,10 +44,11 @@
                     </div>
                     <div class="form-group row">
                         <label class="col-md-2 labels" for="tpo">シチュエーション</label>
-                        <p>
+                        <p class="check-boxes">
                             @foreach($tags as $tag)
                             <label class="checkbox">
-                                <input type="checkbox" class="check_box" name="tag_id[]" value="{{ $tag->id }}">{{ $tag->tag_name }}
+                                <input type="checkbox" class="check_box" name="tag_id[]" value="{{ $tag->id }}" />
+                                <span>{{ $tag->tag_name }}</span>
                             </label>
                             @endforeach
                         </p>

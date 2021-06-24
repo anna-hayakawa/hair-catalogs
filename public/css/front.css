@@ -210,13 +210,13 @@
   height: 1080px;
 }
 
-.detail-box .image-box img {
+.detail-box .image-box .slider img {
   width: 510px;
   height: 543px;
   margin: 40px 0 0 50px;
 }
 
-.detail-box .title-box .title-text {
+.detail-box .image-box .title-box .title-text {
   width: 520px;
   text-align: left;
   margin: 18px 0 7px 0;
@@ -224,7 +224,7 @@
   font-weight: bold;
 }
 
-.detail-box .caption-box .caption-text {
+.detail-box .image-box .caption-box .caption-text {
   width: 520px;
   text-align: left;
   margin: 0 0 15px 15px;
@@ -232,14 +232,14 @@
   font-weight: bold;
 }
 
-.detail-box .desc-box .desc-text {
+.detail-box .image-box .desc-box .desc-text {
   width: 520px;
   text-align: left;
   margin: 0 0 60px 15px;
   font-size: 15px;
 }
 
-.detail-box .tpo-box .tpo-label {
+.detail-box .image-box .tpo-box .tpo-label {
   background-color: #ebcccc;
   width: 140px;
   padding-top: 7px;
@@ -257,7 +257,7 @@
   text-align: center;
 }
 
-.detail-box .tpo-box .tag-box {
+.detail-box .image-box .tpo-box .tag-box {
   border: 1px solid #ebcccc;
   width: 520px;
   height: 60px;
@@ -266,16 +266,16 @@
   margin: 0 0 0 15px;
 }
 
-.detail-box .tpo-box .tag-box .tag-name {
+.detail-box .image-box .tpo-box .tag-box .tag-name {
   padding-right: 0;
   margin: 7px 0 5px 17px;
 }
 
-.detail-box .user-boxes {
+.detail-box .image-box .user-boxes {
   margin-top: 23px;
 }
 
-.detail-box .user-boxes .user-label {
+.detail-box .image-box .user-boxes .user-label {
   background-color: #ebcccc;
   width: 100px;
   padding-top: 5px;
@@ -293,7 +293,7 @@
   text-align: center;
 }
 
-.detail-box .user-boxes .user-box {
+.detail-box .image-box .user-boxes .user-box {
   border: 1px solid #ebcccc;
   width: 520px;
   height: 80px;
@@ -302,7 +302,7 @@
   margin: 0 0 0 15px;
 }
 
-.detail-box .user-boxes .user-box img {
+.detail-box .image-box .user-boxes .user-box img {
   background-image: url(/images/default_profile_icon.png);
   background-size: 60px 60px;
   background-color: rgba(153, 153, 153, 0.801);
@@ -315,17 +315,17 @@
   border: 3px solid #d8c0b4;
 }
 
-.detail-box .user-boxes .user-box .name-text {
+.detail-box .image-box .user-boxes .user-box .name-text {
   margin-left: 5px;
   margin-top: 30px;
   font-size: 14px;
 }
 
-.detail-box .updated-box {
+.detail-box .image-box .updated-box {
   margin-left: 320px;
 }
 
-.detail-box .updated-box .updated-text {
+.detail-box .image-box .updated-box .updated-text {
   width: 260px;
   margin: 10px 0 0 18px;
   font-size: 13px;

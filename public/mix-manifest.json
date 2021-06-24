@@ -4,7 +4,9 @@
     "/css/app.css": "/css/app.css",
     "/css/admin.css": "/css/admin.css",
     "/css/front.css": "/css/front.css",
+    "/css/slick.css": "/css/slick.css",
     "/js/front.js": "/js/front.js",
     "/js/profile.js": "/js/profile.js",
-    "/js/register.js": "/js/register.js"
+    "/js/register.js": "/js/register.js",
+    "/js/slick.min.js": "/js/slick.min.js"
 }

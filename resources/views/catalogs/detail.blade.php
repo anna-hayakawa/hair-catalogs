@@ -3,16 +3,35 @@
 @section('title', '【' . $style->title . '】' . 'の詳細ページ')
 
 @section('content')
+<script src="{{ mix('js/front.js') }}"></script>
     <div class="container">
         <div class="row">
             <div class="col-md-12 mx-auto">
                 <div class="col-md-12 detail-box">
                     <div class="col-md-7 mx-auto image-box">
-                        @if ($style->image_path1 != null)
-                            <img src="{{ asset('storage/image/' . $style->image_path1) }}" alt="" onerror="this.src='/images/lady_icon.png'" />
-                        @else
-                            <img alt="">
-                        @endif
+                        <div class="slider">
+                            <div>
+                                @if ($style->image_path1 != null)
+                                    <img src="{{ asset('storage/image/' . $style->image_path1) }}" alt="" onerror="this.src='/images/lady_icon.png'" />
+                                @else
+                                    <img alt="">
+                                @endif
+                            </div>
+                            <div>
+                                @if ($style->image_path2 != null)
+                                    <img src="{{ asset('storage/image/' . $style->image_path2) }}" alt="" onerror="this.src='/images/lady_icon.png'" />
+                                @else
+                                    <img alt="">
+                                @endif
+                            </div>
+                            <div>
+                                @if ($style->image_path3 != null)
+                                    <img src="{{ asset('storage/image/' . $style->image_path3) }}" alt="" onerror="this.src='/images/lady_icon.png'" />
+                                @else
+                                    <img alt="">
+                                @endif
+                            </div>
+                        </div>
                         <div class="col-md-12">
                             <div class="col-md-12 title-box">
                                 <div class="title-text">

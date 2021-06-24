@@ -62,11 +62,11 @@
                 </div>
                 <div class="form-group row">
                     <label class="col-md-2 labels" for="tpo">シチュエーション</label>
-                    <p>
+                    <p class="check-boxes">
                         @foreach($tags as $key => $tag)
                         <label class="checkbox" for="hair_tags-{{ $tag->id }}">
-                            {{ Form::checkbox('tag_id[]', $tag->id, in_array($tag->id, $hair_tags, true), ['id' => 'hair_tags-' . $tag->id]) }}
-                            {{ $tag->tag_name }}
+                            {{ Form::checkbox('tag_id[]', $tag->id, in_array($tag->id, $hair_tags, true), ['id' => 'hair_tags-' . $tag->id, 'class' => 'check_box']) }}
+                            <span>{{ $tag->tag_name }}</span>
                         </label>
                         @endforeach
                     </p>
