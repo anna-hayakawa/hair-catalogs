@@ -73,7 +73,7 @@ class CatalogController extends Controller
 
     public function index(Request $request)
     {
-        //投稿一覧での検索機能
+        //投稿一覧での検索機能を「タイトル」と「説明」で部分一致検索とする
         $cond_title = $request->cond_title;
         if ($cond_title != '') {
             $posts = Auth::user()->hairStyles()

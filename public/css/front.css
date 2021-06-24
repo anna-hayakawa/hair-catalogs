@@ -272,7 +272,7 @@
 }
 
 .detail-box .user-boxes {
-  margin-top: 20px;
+  margin-top: 23px;
 }
 
 .detail-box .user-boxes .user-label {
@@ -303,15 +303,21 @@
 }
 
 .detail-box .user-boxes .user-box img {
+  background-image: url(/images/default_profile_icon.png);
+  background-size: 60px 60px;
+  background-color: rgba(153, 153, 153, 0.801);
+  background-position: center;
+  background-size: contain;
   width: 60px;
   height: 60px;
   margin: 10px 15px 0 0;
   border-radius: 15px;
+  border: 3px solid #d8c0b4;
 }
 
 .detail-box .user-boxes .user-box .name-text {
   margin-left: 5px;
-  margin-top: 27px;
+  margin-top: 30px;
   font-size: 14px;
 }
 

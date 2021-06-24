@@ -59,6 +59,7 @@
                                 </div>
                             </div>
                             <div class="col-md-6 updated-box">
+                                {{-- created_atとupdated_atが異なる場合(投稿が更新された場合)、「編集済み」と表示させる --}}
                                 <div class="updated-text">
                                     @if ($style->updated_at != $style->created_at)
                                         {{ "投稿日：" . $style->created_at->format('Y年m月d日') . "(編集済み)" }}
