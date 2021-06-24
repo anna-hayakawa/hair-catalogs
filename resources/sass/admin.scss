@@ -31,6 +31,7 @@ h4 {
     margin: 40px 0 20px 0;
 }
 
+//検索ボックス
 .title-desc-label {
     width: 200px;
     padding: 8px 0;
@@ -55,6 +56,7 @@ h4 {
     background-color: rgb(207, 117, 132);
 }
 
+//投稿一覧のテーブル
 .table-catalog {
     background-color: #fff;
     color: rgb(61, 43, 32);
@@ -63,27 +65,53 @@ h4 {
     thead {
         background-color: #5f4436;
         color: #fff;
+
+        .image {
+            padding-left: 50px;
+        }
+
+        .dated_at {
+            font-size: 13px;
+            padding-left: 40px;
+        }
     }
 
     tbody {
 
         tr {
             border: 1px solid #d6c6be;
+
+            .dated_at {
+                font-size: 13px;
+                vertical-align: middle;
+                padding: 12px 7px;
+                text-align: center;
+            }
+
+
+            .btn-boxes {
+                padding: 12px 0 12px 12px;
+
+                .btn-box {
+                    width: 75px;
+                    margin-right: 0;
+
+                    .btn {
+                        padding: 8px 20px;
+                        text-decoration: none;
+                        background-color: #d6c6be;
+                        color: rgb(87, 62, 46);
+                        font-weight: bold;
+                        margin: 6px 0;
+                        padding: 7px 20px;
+                    }
+
+                    .btn:hover {
+                        background-color: #be9f91;
+                    }
+                }
+            }
         }
-    }
-
-    .btn {
-        padding: 8px 20px;
-        text-decoration: none;
-        background-color: #d6c6be;
-        color: rgb(87, 62, 46);
-        font-weight: bold;
-        margin: 6px 0;
-        padding: 7px 20px;
-    }
-
-    .btn:hover {
-        background-color: #be9f91;
     }
 }
 

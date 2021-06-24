@@ -10,9 +10,15 @@ use App\HairStyle;
 
 class ProfileController extends Controller
 {
-    public function index()
+    public function index($user_id)
     {
         $profile = Auth::user();
+
+        if ($user_id != $profile->id)
+        {
+            $profile = User::find($user_id);
+        }
+
         $posts = HairStyle::all()->sortByDesc('updated_at');
 
         return view('admin.profile.index', ['profile_form' => $profile, 'posts' => $posts]);
@@ -53,6 +59,6 @@ class ProfileController extends Controller
 
         $profile->fill($profile_form)->save();
 
-        return redirect('admin/profile');
+        return redirect(route('profile', ['user_id' => Auth::user()->id]));
     }
 }

@@ -118,6 +118,7 @@ body {
     }
 }
 
+//ログイン画面
 .card1 {
     margin-top: 60px;
     margin-bottom: 15px;
@@ -128,6 +129,7 @@ body {
     border-top-right-radius: 8px;
 }
 
+//新規登録画面
 .card2 {
     margin-top: 60px;
     margin-bottom: 15px;
@@ -166,6 +168,66 @@ body {
     margin-top: 9px;
     margin-bottom: 20px;
 
+    //「ログイン情報を記録する」チェックボックス
+    .form-check {
+        padding: 0;
+
+        input[type=checkbox].form-check-input {
+            // margin-right: 1px;
+            display: none;
+        }
+
+        //チェックボックスの代わりにもなるラベル
+        input[type=checkbox].form-check-input + label{
+            display: none;
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            padding-left: 25px;
+            // padding-right: 10px;
+        }
+
+        //ラベルの左に表示させる正方形のボックス□
+        input[type=checkbox].form-check-input + label::before {
+            content: "";
+            position: absolute;
+            display: block;
+            box-sizing: border-box;
+            width: 13px;
+            height: 13px;
+            margin-top: -10px;
+            left: 7px;
+            top: 60%;
+            border: 1px solid;
+            border-radius: 3px;
+            border-color:  rgb(94, 67, 51);
+            background-color: #FFF;
+        }
+
+        //チェックしたときの□ボックスの背景色を変更する
+        input[type=checkbox].form-check-input:checked + label::before {
+            background-color: rgb(61, 43, 32);
+        }
+
+        //チェックが入った時のレ点
+        input[type=checkbox].form-check-input:checked +label::after {
+            content: "";
+            position: absolute;
+            display: block;
+            box-sizing: border-box;
+            width: 9px;
+            height: 5px;
+            margin-top: -5px;
+            top: 50%;
+            left: 9px;
+            transform: rotate(-45deg);
+            border-bottom: 2px solid;
+            border-left: 2px solid;
+            border-color: #fff;
+        }
+    }
+
+    //ログインボタン
     .button {
         background-color: rgb(214, 166, 174);
         color: #fff;
@@ -180,6 +242,13 @@ body {
         background-color: rgb(207, 117, 132);
     }
 
+    //「パスワードを忘れた」リンク
+    .btn-link {
+        color: rgb(87, 62, 46);
+        margin-left:15px;
+    }
+
+    //新規登録ボタン
     .button1 {
         background-color: rgb(214, 166, 174);
         color: #fff;
@@ -195,6 +264,7 @@ body {
         background-color: rgb(207, 117, 132);
     }
 
+    //プロフィール画像
     .image-box {
         background-image: url(/images/default_profile_icon.png);
         background-size:255px 255px;
@@ -211,6 +281,7 @@ body {
         opacity: 0;
     }
 
+    //画像のクリアボタン
     .remove-box {
         width: 255px;
         margin: auto;

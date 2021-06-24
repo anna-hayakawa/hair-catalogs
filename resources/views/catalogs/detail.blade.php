@@ -29,11 +29,6 @@
                                     {{ $style->description }}
                                 </div>
                             </div>
-                            <div class="col-md-6 updated-box">
-                                <div class="updated-text">
-                                    {{ "投稿日：" . $style->updated_at->format('Y年m月d日') }}
-                                </div>
-                            </div>
                             <div class="col-md-12 tpo-box">
                                 <div class="tpo-label">
                                     <p>シチュエーション</p>
@@ -46,19 +41,30 @@
                                     @endforeach
                                 </div>
                             </div>
-                            <div class="col-md-12 user-box">
+                            <div class="col-md-12 user-boxes">
                                 <div class="user-label">
                                     <p>投稿者</p>
                                 </div>
-                                <div class="col-md-4 image-box">
+                                <div class="col-md-4 user-box row">
                                     @if ($profile_form->image_path != null)
                                         <img src="{{ asset('storage/image/' . $profile_form->image_path) }}" alt="" onerror="this.src='/images/default_profile_icon.png'" />
                                     @else
                                         <img alt="">
                                     @endif
                                     <div class="name-text">
-                                        {{ $profile_form->name }}
+                                        <a href="{{ route('profile', ['user_id' => $profile_form->id]) }}">
+                                            {{ $profile_form->name }}
+                                        </a>
                                     </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 updated-box">
+                                <div class="updated-text">
+                                    @if ($style->updated_at != $style->created_at)
+                                        {{ "投稿日：" . $style->created_at->format('Y年m月d日') . "(編集済み)" }}
+                                    @else
+                                        {{ "投稿日：" . $style->created_at->format('Y年m月d日') }}
+                                    @endif
                                 </div>
                             </div>
                         </div>

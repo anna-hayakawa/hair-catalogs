@@ -11097,6 +11097,58 @@ body {
   margin-bottom: 20px;
 }
 
+.form-group1 .form-check {
+  padding: 0;
+}
+
+.form-group1 .form-check input[type=checkbox].form-check-input {
+  display: none;
+}
+
+.form-group1 .form-check input[type=checkbox].form-check-input + label {
+  display: none;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  padding-left: 25px;
+}
+
+.form-group1 .form-check input[type=checkbox].form-check-input + label::before {
+  content: "";
+  position: absolute;
+  display: block;
+  box-sizing: border-box;
+  width: 13px;
+  height: 13px;
+  margin-top: -10px;
+  left: 7px;
+  top: 60%;
+  border: 1px solid;
+  border-radius: 3px;
+  border-color: #5e4333;
+  background-color: #FFF;
+}
+
+.form-group1 .form-check input[type=checkbox].form-check-input:checked + label::before {
+  background-color: #3d2b20;
+}
+
+.form-group1 .form-check input[type=checkbox].form-check-input:checked + label::after {
+  content: "";
+  position: absolute;
+  display: block;
+  box-sizing: border-box;
+  width: 9px;
+  height: 5px;
+  margin-top: -5px;
+  top: 50%;
+  left: 9px;
+  transform: rotate(-45deg);
+  border-bottom: 2px solid;
+  border-left: 2px solid;
+  border-color: #fff;
+}
+
 .form-group1 .button {
   background-color: #d6a6ae;
   color: #fff;
@@ -11109,6 +11161,11 @@ body {
 
 .form-group1 .button:hover {
   background-color: #cf7584;
+}
+
+.form-group1 .btn-link {
+  color: #573e2e;
+  margin-left: 15px;
 }
 
 .form-group1 .button1 {

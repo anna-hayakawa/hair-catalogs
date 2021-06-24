@@ -93,7 +93,7 @@
 }
 
 .tag-groups .tag-group .tag-area .checkbox {
-  margin-left: 30px;
+  margin-left: 25px;
   margin-top: 45px;
 }
 
@@ -153,6 +153,7 @@
   border-radius: 4px;
   border: none;
   width: 70px;
+  margin-right: 10px;
 }
 
 .tag-groups .tag-group .tag-area .tag-btn:hover {
@@ -206,7 +207,7 @@
   border: 4px solid #d6c3ba;
   margin: 20px auto;
   padding: 0 5px 40px 5px;
-  height: 1100px;
+  height: 1080px;
 }
 
 .detail-box .image-box img {
@@ -236,17 +237,6 @@
   text-align: left;
   margin: 0 0 60px 15px;
   font-size: 15px;
-}
-
-.detail-box .updated-box {
-  margin-left: 360px;
-  margin-bottom: -25px;
-}
-
-.detail-box .updated-box .updated-text {
-  width: 260px;
-  margin: 10px 0 0 18px;
-  font-size: 13px;
 }
 
 .detail-box .tpo-box .tpo-label {
@@ -281,16 +271,16 @@
   margin: 7px 0 5px 17px;
 }
 
-.detail-box .user-box {
+.detail-box .user-boxes {
   margin-top: 20px;
 }
 
-.detail-box .user-box .user-label {
+.detail-box .user-boxes .user-label {
   background-color: #ebcccc;
-  width: 120px;
-  padding-top: 7px;
+  width: 100px;
+  padding-top: 5px;
   font-weight: bold;
-  font-size: 13px;
+  font-size: 12.5px;
   border-bottom: transparent;
   /* 下辺を透明に */
   border-top-left-radius: 8px;
@@ -303,18 +293,35 @@
   text-align: center;
 }
 
-.detail-box .user-box .image-box {
+.detail-box .user-boxes .user-box {
   border: 1px solid #ebcccc;
   width: 520px;
-  height: 60px;
+  height: 80px;
   text-align: left;
   font-size: 14px;
   margin: 0 0 0 15px;
 }
 
-.detail-box .user-box .image-box img {
-  width: 20px;
-  height: 20px;
-  margin: 40px 0 0 50px;
+.detail-box .user-boxes .user-box img {
+  width: 60px;
+  height: 60px;
+  margin: 10px 15px 0 0;
+  border-radius: 15px;
+}
+
+.detail-box .user-boxes .user-box .name-text {
+  margin-left: 5px;
+  margin-top: 27px;
+  font-size: 14px;
+}
+
+.detail-box .updated-box {
+  margin-left: 320px;
+}
+
+.detail-box .updated-box .updated-text {
+  width: 260px;
+  margin: 10px 0 0 18px;
+  font-size: 13px;
 }
 

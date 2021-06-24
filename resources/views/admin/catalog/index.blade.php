@@ -13,7 +13,7 @@
                 <a href="{{ action('Admin\CatalogController@add') }}" role="button" class="btn btn-primary btn-1">新規投稿の作成へ</a>
             </div>
             <div class="col-md-5 offset-md-2 text-left">
-                <a href="{{ action('Admin\ProfileController@index') }}" role="button" class="btn btn-primary btn-1">プロフィール画面へ</a>
+                <a href="{{ route('profile', ['user_id' => Auth::user()->id]) }}" role="button" class="btn btn-primary btn-1">プロフィール画面へ</a>
             </div>
         </div>
         <div class="row">
@@ -44,37 +44,43 @@
                     <table class="table table-borderless table-catalog">
                         <thead>
                             <tr>
-                                <th width="7%">No.</th>
+                                <th width="5%">No.</th>
                                 <th width="18%">タイトル</th>
-                                <th width="17%">サブタイトル</th>
+                                <th width="13%">サブタイトル</th>
                                 <th width="30%">説明</th>
-                                <th width="18%">画像</th>
-                                <th width="10%"></th>
+                                <th width="13%" class="image">画像</th>
+                                <th width="12%" class="dated_at">更新日</th>
+                                {{-- <th width="12%" class="dated_at">作成日／更新日</th> --}}
+                                <th width="9%"></th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach($posts as $index=>$style)
-                                {{-- @if ($style->user_id == Auth::user()->id) --}}
-                                    <tr>
-                                            {{--  ユーザーの全投稿数がわかるように、created_atの降順とし、カウントダウンでNo.を取得する  --}}
-                                        <th>{{ $posts->total() - $index - (($posts-> currentPage()-1) * $posts->perPage()) }}</th>
-                                                                                                                                    {{--  $indexは、foreachの周期  --}}
-                                                                                                                                    {{--  $currentPageは、現在のページ
-                                                                                                                                    {{--  $perPageは、ページ毎に何件データを表示するか  --}}
-                                        <td>{{ str_limit($style->title, 100) }}</td>
-                                        <td>{{ str_limit($style->caption, 100) }}</td>
-                                        <td>{{ str_limit($style->description, 250) }}</td>
-                                        <td><img src="{{ asset('storage/image/' . $style->image_path1) }}" width="150" height="100"></td>
-                                        <td>
-                                            <div>
-                                                <a class="btn" href="{{ action('Admin\CatalogController@edit', ['id' => $style->id]) }}">編集</a>
-                                            </div>
-                                            <div>
-                                                <a class="btn" href="{{ action('Admin\CatalogController@delete', ['id' => $style->id]) }}">削除</a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                {{-- @endif --}}
+                                <tr>
+                                        {{--  ユーザーの全投稿数がわかるように、created_atの降順とし、カウントダウンでNo.を取得する  --}}
+                                    <th>{{ $posts->total() - $index - (($posts-> currentPage()-1) * $posts->perPage()) }}</th>{{--  $indexは、foreachの周期／$currentPageは、現在のページ／$perPageは、ページ毎に何件データを表示するか --}}
+                                    <td>
+                                        <a href="{{ route('catalogs.detail', ['catalog_id' => $style->id]) }}">
+                                            {{ str_limit($style->title, 100) }}
+                                        </a>
+                                    </td>
+                                    <td>{{ str_limit($style->caption, 100) }}</td>
+                                    <td>{{ str_limit($style->description, 250) }}</td>
+                                    <td><img src="{{ asset('storage/image/' . $style->image_path1) }}" width="120" height="100"></td>
+                                    @if ($style->updated_at != $style->created_at)
+                                        <td class="dated_at">{{ $style->updated_at->format('Y年m月d日') }}</td>
+                                    @else
+                                        <td class="dated_at"></td>
+                                    @endif
+                                    <td class="btn-boxes">
+                                        <div class="btn-box">
+                                            <a class="btn" href="{{ action('Admin\CatalogController@edit', ['id' => $style->id]) }}">編集</a>
+                                        </div>
+                                        <div class="btn-box">
+                                            <a class="btn" href="{{ action('Admin\CatalogController@delete', ['id' => $style->id]) }}">削除</a>
+                                        </div>
+                                    </td>
+                                </tr>
                             @endforeach
                         </tbody>
                     </table>

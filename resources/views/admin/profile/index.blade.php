@@ -11,7 +11,7 @@
             {{-- プロフィール詳細 --}}
             <div class="col-md-12 profile-box row ">
                 <div class="col-md-4 image-box">
-                    @if ($profile_form->image_path != null)
+                    @if ($profile_form->image_path != '')
                         <img src="{{ asset('storage/image/' . $profile_form->image_path) }}" alt="" onerror="this.src='/images/default_profile_icon.png'" />
                     @else
                         <img alt="">
@@ -31,7 +31,7 @@
                 </div>
                 @if ($profile_form->id == Auth::user()->id)
                     <div class="col-md-3 edit-btn-box">
-                        <a href="{{ action('Admin\ProfileController@edit') }}" role="button" class="btn btn-primary edit-btn">プロフィールを編集する</a>
+                        <a href="{{ route('profile.edit', ['user_id' => $profile_form->id]) }}" role="button" class="btn btn-primary edit-btn">プロフィールを編集する</a>
                     </div>
                 @endif
             </div>
@@ -43,8 +43,8 @@
         </div>
         <div class="style-list col-md-12 mx-auto row">
             @foreach ($posts as $style)
-                @if ($style->user_id == Auth::user()->id)
-                    <a href="{{ route('catalog.detail', ['catalog_id' => $style->id]) }}">
+                @if ($style->user_id == $profile_form->id)
+                    <a href="{{ route('catalogs.detail', ['catalog_id' => $style->id]) }}">
                         <div class="style">
                             <div class="image col-md-12">
                                 <img src="{{ asset('storage/image/' . $style->image_path1) }}"  width="245" height="270">

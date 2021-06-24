@@ -8,7 +8,7 @@
         <div class="row">
             <div class="col-md-12 mx-auto">
                 <h2>プロフィール編集</h2>
-                <form action="{{ action('Admin\ProfileController@update') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('profile.update', ['user_id => Auth::user()->id']) }}" method="POST" enctype="multipart/form-data">
                     @if (count($errors) > 0)
                         <ul>
                             @foreach($errors->all() as $e)
