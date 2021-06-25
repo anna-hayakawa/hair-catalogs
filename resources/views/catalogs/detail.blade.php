@@ -9,28 +9,127 @@
             <div class="col-md-12 mx-auto">
                 <div class="col-md-12 detail-box">
                     <div class="col-md-7 mx-auto image-box">
-                        <div class="slider">
-                            <div>
-                                @if ($style->image_path1 != null)
-                                    <img src="{{ asset('storage/image/' . $style->image_path1) }}" alt="" onerror="this.src='/images/lady_icon.png'" />
+                        {{--  インジケーターの表示方法の指定  --}}
+                        <div id="carousel-1" class="carousel slide">
+                            {{--  画像1,2,3が保存されている場合、３つ表示する  --}}
+                            @if ($style->image_path2 != null && $style->image_path3 != null)
+                                <ol class="carousel-indicators">
+                                    <li data-target="#carousel-1" data-slide-to="0" class="active"></li>
+                                    <li data-target="#carousel-1" data-slide-to="1"></li>
+                                    <li data-target="#carousel-1" data-slide-to="2"></li>
+                                </ol>
+                            {{--  画像1,2または、画像1,3が保存されている場合、２つ表示する  --}}
+                            @elseif ($style->image_path1 != null && $style->image_path2 != null)
+                                <ol class="carousel-indicators">
+                                    <li data-target="#carousel-1" data-slide-to="0" class="active"></li>
+                                    <li data-target="#carousel-1" data-slide-to="1"></li>
+                                </ol>
+                            @elseif ($style->image_path1 != null && $style->image_path3 != null)
+                                <ol class="carousel-indicators">
+                                    <li data-target="#carousel-1" data-slide-to="0" class="active"></li>
+                                    <li data-target="#carousel-1" data-slide-to="1"></li>
+                                </ol>
+                            @endif
+                            {{--  スタイダーで表示する画像の指定  --}}
+                            <div class="carousel-inner">
+                                {{--  画像1のみ保存されている場合、画像1のみ表示する  --}}
+                                @if ($style->image_path2 == null && $style->image_path3 == null)
+                                    <div class="carousel-item active">
+                                        @if ($style->image_path1 != null)
+                                            <img class="d-block w-100" src="{{ asset('storage/image/' . $style->image_path1) }}" alt="First slide">
+                                        @else
+                                            <img alt="">
+                                        @endif
+                                    </div>
+                                {{--  画像1,2のみ保存されている場合、画像1,2を表示する  --}}
+                                @elseif ($style->image_path3 == null)
+                                    <div class="carousel-item active">
+                                        @if ($style->image_path1 != null)
+                                            <img class="d-block w-100" src="{{ asset('storage/image/' . $style->image_path1) }}" alt="First slide">
+                                        @else
+                                            <img alt="">
+                                        @endif
+                                    </div>
+                                    <div class="carousel-item">
+                                        @if ($style->image_path2 != null)
+                                            <img class="d-block w-100" src="{{ asset('storage/image/' . $style->image_path2) }}" alt="Second slide">
+                                        @else
+                                            <img alt="">
+                                        @endif
+                                    </div>
+                                {{--  画像1,3のみ保存されている場合、画像1,3を表示する  --}}
+                                @elseif ($style->image_path2 == null)
+                                    <div class="carousel-item active">
+                                        @if ($style->image_path1 != null)
+                                            <img class="d-block w-100" src="{{ asset('storage/image/' . $style->image_path1) }}" alt="First slide">
+                                        @else
+                                            <img alt="">
+                                        @endif
+                                    </div>
+                                    <div class="carousel-item">
+                                        @if ($style->image_path3 != null)
+                                            <img class="d-block w-100" src="{{ asset('storage/image/' . $style->image_path3) }}" alt="Third slide">
+                                        @else
+                                            <img alt="">
+                                        @endif
+                                    </div>
+                                {{-- 画像1,2,3を表示する  --}}
                                 @else
-                                    <img alt="">
+                                    <div class="carousel-item active">
+                                        @if ($style->image_path1 != null)
+                                            <img class="d-block w-100" src="{{ asset('storage/image/' . $style->image_path1) }}" alt="First slide">
+                                        @else
+                                            <img alt="">
+                                        @endif
+                                    </div>
+                                    <div class="carousel-item">
+                                        @if ($style->image_path2 != null)
+                                            <img class="d-block w-100" src="{{ asset('storage/image/' . $style->image_path2) }}" alt="Second slide">
+                                        @else
+                                            <img alt="">
+                                        @endif
+                                    </div>
+                                    <div class="carousel-item">
+                                        @if ($style->image_path3 != null)
+                                            <img class="d-block w-100" src="{{ asset('storage/image/' . $style->image_path3) }}" alt="Third slide">
+                                        @else
+                                            <img alt="">
+                                        @endif
+                                    </div>
                                 @endif
                             </div>
-                            <div>
-                                @if ($style->image_path2 != null)
-                                    <img src="{{ asset('storage/image/' . $style->image_path2) }}" alt="" onerror="this.src='/images/lady_icon.png'" />
-                                @else
-                                    <img alt="">
-                                @endif
-                            </div>
-                            <div>
-                                @if ($style->image_path3 != null)
-                                    <img src="{{ asset('storage/image/' . $style->image_path3) }}" alt="" onerror="this.src='/images/lady_icon.png'" />
-                                @else
-                                    <img alt="">
-                                @endif
-                            </div>
+                            {{--  コントローラー(左右の矢印)の表示方法の指定  --}}
+                            {{--  画像1,2,3が保存されている場合、表示する  --}}
+                            @if ($style->image_path2 != null && $style->image_path3 != null)
+                                <a class="carousel-control-prev" href="#carousel-1" role="button" data-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="carousel-control-next" href="#carousel-1" role="button" data-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            {{--  画像1,2が保存されている場合、表示する  --}}
+                            @elseif ($style->image_path1 != null && $style->image_path2 != null)
+                                <a class="carousel-control-prev" href="#carousel-1" role="button" data-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="carousel-control-next" href="#carousel-1" role="button" data-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            {{--  画像1,3が保存されている場合、表示する  --}}
+                            @elseif ($style->image_path1 != null && $style->image_path3 != null)
+                                <a class="carousel-control-prev" href="#carousel-1" role="button" data-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="carousel-control-next" href="#carousel-1" role="button" data-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            @endif
                         </div>
                         <div class="col-md-12">
                             <div class="col-md-12 title-box">

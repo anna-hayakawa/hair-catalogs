@@ -8,25 +8,12 @@
 
         <title>@yield('title')</title>
 
-        <script src="{{ asset('js/slick.min.js') }}" type="text/javascript"></script>
         <script src="{{ asset('js/app.js') }}" defer></script>
 
-
-        <link rel="stylesheet" type="text/css" href="{{ asset('css/slick.css') }}"/>
         <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
         <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" />
         <link rel="stylesheet" href="{{ asset('css/app.css') }}" />
         <link rel="stylesheet" href="{{ asset('css/front.css') }}" />
-
-        {{--  スライダー見た目  --}}
-        {{--  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css">  --}}
-        {{--  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css">  --}}
-
-        {{--  jQuery  --}}
-        {{--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>  --}}
-
-        {{--  スライダー動かすやつ  --}}
-        {{--  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js">  --}}
     </head>
     <body>
         <div id="app">
