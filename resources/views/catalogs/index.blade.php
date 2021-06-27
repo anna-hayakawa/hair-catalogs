@@ -50,6 +50,20 @@
                 @endforeach
                 <div class="col-md-12" id="more-box">
                     <button class="more-btn" data-page="0">もっと見る</button>
+                        <div class="test">
+                            {{--  <a href="{{ route('catalogs.detail', ['catalog_id' => $style->id]) }}">
+                                <div class="style">
+                                    <div class="image col-md-12">
+                                        <img src="{{ asset('storage/image/' . $style->image_path1) }}"  width="255" height="300">
+                                    </div>
+                                    <div class="text col-md-12">
+                                        <div class="title-label">
+                                            {{ str_limit($style->title, 150) }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>  --}}
+                        </div>
                     <button class="more-btn" data-page="1">もっと見る2</button>
                 </div>
             </div>

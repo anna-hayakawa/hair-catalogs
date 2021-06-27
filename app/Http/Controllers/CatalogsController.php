@@ -50,7 +50,22 @@ class CatalogsController extends Controller
 
     public function search(Request $request)
     {
-        //
+        foreach ($request->tag_id as $tag_id) {
+            if (HairTag::where('tag_id', $tag_id)) {
+                $hair_tags[] = HairTag::where('tag_id', $tag_id)->get();
+            }
+        }
+        // dd($hair_tags);
+
+        // $styles_id = array_column($hair_tags, 'style_id');
+        // dd($styles_id);
+
+        foreach ($hair_tags as $hair_tag) {
+            $posts = HairStyle::where('id', $hair_tag->style_id)->get();
+        }
+
+
+        return view('catalogs.index', ['tags' => Tag::all(), 'posts' => $posts]);
     }
 }
 

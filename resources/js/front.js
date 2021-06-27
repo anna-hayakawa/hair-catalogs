@@ -18,8 +18,7 @@ function displayCatalog(page) {
         console.log(response);
         var now = $('.now');
 
-        for(var i=0; i<response.length; i++){
-            // row = response[i].title;
+        for(var i=0; i<15; i++){
             console.log(response[i].title);
         }
         $('.test').append(now);
