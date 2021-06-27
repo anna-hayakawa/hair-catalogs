@@ -36,7 +36,7 @@
                                 @if ($style->image_path2 == null && $style->image_path3 == null)
                                     <div class="carousel-item active">
                                         @if ($style->image_path1 != null)
-                                            <img class="d-block w-100" src="{{ asset('storage/image/' . $style->image_path1) }}" alt="First slide">
+                                            <img class="d-block w-100" src="{{ $style->image_path1 }}" alt="First slide">
                                         @else
                                             <img alt="">
                                         @endif
@@ -45,14 +45,14 @@
                                 @elseif ($style->image_path3 == null)
                                     <div class="carousel-item active">
                                         @if ($style->image_path1 != null)
-                                            <img class="d-block w-100" src="{{ asset('storage/image/' . $style->image_path1) }}" alt="First slide">
+                                            <img class="d-block w-100" src="{{ $style->image_path1 }}" alt="First slide">
                                         @else
                                             <img alt="">
                                         @endif
                                     </div>
                                     <div class="carousel-item">
                                         @if ($style->image_path2 != null)
-                                            <img class="d-block w-100" src="{{ asset('storage/image/' . $style->image_path2) }}" alt="Second slide">
+                                            <img class="d-block w-100" src="{{ $style->image_path2 }}" alt="Second slide">
                                         @else
                                             <img alt="">
                                         @endif
@@ -61,14 +61,14 @@
                                 @elseif ($style->image_path2 == null)
                                     <div class="carousel-item active">
                                         @if ($style->image_path1 != null)
-                                            <img class="d-block w-100" src="{{ asset('storage/image/' . $style->image_path1) }}" alt="First slide">
+                                            <img class="d-block w-100" src="{{ $style->image_path1 }}" alt="First slide">
                                         @else
                                             <img alt="">
                                         @endif
                                     </div>
                                     <div class="carousel-item">
                                         @if ($style->image_path3 != null)
-                                            <img class="d-block w-100" src="{{ asset('storage/image/' . $style->image_path3) }}" alt="Third slide">
+                                            <img class="d-block w-100" src="{{ $style->image_path3 }}" alt="Third slide">
                                         @else
                                             <img alt="">
                                         @endif
@@ -77,21 +77,21 @@
                                 @else
                                     <div class="carousel-item active">
                                         @if ($style->image_path1 != null)
-                                            <img class="d-block w-100" src="{{ asset('storage/image/' . $style->image_path1) }}" alt="First slide">
+                                            <img class="d-block w-100" src="{{ $style->image_path1 }}" alt="First slide">
                                         @else
                                             <img alt="">
                                         @endif
                                     </div>
                                     <div class="carousel-item">
                                         @if ($style->image_path2 != null)
-                                            <img class="d-block w-100" src="{{ asset('storage/image/' . $style->image_path2) }}" alt="Second slide">
+                                            <img class="d-block w-100" src="{{ $style->image_path2 }}" alt="Second slide">
                                         @else
                                             <img alt="">
                                         @endif
                                     </div>
                                     <div class="carousel-item">
                                         @if ($style->image_path3 != null)
-                                            <img class="d-block w-100" src="{{ asset('storage/image/' . $style->image_path3) }}" alt="Third slide">
+                                            <img class="d-block w-100" src="{{ $style->image_path3 }}" alt="Third slide">
                                         @else
                                             <img alt="">
                                         @endif

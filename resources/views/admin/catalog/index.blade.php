@@ -66,7 +66,7 @@
                                     </td>
                                     <td>{{ str_limit($style->caption, 100) }}</td>
                                     <td>{{ str_limit($style->description, 250) }}</td>
-                                    <td><img src="{{ asset('storage/image/' . $style->image_path1) }}" width="120" height="100"></td>
+                                    <td><img src="{{ $style->image_path1 }}" width="120" height="100"></td>
 
                                     {{-- created_atとupdated_atが異なる場合(投稿が更新された場合)、「更新日」を表示させる --}}
                                     @if ($style->updated_at != $style->created_at)

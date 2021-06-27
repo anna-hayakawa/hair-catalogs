@@ -9,6 +9,7 @@ use App\Tag;
 use App\HairTag;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
+use Storage;
 
 class CatalogController extends Controller
 {
@@ -25,18 +26,18 @@ class CatalogController extends Controller
         $form = $request->all();
 
         if (isset($form['image_path1'])) {
-            $path = $request->file('image_path1')->store('public/image');
-            $style->image_path1 = basename($path);
+            $path = Storage::disk('s3')->putFile('/',$form['image_path1'],'public');
+            $style->image_path1 = Storage::disk('s3')->url($path);
         }
         if (isset($form['image_path2'])) {
-            $path = $request->file('image_path2')->store('public/image');
-            $style->image_path2 = basename($path);
+            $path = Storage::disk('s3')->putFile('/',$form['image_path2'],'public');
+            $style->image_path2 = Storage::disk('s3')->url($path);
         } else {
             $style->image_path2 = null;
         }
         if (isset($form['image_path3'])) {
-            $path = $request->file('image_path3')->store('public/image');
-            $style->image_path3 = basename($path);
+            $path = Storage::disk('s3')->putFile('/',$form['image_path3'],'public');
+            $style->image_path3 = Storage::disk('s3')->url($path);
         } else {
             $style->image_path3 = null;
         }
@@ -146,30 +147,30 @@ class CatalogController extends Controller
 
         //リクエストの保存
         if (isset($style_form['image1'])) {
-            $path = $request->file('image1')->store('public/image');
-            $style_form['image_path1'] = basename($path);
+            $path = Storage::disk('s3')->putFile('/',$style_form['image1'],'public');
+            $style->image_path1 = Storage::disk('s3')->url($path);
         } else {
-            $style_form['image_path1'] = $style->image_path1;
+            $style_form['image1'] = $style->image_path1;
         }
 
         if ($request->remove2 == "1") {
             $style_form['image2'] = null;
-            $style_form['image_path2'] = null;
+            // $style_form['image_path2'] = null;
         } elseif (isset($style_form['image2'])) {
-            $path = $request->file('image2')->store('public/image');
-            $style_form['image_path2'] = basename($path);
+            $path = Storage::disk('s3')->putFile('/',$style_form['image2'],'public');
+            $style->image_path2 = Storage::disk('s3')->url($path);
         } else {
-            $style_form['image_path2'] = $style->image_path2;
+            $style_form['image2'] = $style->image_path2;
         }
 
         if ($request->remove3 == "1") {
             $style_form['image3'] = null;
-            $style_form['image_path3'] = null;
+            // $style_form['image_path3'] = null;
         } elseif (isset($style_form['image3'])) {
-            $path = $request->file('image3')->store('public/image');
-            $style_form['image_path3'] = basename($path);
+            $path = Storage::disk('s3')->putFile('/',$style_form['image3'],'public');
+            $style->image_path3 = Storage::disk('s3')->url($path);
         } else {
-            $style_form['image_path3'] = $style->image_path3;
+            $style_form['image3'] = $style->image_path3;
         }
 
         $form_tags = $style_form['tag_id'];

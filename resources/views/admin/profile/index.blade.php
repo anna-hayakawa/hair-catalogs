@@ -47,7 +47,7 @@
                     <a href="{{ route('catalogs.detail', ['catalog_id' => $style->id]) }}">
                         <div class="style">
                             <div class="image col-md-12">
-                                <img src="{{ asset('storage/image/' . $style->image_path1) }}"  width="245" height="270">
+                                <img src="{{ $style->image_path1 }}"  width="245" height="270">
                             </div>
                             <div class="text col-md-12">
                                 <div class="title-label">
