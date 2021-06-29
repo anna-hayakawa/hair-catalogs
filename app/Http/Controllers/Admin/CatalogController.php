@@ -155,7 +155,7 @@ class CatalogController extends Controller
 
         if ($request->remove2 == "1") {
             $style_form['image2'] = null;
-            // $style_form['image_path2'] = null;
+            $style_form['image_path2'] = null;
         } elseif (isset($style_form['image2'])) {
             $path = Storage::disk('s3')->putFile('/',$style_form['image2'],'public');
             $style->image_path2 = Storage::disk('s3')->url($path);
@@ -165,7 +165,7 @@ class CatalogController extends Controller
 
         if ($request->remove3 == "1") {
             $style_form['image3'] = null;
-            // $style_form['image_path3'] = null;
+            $style_form['image_path3'] = null;
         } elseif (isset($style_form['image3'])) {
             $path = Storage::disk('s3')->putFile('/',$style_form['image3'],'public');
             $style->image_path3 = Storage::disk('s3')->url($path);
