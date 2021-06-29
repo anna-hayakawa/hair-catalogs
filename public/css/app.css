@@ -11074,6 +11074,16 @@ body {
   margin-bottom: 40px;
 }
 
+.card3 {
+  margin-top: 60px;
+  margin-bottom: 15px;
+  height: 220px;
+  background-color: #fff;
+  border: 1px solid #ebcccc;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
 .card-header {
   background-color: #ebcccc;
   font-weight: bold;
@@ -11176,10 +11186,26 @@ body {
   border-radius: 4px;
   border: none;
   width: 90px;
-  margin-left: 140px;
+  margin-left: 120px;
 }
 
 .form-group1 .button1:hover {
+  background-color: #cf7584;
+}
+
+.form-group1 .button2 {
+  background-color: #d6a6ae;
+  color: #fff;
+  box-shadow: 0 2px 6px rgba(146, 146, 146, 0.8);
+  cursor: pointer;
+  border-radius: 4px;
+  border: none;
+  width: 90px;
+  margin-top: 5px;
+  margin-left: 122px;
+}
+
+.form-group1 .button2:hover {
   background-color: #cf7584;
 }
 
@@ -11191,7 +11217,7 @@ body {
   height: 255px;
   border-radius: 20px;
   margin-bottom: 0;
-  margin-left: 65px;
+  margin-left: 62px;
   cursor: pointer;
 }
 
@@ -11203,7 +11229,7 @@ body {
   width: 255px;
   margin: auto;
   margin-bottom: 0px;
-  margin-left: 135px;
+  margin-left: 132px;
 }
 
 .form-group1 .remove-box .remove-btn {

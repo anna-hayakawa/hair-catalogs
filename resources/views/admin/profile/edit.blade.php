@@ -21,7 +21,7 @@
                             <label class="image-box">
                                 <input type="file" class="form-control-file" name="image" id="image" accept="image/*"
                                 @if ($profile_form->image_path !='')
-                                    data-image="{{ asset('storage/image/' . $profile_form->image_path) }}"
+                                    data-image="{{ $profile_form->image_path }}"
                                 @else
                                     data-def_image=""
                                 @endif

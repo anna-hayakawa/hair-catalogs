@@ -13,5 +13,8 @@
         'Forgot Your Password?' => 'パスワードをお忘れですか？',
         'Logout' => 'ログアウト',
         'MyPage' => 'マイページ',
+        'Reset Password' => 'パスワードの再設定',
+        'Send Password Reset Link' => '送信する',
+
     ];
 

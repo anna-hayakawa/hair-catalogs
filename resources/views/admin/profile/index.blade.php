@@ -12,7 +12,7 @@
             <div class="col-md-12 profile-box row ">
                 <div class="col-md-4 image-box">
                     @if ($profile_form->image_path != '')
-                        <img src="{{ asset('storage/image/' . $profile_form->image_path) }}" alt="" onerror="this.src='/images/default_profile_icon.png'" />
+                        <img src="{{ $profile_form->image_path }}" alt="" onerror="this.src='/images/default_profile_icon.png'" />
                     @else
                         <img alt="">
                     @endif
