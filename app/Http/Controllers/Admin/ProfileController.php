@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use App\User;
 use App\HairStyle;
+use Storage;
 
 class ProfileController extends Controller
 {
@@ -47,8 +48,8 @@ class ProfileController extends Controller
             $profile_form['image'] = null;
             $profile_form['image_path'] = null;
         } elseif ($request->file('image')) {
-            $path = $request->file('image')->store('public/image');
-            $profile_form['image_path'] = basename($path);
+            $path = Storage::disk('s3')->putFile('/',$profile_form['image'],'public');
+            $profile_form['image_path'] = Storage::disk('s3')->url($path);
         } else {
             $profile_form['image_path'] = $profile->image_path;
         }
