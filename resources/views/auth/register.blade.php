@@ -15,7 +15,7 @@
             <div class="card2">
                 <div class="card-header">{{ __('message.Sign Up') }}</div>
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group1 row">
                             <label for="name" class="col-md-3 col-form-label text-md-right">{{ __('message.Name') }}</label>
