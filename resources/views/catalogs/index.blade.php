@@ -16,7 +16,7 @@
                         <p>
                             @foreach($tags as $tag)
                             <label class="checkbox">
-                                <input type="checkbox" class="check_box" name="tag_id[]" value="{{ $tag->id }}" />
+                                <input type="checkbox" class="check_box" name="tag_ids[]" value="{{ $tag->id }}" />
                                 <span>{{ $tag->tag_name }}</span>
                             </label>
                             @endforeach
@@ -41,7 +41,7 @@
                                 </div>
                                 <div class="text col-md-12">
                                     <div class="title-label">
-                                        {{ str_limit($style->title, 150) }}
+                                        {{ str_limit($style->title, 65) }}
                                     </div>
                                 </div>
                             </div>

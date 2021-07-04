@@ -61,10 +61,10 @@
                                     <th>{{ $posts->total() - $index - (($posts-> currentPage()-1) * $posts->perPage()) }}</th>{{--  $indexは、foreachの周期／$currentPageは、現在のページ／$perPageは、ページ毎に何件データを表示するか --}}
                                     <td>
                                         <a href="{{ route('catalogs.detail', ['catalog_id' => $style->id]) }}">
-                                            {{ str_limit($style->title, 100) }}
+                                            {{ str_limit($style->title, 98) }}
                                         </a>
                                     </td>
-                                    <td>{{ str_limit($style->caption, 100) }}</td>
+                                    <td>{{ str_limit($style->caption, 65) }}</td>
                                     <td>{{ str_limit($style->description, 170) }}</td>
                                     <td><img src="{{ $style->image_path1 }}" width="120" height="100"></td>
 

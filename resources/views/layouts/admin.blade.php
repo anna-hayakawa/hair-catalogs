@@ -51,7 +51,7 @@
                             </div>
                         </li>
                         <div class="user-name">
-                            <p>{{ Auth::user()->name }}</p>
+                            <p>{{ str_limit(Auth::user()->name, 30) }}</p>
                         </div>
                             @endguest
                         </ul>

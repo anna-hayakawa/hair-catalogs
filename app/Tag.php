@@ -15,6 +15,6 @@ class Tag extends Model
     //HairStyle ModelとHairTag Modelへの関連付け
     public function styles()
     {
-        return $this->belongsToMany('App\HairStyle', 'App/HairTag');
+        return $this->belongsToMany('App\HairStyle', 'App\HairTag');
     }
 }

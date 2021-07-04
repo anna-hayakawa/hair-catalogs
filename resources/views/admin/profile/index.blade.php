@@ -16,6 +16,11 @@
                     @else
                         <img alt="">
                     @endif
+                    @if ($profile_form->id == Auth::user()->id)
+                    <div class="col-md-3 edit-btn-box">
+                        <a href="{{ route('profile.edit', ['user_id' => $profile_form->id]) }}" role="button" class="btn btn-primary edit-btn">プロフィールを編集する</a>
+                    </div>
+                    @endif
                 </div>
                 <div class="col-md-8">
                     <div class="col-md-4 name-box">
@@ -29,11 +34,6 @@
                         </div>
                     </div>
                 </div>
-                @if ($profile_form->id == Auth::user()->id)
-                    <div class="col-md-3 edit-btn-box">
-                        <a href="{{ route('profile.edit', ['user_id' => $profile_form->id]) }}" role="button" class="btn btn-primary edit-btn">プロフィールを編集する</a>
-                    </div>
-                @endif
             </div>
         </div>
         <hr color="#d6c6be">
@@ -51,7 +51,7 @@
                             </div>
                             <div class="text col-md-12">
                                 <div class="title-label">
-                                    {{ str_limit($style->title, 150) }}
+                                    {{ str_limit($style->title, 64) }}
                                 </div>
                             </div>
                         </div>

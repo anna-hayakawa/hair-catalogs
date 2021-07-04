@@ -152,6 +152,7 @@ return [
         'tag_id' => '「シチュエーション」を1つ以上選択',
         'name' => '名前を入力',
         'password' => 'パスワード',
+        'introduction' => '説明',
     ],
 
 ];
