@@ -51,10 +51,12 @@ class CatalogsController extends Controller
     public function search(Request $request)
     {
         // dd($request->tag_ids);
+
         //中間テーブルの検索の準備
         $hair_ids = $request->input('tag_ids');
 
         // dd($_REQUEST);
+
         //中間テーブルの検索
         $hair_styles = HairTag::whereIn('tag_id', $hair_ids)->select('style_id')->distinct()->get(); //選択されたタグ一覧の取得
         // dd($hair_tag);
@@ -64,12 +66,11 @@ class CatalogsController extends Controller
         }
         // dd($hair_style_ids);
 
-        // $posts = $hair_tag->styles();
         //styleの検索（main）
         $styles = HairStyle::whereIn('id', $hair_style_ids)->get();
         // dd($styles);
 
-        return view('catalogs.index', ['tags' => Tag::all(), 'posts' => $styles]);
+        return view('catalogs.search', ['tags' => Tag::all(), 'posts' => $styles]);
     }
 }
 

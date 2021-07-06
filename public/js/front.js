@@ -11004,7 +11004,7 @@ function displayCatalog(page) {
     console.log(response);
     var now = $('.now');
 
-    for (var i = 0; i < 15; i++) {
+    for (var i = 0; i < 12; i++) {
       console.log(response[i].title);
     }
 
