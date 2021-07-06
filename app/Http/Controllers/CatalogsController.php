@@ -51,26 +51,25 @@ class CatalogsController extends Controller
     public function search(Request $request)
     {
         // dd($request->tag_ids);
-        $tags = Tag::findMany($request->tag_ids); //選択されたタグ一覧の取得
-        // dd($tags);
-        $posts = $tags->styles();
-        dd($posts);
-        // foreach ($request->tag_ids as $tag_id) {
-        //     if (HairTag::where('tag_id', $tag_id)) {
-        //         $hair_tags[] = HairTag::where('tag_id', $tag_id)->get();
-        //     }
-        // }
-        // dd($hair_tags);
+        //中間テーブルの検索の準備
+        $hair_ids = $request->input('tag_ids');
 
-        // $styles_id = array_column($hair_tags, 'style_id');
-        // dd($styles_id);
+        // dd($_REQUEST);
+        //中間テーブルの検索
+        $hair_styles = HairTag::whereIn('tag_id', $hair_ids)->select('style_id')->distinct()->get(); //選択されたタグ一覧の取得
+        // dd($hair_tag);
+        $hair_style_ids = [];
+        foreach ($hair_styles as $hair_style) {
+            $hair_style_ids[] = $hair_style->style_id;
+        }
+        // dd($hair_style_ids);
 
-        // foreach ($hair_tags as $hair_tag) {
-        //     $posts = HairStyle::where('id', $hair_tag->style_id)->get();
-        // }
+        // $posts = $hair_tag->styles();
+        //styleの検索（main）
+        $styles = HairStyle::whereIn('id', $hair_style_ids)->get();
+        // dd($styles);
 
-
-        return view('catalogs.index', ['tags' => Tag::all(), 'posts' => $posts]);
+        return view('catalogs.index', ['tags' => Tag::all(), 'posts' => $styles]);
     }
 }
 
