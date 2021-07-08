@@ -147,11 +147,16 @@ return [
 
     'attributes' => [
         'title' => '「タイトル」',
+        'caption' => '「サブタイトル」',
         'description' => '「説明」',
         'image_path1' => '「画像1」',
+        'image_path2' => '「画像2」',
+        'image_path3' => '「画像3」',
         'tag_id' => '「シチュエーション」',
         'name' => '「名前」',
+        'email' => '「メールアドレス」',
         'password' => '「パスワード」',
+        'image_path' => '「プロフィール画像」',
         'introduction' => '「自己紹介」',
     ],
 

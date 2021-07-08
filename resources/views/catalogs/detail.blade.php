@@ -8,7 +8,7 @@
         <div class="row">
             <div class="col-md-12 mx-auto">
                 <div class="col-md-12 detail-box">
-                    <div class="col-md-7 mx-auto image-box">
+                    <div class="col-md-8 mx-auto image-box">
                         {{--  インジケーターの表示方法の指定  --}}
                         <div id="carousel-1" class="carousel slide">
                             {{--  画像1,2,3が保存されている場合、３つ表示する  --}}
@@ -163,7 +163,7 @@
                                 <div class="user-label">
                                     <p>投稿者</p>
                                 </div>
-                                <div class="col-md-4 user-box row">
+                                <div class="col-md-12 user-box row">
                                     @if ($profile_form->image_path != null)
                                         <img src="{{ $profile_form->image_path }}" alt="" onerror="this.src='/images/default_profile_icon.png'" />
                                     @else
@@ -171,12 +171,12 @@
                                     @endif
                                     <div class="name-text">
                                         <a href="{{ route('profile', ['user_id' => $profile_form->id]) }}">
-                                            {{ $profile_form->name }}
+                                            {{ str_limit($profile_form->name, 18) }}
                                         </a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6 updated-box">
+                            <div class="col-md-12 updated-box">
                                 {{-- created_atとupdated_atが異なる場合(投稿が更新された場合)、「編集済み」と表示させる --}}
                                 <div class="updated-text">
                                     @if ($style->updated_at != $style->created_at)

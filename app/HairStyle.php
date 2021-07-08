@@ -14,8 +14,9 @@ class HairStyle extends Model
         // 'image_path2' => 'required',
         // 'image_path3' => 'required',
         'tag_id' => 'required',
-        'title' => 'required',
-        'description' => 'required',
+        'title' => 'required|max:100',
+        'caption' => 'max:50',
+        'description' => 'required|max:350',
         ];
 
     //Tag ModelとHairTag Modelへの関連付け

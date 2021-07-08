@@ -53,7 +53,7 @@
                             </div>
                             <div class="text col-md-12">
                                 <div class="title-label">
-                                    {{ str_limit($style->title, 64) }}
+                                    {{ str_limit($style->title, 62) }}
                                 </div>
                             </div>
                         </div>
