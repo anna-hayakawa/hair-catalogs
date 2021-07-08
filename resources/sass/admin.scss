@@ -265,15 +265,15 @@ h4 {
 
 //プロフィールページ
 .profile-box {
-    margin-top: 15px;
-    margin-bottom: 30px;
-    margin-left: 40px;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    // margin-left: 20px;
 
     .image-box {
-        margin-top: 30px;
+        margin-bottom: 10px;
         padding: 0 35px;
         width: 280px;
-        height: 280px;
+        height: 350px;
         border: none;
 
         img {
@@ -288,56 +288,46 @@ h4 {
             border-radius: 20px;
             border: 6px solid #d8c0b4;
         }
+
+        .edit-btn-box {
+            margin: 15px 0 0 2px;
+
+            .edit-btn {
+                background-color: rgb(214, 166, 174);
+                color: #fff;
+                box-shadow:  0 2px 6px rgba(146, 146, 146, 0.8);
+                cursor: pointer;
+                border-radius: 4px;
+                border: none;
+                width: 245px;
+            }
+
+            .edit-btn:hover {
+                background-color: rgb(207, 117, 132);
+            }
+        }
     }
 
     .name-box {
-        padding-top: 30px;
-        padding-left: 30px;
-        width: 630px;
+        padding-top: 5px;
+        // padding-left: 15px;
+        // width: 630px;
 
         .name-text {
             font-weight: bold;
             font-size: 26px;
-            width: 630px;
-        }
-
-        .name-label {
-            font-weight: bold;
-            margin-top: 40px;
-            // font-size: 27px;
+            // width: 630px;
         }
     }
 
     .intro-box {
-        padding-top: 40px;
-        padding-left: 30px;
-        width: 630px;
+        padding-top: 50px;
+        // padding-left: 15px;
+        // width: 630px;
 
         .intro-text {
             font-size: 16px;
-            width: 620px;
-        }
-
-        .intro-label {
-            font-weight: bold;
-        }
-    }
-
-    .edit-btn-box {
-        margin: 13px 0 0 2px;
-
-        .edit-btn {
-            background-color: rgb(214, 166, 174);
-            color: #fff;
-            box-shadow:  0 2px 6px rgba(146, 146, 146, 0.8);
-            cursor: pointer;
-            border-radius: 4px;
-            border: none;
-            width: 245px;
-        }
-
-        .edit-btn:hover {
-            background-color: rgb(207, 117, 132);
+            // width: 620px;
         }
     }
 }

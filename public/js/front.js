@@ -11006,9 +11006,9 @@ function displayCatalog(page) {
 
     for (var i = 0; i < 12; i++) {
       console.log(response[i].title);
+      var part = $('<div>').append($('<a>').attr('href', '/catalogs/detail/' + response[i].id).append($('<div>').addClass('style').append($('<div>').addClass('image').addClass('col-md-12').append($('<img>').attr('src', response[i].image_path1).attr('width', 255).attr('height', 300)).add($('<div>').addClass('text').addClass('col-md-12').append($('<div>').addClass('title-label').text(response[i].title))))));
+      $('#test').append(part);
     }
-
-    $('.test').append(now);
   }).fail(function () {
     alert('エラー');
   });

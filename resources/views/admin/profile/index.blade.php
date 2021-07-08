@@ -17,18 +17,18 @@
                         <img alt="">
                     @endif
                     @if ($profile_form->id == Auth::user()->id)
-                    <div class="col-md-3 edit-btn-box">
+                    <div class="col-md-12 edit-btn-box">
                         <a href="{{ route('profile.edit', ['user_id' => $profile_form->id]) }}" role="button" class="btn btn-primary edit-btn">プロフィールを編集する</a>
                     </div>
                     @endif
                 </div>
                 <div class="col-md-8">
-                    <div class="col-md-4 name-box">
+                    <div class="col-md-12 name-box">
                         <div class="name-text">
                             {{ $profile_form->name }}
                         </div>
                     </div>
-                    <div class="col-md-8 intro-box">
+                    <div class="col-md-12 intro-box">
                         <div class="intro-text">
                             {{ $profile_form->introduction }}
                         </div>
@@ -36,7 +36,9 @@
                 </div>
             </div>
         </div>
-        <hr color="#d6c6be">
+        <div>
+            <hr color="#d6c6be">
+        </div>
         {{-- 投稿一覧 --}}
         <div class="col-md-12 mx-auto">
             <h4 class="h4-label">投稿一覧</h4>

@@ -95,7 +95,7 @@ return [
     'numeric'              => ':attributeには、数値を指定してください。',
     'present'              => ':attributeには、現在時刻を指定してください。',
     'regex'                => '正しい形式の:attributeを指定してください。',
-    'required'             => ':attributeしてください。',
+    'required'             => ':attributeは必須です。',
     'required_if'          => ':otherが:valueの場合、:attributeは必須です。',
     'required_unless'      => ':otherが:valuesでない場合、:attributeは必須です。',
     'required_with'        => ':valuesのうちいずれかが指定された場合は、:attributeは必須です。',
@@ -146,13 +146,13 @@ return [
     */
 
     'attributes' => [
-        'title' => '「タイトル」を入力',
-        'description' => '「説明」を入力',
-        'image_path1' => '「画像1」を選択',
-        'tag_id' => '「シチュエーション」を1つ以上選択',
-        'name' => '名前を入力',
-        'password' => 'パスワード',
-        'introduction' => '説明',
+        'title' => '「タイトル」',
+        'description' => '「説明」',
+        'image_path1' => '「画像1」',
+        'tag_id' => '「シチュエーション」',
+        'name' => '「名前」',
+        'password' => '「パスワード」',
+        'introduction' => '「自己紹介」',
     ],
 
 ];
