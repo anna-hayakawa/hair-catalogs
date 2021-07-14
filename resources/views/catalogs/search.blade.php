@@ -16,7 +16,7 @@
                         <p>
                             @foreach($tags as $tag)
                             <label class="checkbox">
-                                <input type="checkbox" class="check_box" name="tag_ids[]" value="{{ $tag->id }}" />
+                                <input type="checkbox" class="check_box" name="tag_ids[]" value="{{ $tag->id }}" {{ in_array((string)$tag->id, $tag_ids, true)? 'checked="checked"' : '' }}/>
                                 <span>{{ $tag->tag_name }}</span>
                             </label>
                             @endforeach
@@ -48,24 +48,13 @@
                         </a>
                     </div>
                 @endforeach
-                <div class="col-md-12" id="more-box">
-                    <button class="more-btn" data-page="0">もっと見る</button>
-                        <div class="test">
-                            {{--  <a href="{{ route('catalogs.detail', ['catalog_id' => $style->id]) }}">
-                                <div class="style">
-                                    <div class="image col-md-12">
-                                        <img src="{{ asset('storage/image/' . $style->image_path1) }}"  width="255" height="300">
-                                    </div>
-                                    <div class="text col-md-12">
-                                        <div class="title-label">
-                                            {{ str_limit($style->title, 150) }}
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>  --}}
-                        </div>
-                    <button class="more-btn" data-page="1">もっと見る2</button>
-                </div>
+            </div>
+            {{-- もっと見るボタン --}}
+            <div class="style-list col-md-12 mx-auto row" id="more-list">
+                {{-- front.jsに表示内容を記載 --}}
+            </div>
+            <div class="more-btn-box col-md-12 text-center">
+                <button class="more-btn" data-page="1">もっと見る<span>1</span></button>
             </div>
         </div>
     </div>
