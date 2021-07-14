@@ -3,7 +3,9 @@ $(function() {
     $('.more-btn').on('click', function() {
         var page = $(this).data('page');
         console.log(page);
-        displayCatalog();
+        displayCatalog(page);
+        $(this).data('page', parseInt(page) + 1);
+        $('.more-btn>span').html(parseInt(page) + 1);
     });
 });
 function displayCatalog(page) {
@@ -18,7 +20,8 @@ function displayCatalog(page) {
         console.log(response);
         var now = $('.now');
 
-        for(var i=0; i<12; i++){
+        //取得するものと、表示方法を指定
+        for(var i=0; i<response.length; i++){
             console.log(response[i].title);
             var part = $('<div>')
                 .append($('<a>').attr('href', '/catalogs/detail/' + response[i].id)
@@ -30,9 +33,14 @@ function displayCatalog(page) {
                             .attr('height', 300)
                         )
                     .add($('<div>').addClass('text').addClass('col-md-12').append(
-                        $('<div>').addClass('title-label').text(response[i].title))))
+                        $('<div>').addClass('title-label').text(response[i].title_short))))
                 ));
-            $('#test').append(part);
+            $('#more-list').append(part);
+        }
+
+        //もっと見るボタンを非表示にする
+        if (response.length < 12) {
+            $('.more-btn').hide();
         }
     })
 

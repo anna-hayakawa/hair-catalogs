@@ -10991,7 +10991,9 @@ $(function () {
   $('.more-btn').on('click', function () {
     var page = $(this).data('page');
     console.log(page);
-    displayCatalog();
+    displayCatalog(page);
+    $(this).data('page', parseInt(page) + 1);
+    $('.more-btn>span').html(parseInt(page) + 1);
   });
 });
 
@@ -11002,12 +11004,17 @@ function displayCatalog(page) {
     type: 'GET'
   }).done(function (response) {
     console.log(response);
-    var now = $('.now');
+    var now = $('.now'); //取得するものと、表示方法を指定
 
-    for (var i = 0; i < 12; i++) {
+    for (var i = 0; i < response.length; i++) {
       console.log(response[i].title);
-      var part = $('<div>').append($('<a>').attr('href', '/catalogs/detail/' + response[i].id).append($('<div>').addClass('style').append($('<div>').addClass('image').addClass('col-md-12').append($('<img>').attr('src', response[i].image_path1).attr('width', 255).attr('height', 300)).add($('<div>').addClass('text').addClass('col-md-12').append($('<div>').addClass('title-label').text(response[i].title))))));
-      $('#test').append(part);
+      var part = $('<div>').append($('<a>').attr('href', '/catalogs/detail/' + response[i].id).append($('<div>').addClass('style').append($('<div>').addClass('image').addClass('col-md-12').append($('<img>').attr('src', response[i].image_path1).attr('width', 255).attr('height', 300)).add($('<div>').addClass('text').addClass('col-md-12').append($('<div>').addClass('title-label').text(response[i].title_short))))));
+      $('#more-list').append(part);
+    } //もっと見るボタンを非表示にする
+
+
+    if (response.length < 12) {
+      $('.more-btn').hide();
     }
   }).fail(function () {
     alert('エラー');
