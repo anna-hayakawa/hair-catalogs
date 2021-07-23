@@ -7,6 +7,7 @@ use App\HairStyle;
 use App\HairTag;
 use App\Tag;
 use App\User;
+use App\Common\CatalogCommon;
 
 
 class CatalogsController extends Controller
@@ -39,43 +40,46 @@ class CatalogsController extends Controller
         return view('catalogs.detail', ['style' => $style, 'tags' => $tags, 'profile_form' => $profile]);
     }
 
-
     public function search(Request $request)
     {
-        // dd($request->tag_ids);
         $page = (int)$request->input('page');
-        $per_page = 12;
-        $skip = $page * $per_page;
 
         //中間テーブルの検索の準備
         $hair_ids = $request->input('tag_ids');
 
-        // dd($_REQUEST);
+        // $per_page = 12;
+        // $skip = $page * $per_page;
+
+        $search_params = [
+            'tag_ids' => $request->input('tag_ids'),
+            'page' => $page,
+        ];
+        // dd($search_params);
+        $catalog = new CatalogCommon();
+        $results = $catalog->searchCatalogs($search_params);
 
         //中間テーブルの検索
         //選択されたタグ一覧の取得
-        $hair_styles = HairTag::select('style_id')
-        ->when(is_array($hair_ids) && count($hair_ids) > 0, function ($query) use ($hair_ids) {
-            \Log::debug(__LINE__.' '.print_r($hair_ids, true));
-            return $query->whereIn('tag_id', $hair_ids);
-        })
-        ->distinct()->get();
+        // $hair_styles = HairTag::select('style_id')
+        // ->when(is_array($hair_ids) && count($hair_ids) > 0, function ($query) use ($hair_ids) {
+        //     \Log::debug(__LINE__.' '.print_r($hair_ids, true));
+        //     return $query->whereIn('tag_id', $hair_ids);
+        // })
+        // ->distinct()->get();
         // dd($hair_tag);
-        $hair_style_ids = [];
-        foreach ($hair_styles as $hair_style) {
-            $hair_style_ids[] = $hair_style->style_id;
-        }
-        // dd($hair_style_ids);
+        // $hair_style_ids = [];
+        // foreach ($hair_styles as $hair_style) {
+        //     $hair_style_ids[] = $hair_style->style_id;
+        // }
 
         //styleの検索（main）
-        $styles = HairStyle::when(count($hair_style_ids) > 0, function ($query) use ($hair_style_ids) {
-            \Log::debug(__LINE__.' '.print_r($hair_style_ids, true));
-            return $query->whereIn('id', $hair_style_ids);
-        })
-        ->skip($skip)->take($per_page)->get();
-        // dd($styles);
+        // $styles = HairStyle::when(count($hair_style_ids) > 0, function ($query) use ($hair_style_ids) {
+        //     \Log::debug(__LINE__.' '.print_r($hair_style_ids, true));
+        //     return $query->whereIn('id', $hair_style_ids);
+        // })
+        // ->skip($skip)->take($per_page)->get();
 
-        return view('catalogs.search', ['tags' => Tag::all(), 'posts' => $styles, 'tag_ids' => $hair_ids]);
+        return view('catalogs.search', ['tags' => Tag::all(), 'posts' => $results, 'tag_ids' => $hair_ids]);;
     }
 }
 

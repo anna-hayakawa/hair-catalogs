@@ -10998,16 +10998,20 @@ $(function () {
 });
 
 function displayCatalog(page) {
-  var url = '/api/catalog?' + 'page=' + page;
+  var tag_ids = $('input[name="tag_ids[]"]:checked').each(function () {
+    return 'tag_ids[]=' + $(this).val();
+  });
+  console.log(tag_ids);
+  var url = '/api/catalog?' + 'page=' + page + '&' + tag_ids;
   $.ajax({
     url: url,
     type: 'GET'
   }).done(function (response) {
-    console.log(response);
+    // console.log(response);
     var now = $('.now'); //取得するものと、表示方法を指定
 
     for (var i = 0; i < response.length; i++) {
-      console.log(response[i].title);
+      // console.log(response[i].title);
       var part = $('<div>').append($('<a>').attr('href', '/catalogs/detail/' + response[i].id).append($('<div>').addClass('style').append($('<div>').addClass('image').addClass('col-md-12').append($('<img>').attr('src', response[i].image_path1).attr('width', 255).attr('height', 300)).add($('<div>').addClass('text').addClass('col-md-12').append($('<div>').addClass('title-label').text(response[i].title_short))))));
       $('#more-list').append(part);
     } //もっと見るボタンを非表示にする

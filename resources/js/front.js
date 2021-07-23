@@ -9,20 +9,25 @@ $(function() {
     });
 });
 function displayCatalog(page) {
+    var tag_ids = $('input[name="tag_ids[]"]:checked').each(function() {
+        return 'tag_ids[]=' + $(this).val();
+    });
+    console.log(tag_ids);
     var url = '/api/catalog?'
-    + 'page=' + page;
+    + 'page=' + page
+    + '&' + tag_ids;
     $.ajax({
         url: url,
         type: 'GET',
     })
 
     .done(function(response) {
-        console.log(response);
+        // console.log(response);
         var now = $('.now');
 
         //取得するものと、表示方法を指定
         for(var i=0; i<response.length; i++){
-            console.log(response[i].title);
+            // console.log(response[i].title);
             var part = $('<div>')
                 .append($('<a>').attr('href', '/catalogs/detail/' + response[i].id)
                 .append(
